@@ -170,7 +170,7 @@ selected_target2 = st.selectbox('Select second Target to show or none', ['Anxiet
 fig1 = px.scatter(df,x="Age", y = selected_target1,
                         color="Fav genre",
                         title="Scatterplot Matrix with Colors as Legend")
-if selected_target2 != None and selected_target2 != selected_target1:
+if selected_target2 != "None" and selected_target2 != selected_target1:
     fig2 = px.scatter(df,x="Age", y = selected_target2,
                             color="Fav genre",
                             title="Scatterplot Matrix with Colors as Legend")
