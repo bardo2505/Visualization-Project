@@ -14,6 +14,7 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
+st.set_page_config(layout="wide")
 
 
 df = pd.read_csv('Sleep_Efficiency.csv')
@@ -177,7 +178,7 @@ st.plotly_chart(fig, use_container_width=True)
 # OUR GRAPHS NOT IDAN #
 df = pd.read_csv('mxmh_survey_results.csv')
 
-st.set_page_config(layout="wide")
+
 st.subheader('Our first graph')
 fig1 = px.scatter(df,x="Age", y = "Anxiety",
                         color="Fav genre",
