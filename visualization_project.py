@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
-st.set_page_config(layout="wide")
+
 
 
 df = pd.read_csv('Sleep_Efficiency.csv')
@@ -37,7 +37,8 @@ df['Sleep efficiency'] = pd.to_numeric(df['Sleep efficiency'], errors='coerce')
 
 
 st.set_page_config(page_title="How does sleep efficiency vary by age, sex, or other variables?",
-                   page_icon=":bar_chart:")
+                   page_icon=":bar_chart:",
+                  layout="wide")
 st.title('How does sleep efficiency vary by age, sex, or other variables?')
 
 
