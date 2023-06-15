@@ -40,6 +40,20 @@ for idx, row in df.iterrows():
     if row[f'Frequency [{fav}]'] not in ['Sometimes','Very frequently']:
       df = df.drop(idx)
 
+third_graph_df = pd.DataFrame(columns=['Genre','Target', 'Average Score'])
+targets = ['Anxiety','Depression','Insomnia','OCD']
+names = sorted(['Rock','Video game music','R&B','EDM', 'Hip hop','Pop','Classical', 'Metal', 'Folk'])
+j=0
+for name in names: 
+    curr_df = df[df['Fav genre']==name]
+    for target in targets:
+        j+=1
+        curr_avg = np.mean(curr_df[target])
+        third_graph_df.loc[j] = [name ,target, curr_avg]
+    
+    
+    
+    
 # First Graph:
 st.subheader('Our first graph')
 
@@ -88,7 +102,13 @@ else:
     st.plotly_chart(second_graph_fig1, use_container_width=True)
 
     
-    
+# Graph 3 #
+
+third_graph_fig1 = px.histogram(third_graph_df, x="Genre", y='Average Score',
+             color='Target', barmode='group',
+             histfunc='avg',
+             height=400)
+st.plotly_chart(third_graph_fig1, use_container_width=True)
 
 # df = pd.read_csv('Sleep_Efficiency.csv')
 # df['Alcohol consumption'] = df['Alcohol consumption'].fillna(0.0)
