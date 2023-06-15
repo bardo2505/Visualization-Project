@@ -32,7 +32,7 @@ df = pd.read_csv('mxmh_survey_results.csv')
 st.subheader('Our first graph')
 
 first_graph_target1 = st.selectbox('Select first Target to show', ['Anxiety', 'Depression','Insomnia','OCD'],key=1)
-first_graph_target2 = st.selectbox('Select second Target to show or none', ['Anxiety', 'Depression','Insomnia','OCD','None'],key=1)
+first_graph_target2 = st.selectbox('Select second Target to show or none', ['Anxiety', 'Depression','Insomnia','OCD','None'],key=2)
 
 first_graph_fig1 = px.scatter(df,x="Age", y = first_graph_target1,
                         color="Fav genre",
@@ -55,8 +55,8 @@ else:
 # Second Graph:
 st.subheader('Our Second graph')
 
-second_graph_target1 = st.selectbox('Select first Target to show', ['Anxiety', 'Depression','Insomnia','OCD'],key=1)
-second_graph_target2 = st.selectbox('Select second Target to show or none', ['Anxiety', 'Depression','Insomnia','OCD','None'],key=1)
+second_graph_target1 = st.selectbox('Select first Target to show', ['Anxiety', 'Depression','Insomnia','OCD'],key=3)
+second_graph_target2 = st.selectbox('Select second Target to show or none', ['Anxiety', 'Depression','Insomnia','OCD','None'],key=4)
 
 second_graph_fig1 = px.scatter(df,x="Hours per day", y = second_graph_target1,
                         color="Fav genre",
