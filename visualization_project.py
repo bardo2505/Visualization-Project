@@ -192,7 +192,7 @@ fig4 = px.scatter(df,x="Age", y = "OCD",
                         color="Fav genre",
                         title="Scatterplot Matrix with Colors as Legend")
 
-col1, col2 = st.beta_columns(2)
+col1, col2 = st.columns(2)
 
 with col1:
     st.plotly_chart(fig1)
