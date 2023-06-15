@@ -191,9 +191,20 @@ fig3 = px.scatter(df,x="Age", y = "Insomnia",
 fig4 = px.scatter(df,x="Age", y = "OCD",
                         color="Fav genre",
                         title="Scatterplot Matrix with Colors as Legend")
-st.plotly_chart(fig1, use_container_width=True)
-st.plotly_chart(fig2, use_container_width=True)
-st.plotly_chart(fig3, use_container_width=True)
-st.plotly_chart(fig4, use_container_width=True)
+
+col1, col2 = st.beta_columns(2)
+
+with col1:
+    st.plotly_chart(fig1)
+
+with col2:
+    st.plotly_chart(fig2)
+
+
+
+# st.plotly_chart(fig1, use_container_width=True)
+# st.plotly_chart(fig2, use_container_width=True)
+# st.plotly_chart(fig3, use_container_width=True)
+# st.plotly_chart(fig4, use_container_width=True)
 
 
