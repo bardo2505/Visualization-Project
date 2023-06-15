@@ -37,7 +37,7 @@ first_graph_target2 = st.selectbox('Select second Target to show or none', ['Anx
 fig1 = px.scatter(df,x="Age", y = first_graph_target1,
                         color="Fav genre",
                         title="Scatterplot Matrix with Colors as Legend")
-if selected_target2 != "None" and first_graph_target2 != first_graph_target1:
+if first_graph_target2 != "None" and first_graph_target2 != first_graph_target1:
     fig2 = px.scatter(df,x="Age", y = first_graph_target2,
                             color="Fav genre",
                             title="Scatterplot Matrix with Colors as Legend")
@@ -61,7 +61,7 @@ second_graph_target2 = st.selectbox('Select second Target to show or none', ['An
 fig1 = px.scatter(df,x="Hours per day", y = second_graph_target1,
                         color="Fav genre",
                         title="Scatterplot Matrix with Colors as Legend")
-if selected_target2 != "None" and second_graph_target2 != second_graph_target1:
+if second_graph_target2 != "None" and second_graph_target2 != second_graph_target1:
     fig2 = px.scatter(df, x="Hours per day", y = second_graph_target2,
                             color="Fav genre",
                             title="Scatterplot Matrix with Colors as Legend")
