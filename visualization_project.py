@@ -34,11 +34,11 @@ st.subheader('Our first graph')
 first_graph_target1 = st.selectbox('Select first Target to show', ['Anxiety', 'Depression','Insomnia','OCD'])
 first_graph_target2 = st.selectbox('Select second Target to show or none', ['Anxiety', 'Depression','Insomnia','OCD','None'])
 
-fig1 = px.scatter(df,x="Age", y = selected_target1,
+fig1 = px.scatter(df,x="Age", y = first_graph_target1,
                         color="Fav genre",
                         title="Scatterplot Matrix with Colors as Legend")
-if selected_target2 != "None" and selected_target2 != selected_target1:
-    fig2 = px.scatter(df,x="Age", y = selected_target2,
+if selected_target2 != "None" and first_graph_target2 != first_graph_target1:
+    fig2 = px.scatter(df,x="Age", y = first_graph_target2,
                             color="Fav genre",
                             title="Scatterplot Matrix with Colors as Legend")
     col1, col2 = st.columns(2, gap="large")
@@ -58,11 +58,11 @@ st.subheader('Our Second graph')
 second_graph_target1 = st.selectbox('Select first Target to show', ['Anxiety', 'Depression','Insomnia','OCD'])
 second_graph_target2 = st.selectbox('Select second Target to show or none', ['Anxiety', 'Depression','Insomnia','OCD','None'])
 
-fig1 = px.scatter(df,x="Hours per day", y = selected_target1,
+fig1 = px.scatter(df,x="Hours per day", y = second_graph_target1,
                         color="Fav genre",
                         title="Scatterplot Matrix with Colors as Legend")
-if selected_target2 != "None" and selected_target2 != selected_target1:
-    fig2 = px.scatter(df, x="Hours per day", y = selected_target2,
+if selected_target2 != "None" and second_graph_target2 != second_graph_target1:
+    fig2 = px.scatter(df, x="Hours per day", y = second_graph_target2,
                             color="Fav genre",
                             title="Scatterplot Matrix with Colors as Legend")
     col1, col2 = st.columns(2, gap="large")
