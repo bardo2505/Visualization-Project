@@ -7,6 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1J9IqMQTF-Z61q7BxpMfHPQlhHMvZYpGk
 """
 
+
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -30,8 +31,8 @@ df = pd.read_csv('mxmh_survey_results.csv')
 # First Graph:
 st.subheader('Our first graph')
 
-selected_target1 = st.selectbox('Select first Target to show', ['Anxiety', 'Depression','Insomnia','OCD'])
-selected_target2 = st.selectbox('Select second Target to show or none', ['Anxiety', 'Depression','Insomnia','OCD','None'])
+first_graph_target1 = st.selectbox('Select first Target to show', ['Anxiety', 'Depression','Insomnia','OCD'])
+first_graph_target2 = st.selectbox('Select second Target to show or none', ['Anxiety', 'Depression','Insomnia','OCD','None'])
 
 fig1 = px.scatter(df,x="Age", y = selected_target1,
                         color="Fav genre",
@@ -54,8 +55,8 @@ else:
 # Second Graph:
 st.subheader('Our Second graph')
 
-selected_target1 = st.selectbox('Select first Target to show', ['Anxiety', 'Depression','Insomnia','OCD'])
-selected_target2 = st.selectbox('Select second Target to show or none', ['Anxiety', 'Depression','Insomnia','OCD','None'])
+second_graph_target1 = st.selectbox('Select first Target to show', ['Anxiety', 'Depression','Insomnia','OCD'])
+second_graph_target2 = st.selectbox('Select second Target to show or none', ['Anxiety', 'Depression','Insomnia','OCD','None'])
 
 fig1 = px.scatter(df,x="Hours per day", y = selected_target1,
                         color="Fav genre",
