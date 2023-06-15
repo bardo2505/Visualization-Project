@@ -26,7 +26,19 @@ st.set_page_config(page_title="PROJECT",
 st.title('PROJECT')
 
 # OUR GRAPHS #
+
+# preprocess:
+
 df = pd.read_csv('mxmh_survey_results.csv')
+
+genres_to_remove = ['Jazz', 'Lofi', 'Gospel', 'Latin','Rap','Country','K pop']
+df = df[~df['Fav genre'].isin(genres_to_remove)]
+
+genres_to_keep = ['Rock','Pop','Metal','Classical','Video game music','EDM','R&B','Hip hop','Folk']
+for idx, row in df.iterrows():
+    fav = row['Fav genre']
+    if row[f'Frequency [{fav}]'] not in ['Sometimes','Very frequently']:
+      df = df.drop(idx)
 
 # First Graph:
 st.subheader('Our first graph')
