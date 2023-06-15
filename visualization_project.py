@@ -177,7 +177,7 @@ st.plotly_chart(fig, use_container_width=True)
 # OUR GRAPHS NOT IDAN #
 df = pd.read_csv('mxmh_survey_results.csv')
 
-
+st.set_page_config(layout="wide")
 st.subheader('Our first graph')
 fig1 = px.scatter(df,x="Age", y = "Anxiety",
                         color="Fav genre",
