@@ -43,7 +43,7 @@ st.title('How does sleep efficiency vary by age, sex, or other variables?')
 #First Graph
 st.subheader('Sleep Efficiency by Wakeup Hour')
 # Filter the data based on the selected gender
-selected_gender = st.selectbox('Select Gender', ['Male', 'Female'])
+selected_gender = st.selectbox('Select Gender', ['Mal', 'Female'])
 filtered_data = df[df['Gender'] == selected_gender]
 
 # Create the box plot using plotly express
