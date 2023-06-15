@@ -25,7 +25,7 @@ from plotly.subplots import make_subplots
 st.set_page_config(page_title="PROJECT",
                    page_icon=":bar_chart:",
                   layout="wide")
-st.title('אופיר הכי יפה בעולם ואני אוהב אותה מאוד')
+st.title('PROJECT')
 
 # OUR GRAPHS #
 
