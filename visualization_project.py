@@ -139,3 +139,58 @@ ax.set_ylabel('Density')
 # ax.set_title('Sleep Efficiency Distribution: Weekdays vs. Weekends')
 ax.legend(labels=['Weekend','Weekday'])
 st.pyplot(fig)
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Second Graph
+
+
+# Define a custom color palette for the bars
+color_scale = ["purple", "skyblue", "orange"]
+# Create a bar plot using Plotly Express
+fig = px.bar(avg_sleep_perc, y=avg_sleep_perc.index, x=avg_sleep_perc.values,
+             labels={'x': 'Sleep Type', 'y': 'Average Percentage'},
+             color=avg_sleep_perc.index, color_discrete_sequence=color_scale)
+
+
+# Customize the plot as needed
+fig.update_layout(yaxis_title='Sleep Type',
+                  xaxis_title='Average Percentage')
+
+# Display the plot
+st.plotly_chart(fig, use_container_width=True)
+
+
+
+
+
+# OUR GRAPHS NOT IDAN #
+st.subheader('Our first graph')
+fig1 = px.scatter(df,x="Age", y = "Anxiety",
+                        color="Fav genre",
+                        title="Scatterplot Matrix with Colors as Legend")
+fig2 = px.scatter(df,x="Age", y = "Depression",
+                        color="Fav genre",
+                        title="Scatterplot Matrix with Colors as Legend")
+fig3 = px.scatter(df,x="Age", y = "Insomnia",
+                        color="Fav genre",
+                        title="Scatterplot Matrix with Colors as Legend")
+fig4 = px.scatter(df,x="Age", y = "OCD",
+                        color="Fav genre",
+                        title="Scatterplot Matrix with Colors as Legend")
+st.plotly_chart(fig1, use_container_width=True)
+st.plotly_chart(fig2, use_container_width=True)
+st.plotly_chart(fig3, use_container_width=True)
+st.plotly_chart(fig4, use_container_width=True)
+
+
