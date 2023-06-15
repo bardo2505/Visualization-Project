@@ -45,7 +45,7 @@ st.title('How does sleep efficiency vary by age, sex, or other variables?')
 #First Graph
 st.subheader('Sleep Efficiency by Wakeup Hour')
 # Filter the data based on the selected gender
-selected_gender = st.selectbox('Select Gender', ['Mal', 'Female'])
+selected_gender = st.selectbox('Select Gender', ['Male', 'Female'])
 filtered_data = df[df['Gender'] == selected_gender]
 
 # Create the box plot using plotly express
@@ -154,24 +154,6 @@ st.pyplot(fig)
 
 
 
-#Second Graph
-
-
-# Define a custom color palette for the bars
-color_scale = ["purple", "skyblue", "orange"]
-# Create a bar plot using Plotly Express
-fig = px.bar(avg_sleep_perc, y=avg_sleep_perc.index, x=avg_sleep_perc.values,
-             labels={'x': 'Sleep Type', 'y': 'Average Percentage'},
-             color=avg_sleep_perc.index, color_discrete_sequence=color_scale)
-
-
-# Customize the plot as needed
-fig.update_layout(yaxis_title='Sleep Type',
-                  xaxis_title='Average Percentage')
-
-# Display the plot
-st.plotly_chart(fig, use_container_width=True)
-
 
 
 
@@ -181,32 +163,26 @@ df = pd.read_csv('mxmh_survey_results.csv')
 
 
 st.subheader('Our first graph')
-fig1 = px.scatter(df,x="Age", y = "Anxiety",
-                        color="Fav genre",
-                        title="Scatterplot Matrix with Colors as Legend")
-fig2 = px.scatter(df,x="Age", y = "Depression",
-                        color="Fav genre",
-                        title="Scatterplot Matrix with Colors as Legend")
-fig3 = px.scatter(df,x="Age", y = "Insomnia",
-                        color="Fav genre",
-                        title="Scatterplot Matrix with Colors as Legend")
-fig4 = px.scatter(df,x="Age", y = "OCD",
-                        color="Fav genre",
-                        title="Scatterplot Matrix with Colors as Legend")
 
-col1, col2 = st.columns(2, gap="large")
+selected_target1 = st.selectbox('Select first Target to show', ['Anxiety', 'Depression','Insomnia','OCD'])
+selected_target2 = st.selectbox('Select second Target to show or none', ['Anxiety', 'Depression','Insomnia','OCD','None'])
 
-with col1:
+fig1 = px.scatter(df,x="Age", y = selected_target1,
+                        color="Fav genre",
+                        title="Scatterplot Matrix with Colors as Legend")
+if selected_target2 != None and selected_target2 != selected_target1:
+    fig2 = px.scatter(df,x="Age", y = selected_target2,
+                            color="Fav genre",
+                            title="Scatterplot Matrix with Colors as Legend")
+    col1, col2 = st.columns(2, gap="large")
+
+    with col1:
+        st.plotly_chart(fig1, use_container_width=True)
+
+    with col2:
+        st.plotly_chart(fig2, use_container_width=True)
+else:
     st.plotly_chart(fig1, use_container_width=True)
 
-with col2:
-    st.plotly_chart(fig2, use_container_width=True)
-
-
-
-# st.plotly_chart(fig1, use_container_width=True)
-# st.plotly_chart(fig2, use_container_width=True)
-# st.plotly_chart(fig3, use_container_width=True)
-# st.plotly_chart(fig4, use_container_width=True)
 
 
