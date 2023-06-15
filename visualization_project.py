@@ -34,22 +34,22 @@ st.subheader('Our first graph')
 first_graph_target1 = st.selectbox('Select first Target to show', ['Anxiety', 'Depression','Insomnia','OCD'])
 first_graph_target2 = st.selectbox('Select second Target to show or none', ['Anxiety', 'Depression','Insomnia','OCD','None'])
 
-fig1 = px.scatter(df,x="Age", y = first_graph_target1,
+first_graph_fig1 = px.scatter(df,x="Age", y = first_graph_target1,
                         color="Fav genre",
                         title="Scatterplot Matrix with Colors as Legend")
 if first_graph_target2 != "None" and first_graph_target2 != first_graph_target1:
-    fig2 = px.scatter(df,x="Age", y = first_graph_target2,
+    first_graph_fig2 = px.scatter(df,x="Age", y = first_graph_target2,
                             color="Fav genre",
                             title="Scatterplot Matrix with Colors as Legend")
     col1, col2 = st.columns(2, gap="large")
 
     with col1:
-        st.plotly_chart(fig1, use_container_width=True)
+        st.plotly_chart(first_graph_fig1, use_container_width=True)
 
     with col2:
-        st.plotly_chart(fig2, use_container_width=True)
+        st.plotly_chart(first_graph_fig2, use_container_width=True)
 else:
-    st.plotly_chart(fig1, use_container_width=True)
+    st.plotly_chart(first_graph_fig1, use_container_width=True)
     
     
 # Second Graph:
@@ -58,22 +58,22 @@ st.subheader('Our Second graph')
 second_graph_target1 = st.selectbox('Select first Target to show', ['Anxiety', 'Depression','Insomnia','OCD'])
 second_graph_target2 = st.selectbox('Select second Target to show or none', ['Anxiety', 'Depression','Insomnia','OCD','None'])
 
-fig1 = px.scatter(df,x="Hours per day", y = second_graph_target1,
+second_graph_fig1 = px.scatter(df,x="Hours per day", y = second_graph_target1,
                         color="Fav genre",
                         title="Scatterplot Matrix with Colors as Legend")
 if second_graph_target2 != "None" and second_graph_target2 != second_graph_target1:
-    fig2 = px.scatter(df, x="Hours per day", y = second_graph_target2,
+    second_graph_fig2 = px.scatter(df, x="Hours per day", y = second_graph_target2,
                             color="Fav genre",
                             title="Scatterplot Matrix with Colors as Legend")
     col1, col2 = st.columns(2, gap="large")
 
     with col1:
-        st.plotly_chart(fig1, use_container_width=True)
+        st.plotly_chart(second_graph_fig1, use_container_width=True)
 
     with col2:
-        st.plotly_chart(fig2, use_container_width=True)
+        st.plotly_chart(second_graph_fig2, use_container_width=True)
 else:
-    st.plotly_chart(fig1, use_container_width=True)
+    st.plotly_chart(second_graph_fig1, use_container_width=True)
 
     
     
