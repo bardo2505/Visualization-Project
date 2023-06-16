@@ -126,7 +126,7 @@ if comparison == 'Comparison':
     Anxiety = px.scatter(df,x="Age", y = 'Anxiety',
                         color="Fav genre",
                         title="Age Vs. Anxiety",
-                        color_discrete_sequence = cmap_graph_12)
+                        color_discrete_sequence = px.colors.qualitative.Safe)
 
     
     Depression = px.scatter(df,x="Age", y = 'Depression',
