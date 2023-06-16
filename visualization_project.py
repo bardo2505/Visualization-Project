@@ -414,12 +414,10 @@ fourth_graph_fig1.update_layout(title="Average Mental Health Score by Hours Bins
                                coloraxis=dict(
                                       colorbar=dict(
                                             title="Mental Health Average Score",
-                                            titleside="right",
-                                            titlefont=dict(size=20),
-                                            tickfont=dict(size=17)
-                                                    )
-                                              )
-                                )
+                                            titleside="top",
+                                            titlefont=dict(size=15),
+                                            tickfont=dict(size=12),
+                                             title_standoff=15)))
 
 
 
