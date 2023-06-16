@@ -306,7 +306,7 @@ with st.container():
     pop = col6.checkbox('Pop', key=14)
     rnb = col7.checkbox('R&B', key=15)    
     rock = col8.checkbox('Rock', key=16) 
-    videogame = col8.checkbox('Video game music', key=17) 
+    videogame = col9.checkbox('Video game music', key=17) 
 
 check_box_booleans = [classical,edm,folk,hiphop,metal,pop,rnb,rock,videogame]        
 genres = ['Classical','EDM','Folk','Hip hop','Metal','Pop','R&B','Rock','Video game music'] 
@@ -316,7 +316,7 @@ for i in range(len(genres)):
         to_show.append(genres[i])
  
 
-to_show_df = third_graph_df[third_graph_df["Fav genre"].isin(to_show)]
+to_show_df = third_graph_df[third_graph_df["Genre"].isin(to_show)]
 
 third_graph_fig1 = px.histogram(to_show_df, x="Genre", y='Average Score',
              color='Target', barmode='group',
