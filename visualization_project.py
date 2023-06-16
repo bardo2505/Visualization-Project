@@ -405,11 +405,11 @@ fourth_graph_fig1 = px.density_heatmap(df_avg, x="Fav genre", y="Hours bins", z=
 fourth_graph_fig1.update_layout(title="Average Mental Health Score by Hours Bins and Favorite Genre",
                                xaxis=dict(
                                        tickfont=dict(size=17),  # Set font size for x-axis tick numbers
-                                       title=dict(font=dict(size=20))  # Set font size for x-axis label
+                                       title=dict(text="Favorite Genre",font=dict(size=20))  # Set font size for x-axis label
                                         ),
                                yaxis=dict(
                                        tickfont=dict(size=17),  # Set font size for y-axis tick numbers
-                                       title=dict(font=dict(size=20))  # Set font size for y-axis label
+                                       title=dict(text="Hours of listening (Daily)", font=dict(size=20))  # Set font size for y-axis label
                                         ),
                                coloraxis=dict(
                                       colorbar=dict(
