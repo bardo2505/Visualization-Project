@@ -159,6 +159,8 @@ st.plotly_chart(third_graph_fig1, use_container_width=True)
 
 # Graph 4 #
 
+hours_bins_order = ["[0-2]","(2-3]","(3-4]","(4-24]"]
+df["Hours bins"] = pd.Categorical(df["Hours bins"], categories=hours_bins_order, ordered=True)
 
 df_avg = df.groupby(["Hours bins", "Fav genre"]).mean().reset_index()
 fourth_graph_fig1 = px.density_heatmap(df_avg, x="Fav genre", y="Hours bins", z="targets_mean",
