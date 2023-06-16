@@ -106,7 +106,7 @@ if comparison == 'Comparison':
                         color="Fav genre",
                         title="Age Vs. Anxiety")
     for trace in Anxiety.data:
-        trace.update(marker=dict(size=10, opacity=0.8))
+        trace.update(marker=dict(size=10, opacity=0.6))
     
     Depression = px.scatter(df,x="Age", y = 'Depression',
                         color="Fav genre",
