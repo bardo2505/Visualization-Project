@@ -103,12 +103,8 @@ st.subheader('Our first graph')
 
 comparison = st.selectbox('Would you like to look at Average of all or comapre two graphs?', ['Average', 'Comparison'],key=0)
 if comparison == 'Comparison':
-    Anxiety_bool = False
-    Depression_bool = False
-    Insomnia_bool = False
-    OCD_bool = False
-    list_of_trues = [Anxiety_bool, Depression_bool, Insomnia_bool, OCD_bool]
-    true_indices = [index for index, value in enumerate(list_of_trues) if value]
+
+    list_of_trues = [False, False, False, False]
     if (st.checkbox("Anxiety")):
         list_of_trues[0] = True
     else:
@@ -128,7 +124,7 @@ if comparison == 'Comparison':
         list_of_trues[3] = True
     else:
         list_of_trues[3] = False
-    
+    true_indices = [index for index, value in enumerate(list_of_trues) if value]
     graphs_amount = sum(list_of_trues)
     Anxiety = px.scatter(df,x="Age", y = 'Anxiety',
                         color="Fav genre",
