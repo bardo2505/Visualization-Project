@@ -352,7 +352,7 @@ df["Hours bins"] = pd.Categorical(df["Hours bins"], categories=hours_bins_order,
 df_avg = df.groupby(["Hours bins", "Fav genre"]).mean().reset_index()
 fourth_graph_fig1 = px.density_heatmap(df_avg, x="Fav genre", y="Hours bins", z="targets_mean",
                          labels=dict(x="Favorite Genre", y="Hours Bins", z="Average Score"),
-                         color_continuous_scale="Viridis")
+                         color_continuous_scale="RdYlBu_r")
 fourth_graph_fig1.update_layout(title="Average Mental Health Score by Hours Bins and Favorite Genre")
 st.plotly_chart(fourth_graph_fig1, use_container_width=True)
 
