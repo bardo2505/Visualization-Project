@@ -261,7 +261,7 @@ elif comparison == 'Average':
                          color="Fav genre",
                          title="Scatterplot Matrix with Colors as Legend")
     g.update_layout(yaxis_title='Average of Mental Health Scores')
-    g.update_xaxes(range=[0, 24])
+    g.update_xaxes(range=[0, 24.5])
     st.plotly_chart(g, use_container_width=True)
 
 
