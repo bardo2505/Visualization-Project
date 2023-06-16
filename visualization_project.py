@@ -101,26 +101,29 @@ for name in names:
 # First Graph:
 st.subheader('Our first graph')
 
-first_graph_target1 = st.selectbox('Select first Target to show', ['Anxiety', 'Depression','Insomnia','OCD'],key=1)
-first_graph_target2 = st.selectbox('Select second Target to show or none', ['Anxiety', 'Depression','Insomnia','OCD','None'],key=2)
+comparison = st.selectbox('Would you like to look at Average of all or comapre two graphs?', ['Average', 'Comparison'],key=0)
+if comparison == 'Comparison':
+    first_graph_target1 = st.selectbox('Select first Target to show', ['Anxiety', 'Depression','Insomnia','OCD'],key=1)
+    first_graph_target2 = st.selectbox('Select second Target to show or none', ['Anxiety', 'Depression','Insomnia','OCD','None'],key=2)
 
-first_graph_fig1 = px.scatter(df,x="Age", y = first_graph_target1,
+    first_graph_fig1 = px.scatter(df,x="Age", y = first_graph_target1,
                         color="Fav genre",
                         title="Scatterplot Matrix with Colors as Legend")
-if first_graph_target2 != "None" and first_graph_target2 != first_graph_target1:
-    first_graph_fig2 = px.scatter(df,x="Age", y = first_graph_target2,
+    if first_graph_target2 != "None" and first_graph_target2 != first_graph_target1:
+        first_graph_fig2 = px.scatter(df,x="Age", y = first_graph_target2,
                             color="Fav genre",
                             title="Scatterplot Matrix with Colors as Legend")
-    col1, col2 = st.columns(2, gap="large")
+        col1, col2 = st.columns(2, gap="large")
 
-    with col1:
+        with col1:
+            st.plotly_chart(first_graph_fig1, use_container_width=True)
+
+        with col2:
+            st.plotly_chart(first_graph_fig2, use_container_width=True)
+    else:
         st.plotly_chart(first_graph_fig1, use_container_width=True)
-
-    with col2:
-        st.plotly_chart(first_graph_fig2, use_container_width=True)
-else:
-    st.plotly_chart(first_graph_fig1, use_container_width=True)
-    
+  else:
+    pass
     
 # Second Graph:
 st.subheader('Our Second graph')
