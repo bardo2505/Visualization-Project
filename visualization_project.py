@@ -105,19 +105,22 @@ if comparison == 'Comparison':
     Anxiety = px.scatter(df,x="Age", y = 'Anxiety',
                         color="Fav genre",
                         title="Age Vs. Anxiety")
-    for trace in Anxiety.data:
-        trace.update(marker=dict(symbol='square', size=14))
     
     Depression = px.scatter(df,x="Age", y = 'Depression',
                         color="Fav genre",
                         title="Age Vs. Depression")
+    
     Insomnia = px.scatter(df,x="Age", y = 'Insomnia',
                         color="Fav genre",
                         title="Age Vs. Insomnia")
+    
     OCD = px.scatter(df,x="Age", y = 'OCD',
                         color="Fav genre",
                         title="Age Vs. OCD")
+    
     graphs = [Anxiety, Depression, Insomnia, OCD]
+    for g in graphs:
+      g.update_xaxes(range=[-0.5, 90.5], tickmode='linear', dtick=10)  
     if graphs_amount == 0:
         pass
     
@@ -167,6 +170,7 @@ elif comparison == 'Average':
                          color="Fav genre",
                          title="Scatterplot Matrix with Colors as Legend")
     g.update_layout(yaxis_title='Average of Mental Health Scores')
+    g.update_xaxes(range=[-0.5, 90.5], tickmode='linear', dtick=10)  
     st.plotly_chart(g, use_container_width=True)
 
 
@@ -214,7 +218,7 @@ if comparison == 'Comparison':
     OCD.update_xaxes(range=[-0.5, 24.5], tickmode='linear', dtick=1)
     graphs = [Anxiety, Depression, Insomnia, OCD]
     for g in graphs:
-      g.update_xaxes(range=[-0.5, 24.5], tickmode='linear', dtick=1)  
+      g.update_xaxes(range=[-0.5, 24.5], tickmode='linear', dtick=2)  
     if graphs_amount == 0:
         pass
     
