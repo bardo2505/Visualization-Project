@@ -83,7 +83,7 @@ df['Hours bins'] = df['Hours per day'].apply(apply_bins_hours)
 df['targets_mean'] = df.apply(lambda row: row[['Anxiety', 'Depression', 'Insomnia', 'OCD']].mean(), axis=1)
 
 # make a DF for graph number 3 : 
-res_df = pd.DataFrame(columns=['Genre','Target', 'Average Score'])
+third_graph_df = pd.DataFrame(columns=['Genre','Target', 'Average Score'])
 targets = ['Anxiety','Depression','Insomnia','OCD']
 names = sorted(['Rock','Video game music','R&B','EDM', 'Hip hop','Pop','Classical', 'Metal', 'Folk'])
 j=0
@@ -92,7 +92,7 @@ for name in names:
     for target in targets:
         j+=1
         curr_avg = np.mean(curr_df[target])
-        res_df.loc[j] = [name ,target, curr_avg]
+        third_graph_df.loc[j] = [name ,target, curr_avg]
 
     
     
