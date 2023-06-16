@@ -387,15 +387,7 @@ third_graph_fig1.update_layout(title="Put title here",
                                yaxis=dict(
                                        tickfont=dict(size=17),  # Set font size for y-axis tick numbers
                                        title=dict(text="Mental Health Score", font=dict(size=20))  # Set font size for y-axis label
-                                        ),
-                               coloraxis=dict(
-                                      title =dict(text="Mental Health Disorder", font=dict(size=15))))  # Set font size for y-axis label
-#                                       colorbar=dict(
-#                                             title="Mental Health Disorder",
-#                                             titleside="top",
-#                                             titlefont=dict(size=15),
-#                                             tickfont=dict(size=15))))
-
+                                        )))
 
 
 st.plotly_chart(third_graph_fig1, use_container_width=True)
