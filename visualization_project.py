@@ -353,13 +353,20 @@ for i in range(len(genres)):
  
 
 to_show_df = third_graph_df[third_graph_df["Genre"].isin(to_show)]
-color_map = {
-    "Anxiety": "#FF0000",  # Red
-    "Depression": "#00FF00",  # Green
-    "Insomnia": "#0000FF",  # Blue
-    "OCD": "#FF8000",  # Orange
-}
-
+if color_blind == 'No':
+    color_map = {
+        "Anxiety": "#FF0000",  # Red
+        "Depression": "#2CA02C",  # Green
+        "Insomnia": "#0000FF",  # Blue
+        "OCD": "#FF8000",  # Orange
+    }
+else:
+     color_map = {
+        "Anxiety": px.colors.qualitative.Set1[4],  # Orange
+        "Depression": px.colors.qualitative.Set1[5],  # Yellow
+        "Insomnia": px.colors.qualitative.Set1[6],  # Brown
+        "OCD": px.colors.qualitative.Set1[7]  # Pink
+    } 
 
 
 third_graph_fig1 = px.histogram(to_show_df, x="Genre", y='Average Score',
