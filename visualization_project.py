@@ -34,26 +34,26 @@ else:
 
 if color_blind == 'No':
      color_map_graphs12 = {
-        "Classical":px.colors.qualitative.Dark24[5] # Black
-        "EDM":px.colors.qualitative.Dark24[7] # Purple
-        "Folk":px.colors.qualitative.T10[9]
-        "Hip hop":px.colors.qualitative.Vivid[2]
-        "Metal":px.colors.qualitative.Alphabet[19] # Light blue
-        "Pop":px.colors.qualitative.Set1[0] # Red
-        "R&B":px.colors.qualitative.Set1[4] # Orange
-        "Rock":px.colors.qualitative.Set1[5] # Yellow
+        "Classical":px.colors.qualitative.Dark24[5], # Black
+        "EDM":px.colors.qualitative.Dark24[7], # Purple
+        "Folk":px.colors.qualitative.T10[9], # Grey
+        "Hip hop":px.colors.qualitative.Vivid[2], # Torquise
+        "Metal":px.colors.qualitative.Alphabet[19], # Light blue
+        "Pop":px.colors.qualitative.Set1[0], # Red
+        "R&B":px.colors.qualitative.Set1[4], # Orange
+        "Rock":px.colors.qualitative.Set1[5], # Yellow
         "Video game music":px.colors.qualitative.Pastel1[8] # White
     }  
 else:
      color_map_graphs12 = {
-        "Classical":px.colors.qualitative.Dark24[5] # Black
-        "EDM":px.colors.qualitative.Dark24[7] # Purple
-        "Folk":px.colors.qualitative.T10[9]
-        "Hip hop":px.colors.qualitative.Vivid[2]
-        "Metal":px.colors.qualitative.Alphabet[19] # Light blue
-        "Pop":px.colors.qualitative.Set1[0] # Red
-        "R&B":px.colors.qualitative.Set1[4] # Orange
-        "Rock":px.colors.qualitative.Set1[5] # Yellow
+        "Classical":px.colors.qualitative.Dark24[5], # Black
+        "EDM":px.colors.qualitative.Dark24[7], # Purple
+        "Folk":px.colors.qualitative.T10[9], # Grey
+        "Hip hop":px.colors.qualitative.Vivid[2], # Torquise
+        "Metal":px.colors.qualitative.Alphabet[19], # Light blue
+        "Pop":px.colors.qualitative.Set1[0], # Red
+        "R&B":px.colors.qualitative.Set1[4],# Orange
+        "Rock":px.colors.qualitative.Set1[5], # Yellow
         "Video game music":px.colors.qualitative.Pastel1[8] # White
     }   
   
