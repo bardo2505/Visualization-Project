@@ -101,9 +101,13 @@ if comparison == 'Comparison':
         list_of_trues[3] = False
     true_indices = [index for index, value in enumerate(list_of_trues) if value]
     graphs_amount = sum(list_of_trues)
+    
     Anxiety = px.scatter(df,x="Age", y = 'Anxiety',
                         color="Fav genre",
                         title="Age Vs. Anxiety")
+    for trace in Anxiety.data:
+        trace.update(marker=dict(symbol='square', size=14))
+    
     Depression = px.scatter(df,x="Age", y = 'Depression',
                         color="Fav genre",
                         title="Age Vs. Depression")
