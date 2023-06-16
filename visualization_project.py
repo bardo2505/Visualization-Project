@@ -167,14 +167,12 @@ elif comparison == 'Average':
 
     
 # Second Graph:
-
-
-
 st.subheader('Scatter Plot for Hours of listening per day Vs. Mental Health Scores')
 st.text("Would you like to see how hours of listening per day affects the average of the scores? Or compare between specific scores?")
 comparison = st.selectbox('Choose one of:', ['None', 'Average', 'Comparison'], key=-1)
 if comparison == 'Comparison':
     list_of_trues = [False, False, False, False]
+    st.text("Reached here")
     if (st.checkbox("Anxiety")):
         list_of_trues[0] = True
     else:
