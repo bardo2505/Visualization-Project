@@ -352,7 +352,7 @@ st.plotly_chart(third_graph_fig1, use_container_width=True)
 st.markdown("---") 
 
 ##################################### Fourth Graph #####################################
-color_blind = st.selectbox("Are you color blind?",['Yes', 'No'])
+color_blind = st.selectbox("Are you color blind?",['No', 'Yes'])
 if color_blind=='Yes':
   cmap = "Cividis"
 else:
