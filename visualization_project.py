@@ -26,10 +26,10 @@ st.title('PROJECT')
 
 color_blind = st.selectbox("Are you color blind?",['No','Yes']) # Did you know that 9% of men are color blind?
 if color_blind == 'Yes': 
-  cmap_graph_12 = px.colors.qualitative.Safe # graphs 1 and 2
+  cmap_graphs12 = px.colors.qualitative.Safe # graphs 1 and 2
   cmap_graph_4 = "Cividis" # graph 4
 else:
-  cmap_graph_12 = "Virdis" # graphs 1 and 2
+  cmap_graphs12 = px.colors.qualitative.Plotly # graphs 1 and 2
   cmap_graph_4 = "Oranges" # graph 4
 
 
@@ -126,7 +126,7 @@ if comparison == 'Comparison':
     Anxiety = px.scatter(df,x="Age", y = 'Anxiety',
                         color="Fav genre",
                         title="Age Vs. Anxiety",
-                        color_discrete_sequence = px.colors.qualitative.Safe)
+                        color_discrete_sequence = cmap_graphs12)
 
     
     Depression = px.scatter(df,x="Age", y = 'Depression',
@@ -244,6 +244,7 @@ if comparison == 'Comparison':
         
     true_indices = [index for index, value in enumerate(list_of_trues) if value]
     graphs_amount = sum(list_of_trues)
+    
     Anxiety = px.scatter(df,x="Hours per day", y = 'Anxiety',
                         color="Fav genre",
                         title="Hours per day Vs. Anxiety")
@@ -256,7 +257,7 @@ if comparison == 'Comparison':
     OCD = px.scatter(df,x="Hours per day", y = 'OCD',
                         color="Fav genre",
                         title="Hours per day Vs. OCD")
-    OCD.update_xaxes(range=[-0.5, 24.5], tickmode='linear', dtick=1)
+
     graphs = [Anxiety, Depression, Insomnia, OCD]
     for g in graphs:
       g.update_xaxes(range=[-0.5, 24.5], tickmode='linear', dtick=2)  
