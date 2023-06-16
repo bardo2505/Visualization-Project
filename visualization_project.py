@@ -322,11 +322,11 @@ elif comparison == 'Average':
                         color_discrete_sequence = cmap_graphs12)
     for trace in g.data:
         trace.update(marker=dict(size=10, opacity=0.7))
-    g.update_layout(yaxis_title='Average of Mental Health Scores',coloraxis_title='BlaBla')
+    g.update_layout(yaxis_title='Average of Mental Health Scores')
     g.update_xaxes(range=[-0.5, 24.5], tickmode='linear', dtick=1)
     g.update_xaxes(title_font=dict(size=20), tickfont=dict(size=14))
     g.update_yaxes(title_font=dict(size=20), tickfont=dict(size=14))
-    g.update_coloraxes(colorbar_title="bla bla", colorbar_title_font=dict(size=16), colorbar_tickfont=dict(size=14))  # Update legend label and font size
+
     st.plotly_chart(g, use_container_width=True)#fix this
 
 st.markdown("---") 
