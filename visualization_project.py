@@ -29,31 +29,7 @@ st.title('PROJECT')
 
 # OUR GRAPHS #
 
-# preprocess:
 
-# df = pd.read_csv('mxmh_survey_results.csv')
-
-# genres_to_remove = ['Jazz', 'Lofi', 'Gospel', 'Latin','Rap','Country','K pop']
-# df = df[~df['Fav genre'].isin(genres_to_remove)]
-
-# genres_to_keep = ['Rock','Pop','Metal','Classical','Video game music','EDM','R&B','Hip hop','Folk']
-# for idx, row in df.iterrows():
-#     fav = row['Fav genre']
-#     if row[f'Frequency [{fav}]'] not in ['Sometimes','Very frequently']:
-#       df = df.drop(idx)
-
-# third_graph_df = pd.DataFrame(columns=['Genre','Target', 'Average Score'])
-# targets = ['Anxiety','Depression','Insomnia','OCD']
-# names = sorted(['Rock','Video game music','R&B','EDM', 'Hip hop','Pop','Classical', 'Metal', 'Folk'])
-# j=0
-# for name in names: 
-#     curr_df = df[df['Fav genre']==name]
-#     for target in targets:
-#         j+=1
-#         curr_avg = np.mean(curr_df[target])
-#         third_graph_df.loc[j] = [name ,target, curr_avg]
-    
-# df['targets_mean'] = df.apply(lambda row: row[['Anxiety', 'Depression', 'Insomnia', 'OCD']].mean(), axis=1)    
     
 
 df = pd.read_csv('mxmh_survey_results.csv') # read csv
@@ -152,9 +128,9 @@ if comparison == 'Comparison':
          g1_idx = true_indices[0]
          g2_idx = true_indices[1]
          with col1:
-            st.plotly_chart(graphs[g1_idx], use_container_width=True)
+            st.plotly_chart(graphs[g1_idx], use_container_width=False)
          with col2:
-            st.plotly_chart(graphs[g2_idx], use_container_width=True)
+            st.plotly_chart(graphs[g2_idx], use_container_width=False)
     elif graphs_amount == 3:
          col1, col2, col3 = st.columns(3, gap="large")
          g1_idx = true_indices[0]
@@ -372,4 +348,32 @@ st.plotly_chart(fourth_graph_fig1, use_container_width=True)
 # ax.legend(labels=['Weekend','Weekday'])
 # st.pyplot(fig)
 
+
+
+#OLD PREPROC
+# preprocess:
+
+# df = pd.read_csv('mxmh_survey_results.csv')
+
+# genres_to_remove = ['Jazz', 'Lofi', 'Gospel', 'Latin','Rap','Country','K pop']
+# df = df[~df['Fav genre'].isin(genres_to_remove)]
+
+# genres_to_keep = ['Rock','Pop','Metal','Classical','Video game music','EDM','R&B','Hip hop','Folk']
+# for idx, row in df.iterrows():
+#     fav = row['Fav genre']
+#     if row[f'Frequency [{fav}]'] not in ['Sometimes','Very frequently']:
+#       df = df.drop(idx)
+
+# third_graph_df = pd.DataFrame(columns=['Genre','Target', 'Average Score'])
+# targets = ['Anxiety','Depression','Insomnia','OCD']
+# names = sorted(['Rock','Video game music','R&B','EDM', 'Hip hop','Pop','Classical', 'Metal', 'Folk'])
+# j=0
+# for name in names: 
+#     curr_df = df[df['Fav genre']==name]
+#     for target in targets:
+#         j+=1
+#         curr_avg = np.mean(curr_df[target])
+#         third_graph_df.loc[j] = [name ,target, curr_avg]
+    
+# df['targets_mean'] = df.apply(lambda row: row[['Anxiety', 'Depression', 'Insomnia', 'OCD']].mean(), axis=1)    
 
