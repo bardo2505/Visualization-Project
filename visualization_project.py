@@ -75,9 +75,9 @@ for name in names:
     
     
 # First Graph:
-st.subheader('Our first graph')
-
-comparison = st.selectbox('Would you like to look at Average of all or comapre two graphs?', ['Average', 'Comparison'],key=0)
+st.subheader('Scatter Plot for Age Vs. Mental Health Scores')
+st.text("Would you like to see how age affects the average of the scores? Or compare between specific scores?")
+comparison = st.selectbox('Would you like to look at Average of all or comapre two graphs?', ['None', 'Average', 'Comparison'], key=0)
 if comparison == 'Comparison':
 
     list_of_trues = [False, False, False, False]
