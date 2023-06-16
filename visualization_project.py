@@ -394,6 +394,7 @@ third_graph_fig1.update_layout(title="Put title here",
                                             titleside="top",
                                             titlefont=dict(size=15),
                                             tickfont=dict(size=15))))
+third_graph_fig1.update_traces(legendtitle_text="Mental Health Disorder")
 
 
 
