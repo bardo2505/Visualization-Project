@@ -160,7 +160,7 @@ if comparison == 'Comparison':
 
 
 elif comparison == 'Average':
-    g = px.scatter(df, x="Age", y=targets_mean,
+    g = px.scatter(df, x="Age", y="targets_mean",
                          color="Fav genre",
                          title="Scatterplot Matrix with Colors as Legend")
     st.plotly_chart(g, use_container_width=True)
