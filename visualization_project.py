@@ -122,8 +122,7 @@ if comparison == 'Comparison':
             st.plotly_chart(first_graph_fig2, use_container_width=True)
     else:
         st.plotly_chart(first_graph_fig1, use_container_width=True)
- else:
-    pass
+
     
 # Second Graph:
 st.subheader('Our Second graph')
