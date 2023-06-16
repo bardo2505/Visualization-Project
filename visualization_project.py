@@ -379,6 +379,24 @@ third_graph_fig1 = px.histogram(to_show_df, x="Genre", y='Average Score',
              histfunc='avg',
              height=400,
              color_discrete_map=color_map)
+third_graph_fig1.update_layout(title="Put title here",
+                               xaxis=dict(
+                                       tickfont=dict(size=17),  # Set font size for x-axis tick numbers
+                                       title=dict(text="Favorite Genre",font=dict(size=20))  # Set font size for x-axis label
+                                        ),
+                               yaxis=dict(
+                                       tickfont=dict(size=17),  # Set font size for y-axis tick numbers
+                                       title=dict(text="Mental Health Score", font=dict(size=20))  # Set font size for y-axis label
+                                        ),
+                               coloraxis=dict(
+                                      colorbar=dict(
+                                            title="Mental Health Disorder",
+                                            titleside="top",
+                                            titlefont=dict(size=15),
+                                            tickfont=dict(size=15))))
+
+
+
 st.plotly_chart(third_graph_fig1, use_container_width=True)
 
 
