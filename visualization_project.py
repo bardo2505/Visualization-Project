@@ -352,6 +352,11 @@ st.plotly_chart(third_graph_fig1, use_container_width=True)
 st.markdown("---") 
 
 ##################################### Fourth Graph #####################################
+color_blind = st.selectbox("Are you color blind?",['Yes', 'No'])
+if color_blind=='Yes':
+  cmap = "Cividis"
+else:
+  cmap = "RdYlBu_r"
 st.subheader('Heatmap for Hours of listening per day Vs. Mental Health Scores')
 
 hours_bins_order = ["[0-2]","(2-3]","(3-4]","(4-24]"]
@@ -360,7 +365,7 @@ df["Hours bins"] = pd.Categorical(df["Hours bins"], categories=hours_bins_order,
 df_avg = df.groupby(["Hours bins", "Fav genre"]).mean().reset_index()
 fourth_graph_fig1 = px.density_heatmap(df_avg, x="Fav genre", y="Hours bins", z="targets_mean",
                          labels=dict(x="Favorite Genre", y="Hours Bins", z="Average Score"),
-                         color_continuous_scale="RdYlBu_r")
+                         color_continuous_scale=cmap)
 fourth_graph_fig1.update_layout(title="Average Mental Health Score by Hours Bins and Favorite Genre",
                                xaxis=dict(
                                        tickfont=dict(size=17),  # Set font size for x-axis tick numbers
