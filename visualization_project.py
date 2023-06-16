@@ -105,6 +105,8 @@ if comparison == 'Comparison':
     Anxiety = px.scatter(df,x="Age", y = 'Anxiety',
                         color="Fav genre",
                         title="Age Vs. Anxiety")
+    for trace in Anxiety.data:
+        trace.update(marker=dict(size=10, opacity=0.8))
     
     Depression = px.scatter(df,x="Age", y = 'Depression',
                         color="Fav genre",
