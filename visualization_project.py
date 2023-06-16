@@ -317,11 +317,20 @@ for i in range(len(genres)):
  
 
 to_show_df = third_graph_df[third_graph_df["Genre"].isin(to_show)]
+color_map = {
+    "Anxiety": "#FF0000",  # Red
+    "Depression": "#00FF00",  # Green
+    "Insomnia": "#0000FF",  # Blue
+    "OCD": "#FFFF00",  # Yellow
+}
+
+
 
 third_graph_fig1 = px.histogram(to_show_df, x="Genre", y='Average Score',
              color='Target', barmode='group',
              histfunc='avg',
-             height=400)
+             height=400,
+             color_discrete_map=color_map)
 st.plotly_chart(third_graph_fig1, use_container_width=True)
 
 
