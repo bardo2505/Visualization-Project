@@ -31,27 +31,69 @@ st.title('PROJECT')
 
 # preprocess:
 
-df = pd.read_csv('mxmh_survey_results.csv')
+# df = pd.read_csv('mxmh_survey_results.csv')
 
-genres_to_remove = ['Jazz', 'Lofi', 'Gospel', 'Latin','Rap','Country','K pop']
+# genres_to_remove = ['Jazz', 'Lofi', 'Gospel', 'Latin','Rap','Country','K pop']
+# df = df[~df['Fav genre'].isin(genres_to_remove)]
+
+# genres_to_keep = ['Rock','Pop','Metal','Classical','Video game music','EDM','R&B','Hip hop','Folk']
+# for idx, row in df.iterrows():
+#     fav = row['Fav genre']
+#     if row[f'Frequency [{fav}]'] not in ['Sometimes','Very frequently']:
+#       df = df.drop(idx)
+
+# third_graph_df = pd.DataFrame(columns=['Genre','Target', 'Average Score'])
+# targets = ['Anxiety','Depression','Insomnia','OCD']
+# names = sorted(['Rock','Video game music','R&B','EDM', 'Hip hop','Pop','Classical', 'Metal', 'Folk'])
+# j=0
+# for name in names: 
+#     curr_df = df[df['Fav genre']==name]
+#     for target in targets:
+#         j+=1
+#         curr_avg = np.mean(curr_df[target])
+#         third_graph_df.loc[j] = [name ,target, curr_avg]
+    
+# df['targets_mean'] = df.apply(lambda row: row[['Anxiety', 'Depression', 'Insomnia', 'OCD']].mean(), axis=1)    
+    
+
+df = pd.read_csv('mxmh_survey_results.csv') # read csv
+
+
+genres_to_remove = ['Jazz', 'Lofi', 'Gospel', 'Latin','Rap','Country','K pop'] # remove genres with num of records < 30
 df = df[~df['Fav genre'].isin(genres_to_remove)]
 
-genres_to_keep = ['Rock','Pop','Metal','Classical','Video game music','EDM','R&B','Hip hop','Folk']
+
+genres_to_keep = ['Rock','Pop','Metal','Classical','Video game music','EDM','R&B','Hip hop','Folk']  # remove people that are not listening to thier fav genre (112 records removed)
 for idx, row in df.iterrows():
     fav = row['Fav genre']
     if row[f'Frequency [{fav}]'] not in ['Sometimes','Very frequently']:
       df = df.drop(idx)
 
-third_graph_df = pd.DataFrame(columns=['Genre','Target', 'Average Score'])
+def apply_bins_hours(time): # divide to hour bins for graph number 4
+  if time <= 2:
+    return "[0-2]"
+  if time < 3:
+    return "(2-3]"
+  if time < 5:
+    return "(3-4]"
+  return "(4-24]"
+df['Hours bins'] = df['Hours per day'].apply(apply_bins_hours)
+
+# calculate the mean of targets for graph number 4
+df['targets_mean'] = df.apply(lambda row: row[['Anxiety', 'Depression', 'Insomnia', 'OCD']].mean(), axis=1)
+
+# make a DF for graph number 3 : 
+res_df = pd.DataFrame(columns=['Genre','Target', 'Average Score'])
 targets = ['Anxiety','Depression','Insomnia','OCD']
 names = sorted(['Rock','Video game music','R&B','EDM', 'Hip hop','Pop','Classical', 'Metal', 'Folk'])
 j=0
-for name in names: 
+for name in names:
     curr_df = df[df['Fav genre']==name]
     for target in targets:
         j+=1
         curr_avg = np.mean(curr_df[target])
-        third_graph_df.loc[j] = [name ,target, curr_avg]
+        res_df.loc[j] = [name ,target, curr_avg]
+
     
     
     
@@ -111,6 +153,25 @@ third_graph_fig1 = px.histogram(third_graph_df, x="Genre", y='Average Score',
              histfunc='avg',
              height=400)
 st.plotly_chart(third_graph_fig1, use_container_width=True)
+
+
+
+
+# Graph 4 #
+
+
+df_avg = df.groupby(["Hours bins", "Fav genre"]).mean().reset_index()
+fourth_graph_fig1 = px.density_heatmap(df_avg, x="Fav genre", y="Hours bins", z="targets_mean",
+                         labels=dict(x="Favorite Genre", y="Hours Bins", z="Average Score"),
+                         color_continuous_scale="Viridis")
+fourth_graph_fig1.update_layout(title="Average Mental Health Score by Hours Bins and Favorite Genre")
+st.plotly_chart(fourth_graph_fig1, use_container_width=True)
+
+
+
+
+
+
 
 # df = pd.read_csv('Sleep_Efficiency.csv')
 # df['Alcohol consumption'] = df['Alcohol consumption'].fillna(0.0)
