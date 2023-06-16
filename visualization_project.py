@@ -29,7 +29,7 @@ if color_blind == 'Yes':
   cmap_graphs12 = px.colors.qualitative.Safe # graphs 1 and 2
   cmap_graph_4 = "Cividis" # graph 4
 else:
-  cmap_graphs12 = px.colors.qualitative.Plotly # graphs 1 and 2
+  cmap_graphs12 = px.colors.qualitative.Prism # graphs 1 and 2
   cmap_graph_4 = "Oranges" # graph 4
 
 
