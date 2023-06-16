@@ -321,7 +321,7 @@ color_map = {
     "Anxiety": "#FF0000",  # Red
     "Depression": "#00FF00",  # Green
     "Insomnia": "#0000FF",  # Blue
-    "OCD": "#FFFF00",  # Yellow
+    "OCD": "#FF8000",  # Orange
 }
 
 
