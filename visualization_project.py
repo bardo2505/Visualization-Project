@@ -77,9 +77,8 @@ for name in names:
 # First Graph:
 st.subheader('Scatter Plot for Age Vs. Mental Health Scores')
 st.text("Would you like to see how age affects the average of the scores? Or compare between specific scores?")
-comparison = st.selectbox('Would you like to look at Average of all or comapre two graphs?', ['None', 'Average', 'Comparison'], key=0)
+comparison = st.selectbox('Choose one of:', ['None', 'Average', 'Comparison'], key=0)
 if comparison == 'Comparison':
-
     list_of_trues = [False, False, False, False]
     if (st.checkbox("Anxiety")):
         list_of_trues[0] = True
@@ -164,49 +163,141 @@ elif comparison == 'Average':
                          color="Fav genre",
                          title="Scatterplot Matrix with Colors as Legend")
     st.plotly_chart(g, use_container_width=True)
-#     first_graph_target1 = st.selectbox('Select first Target to show', ['Anxiety', 'Depression','Insomnia','OCD'],key=1)
-#     first_graph_target2 = st.selectbox('Select second Target to show or none', ['Anxiety', 'Depression','Insomnia','OCD','None'],key=2)
 
-#     first_graph_fig1 = px.scatter(df,x="Age", y = first_graph_target1,
-#                         color="Fav genre",
-#                         title="Scatterplot Matrix with Colors as Legend")
-#     if first_graph_target2 != "None" and first_graph_target2 != first_graph_target1:
-#         first_graph_fig2 = px.scatter(df,x="Age", y = first_graph_target2,
-#                             color="Fav genre",
-#                             title="Scatterplot Matrix with Colors as Legend")
-#         col1, col2 = st.columns(2, gap="large")
-
-#         with col1:
-#             st.plotly_chart(first_graph_fig1, use_container_width=True)
-
-#         with col2:
-#             st.plotly_chart(first_graph_fig2, use_container_width=True)
-#     else:
-#         st.plotly_chart(first_graph_fig1, use_container_width=True)
 
     
 # Second Graph:
-st.subheader('Our Second graph')
 
-second_graph_target1 = st.selectbox('Select first Target to show', ['Anxiety', 'Depression','Insomnia','OCD'],key=3)
-second_graph_target2 = st.selectbox('Select second Target to show or none', ['Anxiety', 'Depression','Insomnia','OCD','None'],key=4)
 
-second_graph_fig1 = px.scatter(df,x="Hours per day", y = second_graph_target1,
+
+st.subheader('Scatter Plot for Hours of listening per day Vs. Mental Health Scores')
+st.text("Would you like to see how hours of listening per day affects the average of the scores? Or compare between specific scores?")
+comparison = st.selectbox('Choose one of:', ['None', 'Average', 'Comparison'], key=-1)
+if comparison == 'Comparison':
+    list_of_trues = [False, False, False, False]
+    if (st.checkbox("Anxiety")):
+        list_of_trues[0] = True
+    else:
+        list_of_trues[0] = False
+        
+    if (st.checkbox("Depression")):
+        list_of_trues[1] = True
+    else:
+        list_of_trues[1] = False
+        
+    if (st.checkbox("Insomnia")):
+        list_of_trues[2] = True
+    else:
+        list_of_trues[2] = False
+        
+    if (st.checkbox("OCD")):
+        list_of_trues[3] = True
+    else:
+        list_of_trues[3] = False
+    true_indices = [index for index, value in enumerate(list_of_trues) if value]
+    graphs_amount = sum(list_of_trues)
+    Anxiety = px.scatter(df,x="Hours per day", y = 'Anxiety',
                         color="Fav genre",
                         title="Scatterplot Matrix with Colors as Legend")
-if second_graph_target2 != "None" and second_graph_target2 != second_graph_target1:
-    second_graph_fig2 = px.scatter(df, x="Hours per day", y = second_graph_target2,
-                            color="Fav genre",
-                            title="Scatterplot Matrix with Colors as Legend")
-    col1, col2 = st.columns(2, gap="large")
+    Depression = px.scatter(df,x="Hours per day", y = 'Depression',
+                        color="Fav genre",
+                        title="Scatterplot Matrix with Colors as Legend")
+    Insomnia = px.scatter(df,x="Hours per day", y = 'Insomnia',
+                        color="Fav genre",
+                        title="Scatterplot Matrix with Colors as Legend")
+    OCD = px.scatter(df,x="Hours per day", y = 'OCD',
+                        color="Fav genre",
+                        title="Scatterplot Matrix with Colors as Legend")
+    graphs = [Anxiety, Depression, Insomnia, OCD]
+    if graphs_amount == 0:
+        pass
+    
+    elif graphs_amount == 1:
+        for i in range(len(list_of_trues)):
+            if list_of_trues[i]:
+                st.plotly_chart(graphs[i], use_container_width=True)
+                
+    elif graphs_amount == 2:
+         col1, col2 = st.columns(2, gap="large")
+         g1_idx = true_indices[0]
+         g2_idx = true_indices[1]
+         with col1:
+            st.plotly_chart(graphs[g1_idx], use_container_width=False)
+         with col2:
+            st.plotly_chart(graphs[g2_idx], use_container_width=False)
+    elif graphs_amount == 3:
+         col1, col2 = st.columns(2, gap="large")
+         g1_idx = true_indices[0]
+         g2_idx = true_indices[1]
+         g3_idx = true_indices[2]
+         with col1:
+            st.plotly_chart(graphs[g1_idx], use_container_width=False)
+         with col2:
+            st.plotly_chart(graphs[g2_idx], use_container_width=False)
+         col3, _ = st.columns(2, gap="large")
+         with col3:
+            st.plotly_chart(graphs[g3_idx], use_container_width=False)
 
-    with col1:
-        st.plotly_chart(second_graph_fig1, use_container_width=True)
+    elif graphs_amount == 4:
+        col1, col2 = st.columns(2, gap="large")
 
-    with col2:
-        st.plotly_chart(second_graph_fig2, use_container_width=True)
-else:
-    st.plotly_chart(second_graph_fig1, use_container_width=True)
+        with col1:
+            st.plotly_chart(graphs[0], use_container_width=False)
+        with col2:
+            st.plotly_chart(graphs[1], use_container_width=False)
+            
+        col3, col4 = st.columns(2, gap="large")
+        with col3:
+            st.plotly_chart(graphs[2], use_container_width=False)   
+        with col4:
+            st.plotly_chart(graphs[3], use_container_width=False)   
+
+
+elif comparison == 'Average':
+    g = px.scatter(df, x="Hours per day", y="targets_mean",
+                         color="Fav genre",
+                         title="Scatterplot Matrix with Colors as Legend")
+    st.plotly_chart(g, use_container_width=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# st.subheader('Our Second graph')
+
+# second_graph_target1 = st.selectbox('Select first Target to show', ['Anxiety', 'Depression','Insomnia','OCD'],key=3)
+# second_graph_target2 = st.selectbox('Select second Target to show or none', ['Anxiety', 'Depression','Insomnia','OCD','None'],key=4)
+
+# second_graph_fig1 = px.scatter(df,x="Hours per day", y = second_graph_target1,
+#                         color="Fav genre",
+#                         title="Scatterplot Matrix with Colors as Legend")
+# if second_graph_target2 != "None" and second_graph_target2 != second_graph_target1:
+#     second_graph_fig2 = px.scatter(df, x="Hours per day", y = second_graph_target2,
+#                             color="Fav genre",
+#                             title="Scatterplot Matrix with Colors as Legend")
+#     col1, col2 = st.columns(2, gap="large")
+
+#     with col1:
+#         st.plotly_chart(second_graph_fig1, use_container_width=True)
+
+#     with col2:
+#         st.plotly_chart(second_graph_fig2, use_container_width=True)
+# else:
+#     st.plotly_chart(second_graph_fig1, use_container_width=True)
 
     
 # Graph 3 #
