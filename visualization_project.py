@@ -81,11 +81,11 @@ comparison = st.selectbox('Choose one of:', ['None', 'Average', 'Comparison'], k
 
 if comparison == 'Comparison':
     with st.container():
-    col1, col2, col3, col4 = st.columns(4)
-    checkbox1 = col1.checkbox('Anxiety', key=1)
-    checkbox2 = col2.checkbox('Depression', key=2)
-    checkbox3 = col3.checkbox('Insomnia', key=3)    
-    checkbox4 = col4.checkbox('OCD', key=4) 
+        col1, col2, col3, col4 = st.columns(4)
+        checkbox1 = col1.checkbox('Anxiety', key=1)
+        checkbox2 = col2.checkbox('Depression', key=2)
+        checkbox3 = col3.checkbox('Insomnia', key=3)    
+        checkbox4 = col4.checkbox('OCD', key=4) 
    
     list_of_trues = [False, False, False, False]
     if (checkbox1):
