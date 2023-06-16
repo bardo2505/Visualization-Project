@@ -326,7 +326,7 @@ elif comparison == 'Average':
     g.update_xaxes(range=[-0.5, 24.5], tickmode='linear', dtick=1)
     g.update_xaxes(title_font=dict(size=20), tickfont=dict(size=14))
     g.update_yaxes(title_font=dict(size=20), tickfont=dict(size=14))
-    g.update_coloraxes(colorbar=dict(title="bla bla", title_font=dict(size=16), tickfont=dict(size=14)))
+    g.update_coloraxes(colorbar_title="bla bla", colorbar_title_font=dict(size=16), colorbar_tickfont=dict(size=14))  # Update legend label and font size
     st.plotly_chart(g, use_container_width=True)
 
 st.markdown("---") 
