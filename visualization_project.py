@@ -181,11 +181,13 @@ elif comparison == 'Average':
     g = px.scatter(df, x="Age", y="targets_mean",
                          color="Fav genre",
                          title="Scatterplot Matrix with Colors as Legend")
+    for trace in g.data:
+            trace.update(marker=dict(size=10, opacity=0.7))
     g.update_layout(yaxis_title='Average of Mental Health Scores')
     g.update_xaxes(range=[-0.5, 90.5], tickmode='linear', dtick=10)  
     st.plotly_chart(g, use_container_width=True)
 
-
+st.markdown("---") 
     
 # Second Graph:
 st.subheader('Scatter Plot for Hours of listening per day Vs. Mental Health Scores')
@@ -239,6 +241,8 @@ if comparison == 'Comparison':
     graphs = [Anxiety, Depression, Insomnia, OCD]
     for g in graphs:
       g.update_xaxes(range=[-0.5, 24.5], tickmode='linear', dtick=2)  
+      for trace in g.data:
+          trace.update(marker=dict(size=10, opacity=0.7))
     if graphs_amount == 0:
         pass
     
@@ -287,15 +291,18 @@ elif comparison == 'Average':
     g = px.scatter(df, x="Hours per day", y="targets_mean",
                          color="Fav genre",
                          title="Scatterplot Matrix with Colors as Legend")
+    for trace in g.data:
+        trace.update(marker=dict(size=10, opacity=0.7))
     g.update_layout(yaxis_title='Average of Mental Health Scores')
     g.update_xaxes(range=[-0.5, 24.5], tickmode='linear', dtick=1)
     st.plotly_chart(g, use_container_width=True)
 
 
-
+st.markdown("---") 
     
 # Graph 3 #
-
+st.subheader('Bar Plot for Genres Vs. Mental Health Scores')
+st.text("Use the checkboxes to observe specific genres")
 with st.container():
     col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
     classical = col1.checkbox('Classical', key=9)
@@ -334,9 +341,10 @@ third_graph_fig1 = px.histogram(to_show_df, x="Genre", y='Average Score',
 st.plotly_chart(third_graph_fig1, use_container_width=True)
 
 
-
+st.markdown("---") 
 
 # Graph 4 #
+st.subheader('Heatmap for Hours of listening per day Vs. Mental Health Scores')
 
 hours_bins_order = ["[0-2]","(2-3]","(3-4]","(4-24]"]
 df["Hours bins"] = pd.Categorical(df["Hours bins"], categories=hours_bins_order, ordered=True)
