@@ -2,7 +2,7 @@
 """Visualization Final Project.ipynb
 """
 
-
+# Imports #
 import streamlit as st
 
 import pandas as pd
@@ -18,16 +18,21 @@ from plotly.subplots import make_subplots
 
 
 
-
+# Intro #
 st.set_page_config(page_title="PROJECT",
                    page_icon=":bar_chart:",
                   layout="wide")
 st.title('PROJECT')
 
-# OUR GRAPHS #
 
 
-    
+
+
+
+
+
+
+# Pre-Process #
 
 df = pd.read_csv('mxmh_survey_results.csv') # read csv
 df = df.sort_values('Fav genre')
@@ -70,8 +75,8 @@ for name in names:
     
     
     
-
-# First Graph:
+# OUR GRAPHS # 
+##################################### First Graph #####################################
 st.subheader('Scatter Plot for Age Vs. Mental Health Scores')
 st.text("Would you like to see how age affects the average of the scores? Or compare between specific scores?")
 comparison = st.selectbox('Choose one of:', ['None', 'Average', 'Comparison'], key=0)
@@ -186,7 +191,13 @@ elif comparison == 'Average':
 
 st.markdown("---") 
     
-# Second Graph:
+  
+  
+  
+  
+  
+  
+##################################### Second Graph #####################################
 st.subheader('Scatter Plot for Hours of listening per day Vs. Mental Health Scores')
 st.text("Would you like to see how hours of listening per day affects the average of the scores? Or compare between specific scores?")
 comparison = st.selectbox('Choose one of:', ['None', 'Average', 'Comparison'], key=-1)
@@ -297,7 +308,7 @@ elif comparison == 'Average':
 
 st.markdown("---") 
     
-# Graph 3 #
+##################################### Third Graph #####################################
 st.subheader('Bar Plot for Genres Vs. Mental Health Scores')
 st.text("Use the checkboxes to observe specific genres")
 with st.container():
@@ -340,7 +351,7 @@ st.plotly_chart(third_graph_fig1, use_container_width=True)
 
 st.markdown("---") 
 
-# Graph 4 #
+##################################### Fourth Graph #####################################
 st.subheader('Heatmap for Hours of listening per day Vs. Mental Health Scores')
 
 hours_bins_order = ["[0-2]","(2-3]","(3-4]","(4-24]"]
@@ -350,158 +361,13 @@ df_avg = df.groupby(["Hours bins", "Fav genre"]).mean().reset_index()
 fourth_graph_fig1 = px.density_heatmap(df_avg, x="Fav genre", y="Hours bins", z="targets_mean",
                          labels=dict(x="Favorite Genre", y="Hours Bins", z="Average Score"),
                          color_continuous_scale="RdYlBu_r")
-fourth_graph_fig1.update_layout(title="Average Mental Health Score by Hours Bins and Favorite Genre")
+fourth_graph_fig1.update_layout(title="Average Mental Health Score by Hours Bins and Favorite Genre",
+                               xaxis=dict(
+                                       tickfont=dict(size=14),  # Set font size for x-axis tick numbers
+                                       title=dict(font=dict(size=16))  # Set font size for x-axis label
+                                        ),
+                               yaxis=dict(
+                                       tickfont=dict(size=14),  # Set font size for y-axis tick numbers
+                                       title=dict(font=dict(size=16))  # Set font size for y-axis label
+                                        ))
 st.plotly_chart(fourth_graph_fig1, use_container_width=True)
-
-
-
-
-
-
-
-# df = pd.read_csv('Sleep_Efficiency.csv')
-# df['Alcohol consumption'] = df['Alcohol consumption'].fillna(0.0)
-# df['Caffeine consumption'] = df['Alcohol consumption'].fillna(0.0)
-# df['Awakenings'] = df['Awakenings'].fillna(0.0)
-# df['Exercise frequency'] = df['Exercise frequency'].fillna(0.0)
-# # Convert bedtime and wakeup time columns to datetime format
-# df['Bedtime'] = pd.to_datetime(df['Bedtime'])
-# df['Wakeup time'] = pd.to_datetime(df['Wakeup time'])
-# df['DayOfWeek'] = df['Bedtime'].dt.day_name()
-# # "DayType" column based on weekdays and weekends
-# df['DayType'] = df['DayOfWeek'].apply(lambda x: 'Weekday' if x in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'] else 'Weekend')
-# # Convert 'Wakeup time' column to datetime format
-# df['Wakeup time'] = pd.to_datetime(df['Wakeup time'])
-# # Extract the hour number into a new column
-# df['Wakeup Hour'] = df['Wakeup time'].dt.hour
-# df['Sleep efficiency'] = pd.to_numeric(df['Sleep efficiency'], errors='coerce')
-
-# #First Graph
-# st.subheader('Sleep Efficiency by Wakeup Hour')
-# # Filter the data based on the selected gender
-# selected_gender = st.selectbox('Select Gender', ['Male', 'Female'])
-# filtered_data = df[df['Gender'] == selected_gender]
-
-# # Create the box plot using plotly express
-# fig = px.box(filtered_data, x='Wakeup Hour', y='Sleep efficiency', color='Wakeup Hour', hover_data=['Wakeup time'],
-#             category_orders={'Wakeup Hour': sorted(df['Wakeup Hour'].unique())})
-# fig.update_traces(hovertemplate="<b>Wakeup Hour:</b> %{x}<br><b>Sleep Efficiency:</b> %{y}<br><b>Wakeup Time:</b> %{customdata[0]}")
-
-
-# # Show the plot
-# st.plotly_chart(fig)
-
-
-# #Second Graph
-# st.subheader('Sleep Type by Average Percentage')
-# # Get the age range from the user using number input fields
-# min_age = st.number_input('Minimum Age', min_value=int(df['Age'].min()), max_value=int(df['Age'].max()), value=int(df['Age'].min()), step=10)
-# max_age = st.number_input('Maximum Age', min_value=int(df['Age'].min()), max_value=int(df['Age'].max()), value=int(df['Age'].max()), step=10)
-
-# # Filter the dataframe based on the selected age range
-# filtered_df = df[(df['Age'] >= min_age) & (df['Age'] <= max_age)]
-
-# # Calculate the average percentage of each type of sleep
-# avg_sleep_perc = filtered_df[[ 'REM sleep percentage', 'Deep sleep percentage',
-#     'Light sleep percentage' ]].mean()
-# # Define a custom color palette for the bars
-# color_scale = ["purple", "skyblue", "orange"]
-# # Create a bar plot using Plotly Express
-# fig = px.bar(avg_sleep_perc, y=avg_sleep_perc.index, x=avg_sleep_perc.values,
-#              labels={'x': 'Sleep Type', 'y': 'Average Percentage'},
-#              color=avg_sleep_perc.index, color_discrete_sequence=color_scale)
-
-
-# # Customize the plot as needed
-# fig.update_layout(yaxis_title='Sleep Type',
-#                   xaxis_title='Average Percentage')
-
-# # Display the plot
-# st.plotly_chart(fig, use_container_width=True)
-
-# #Third Graph
-# # Define the columns for the line plot
-# st.subheader('Sleep Efficiency by Number of Sleep Hours and Weekly Habits')
-# x_column = 'Sleep duration'
-# y_column = 'Sleep efficiency'
-
-# # Get unique values for the condition columns
-# awakenings_values = df['Awakenings'].unique()
-# alcohol_values = df['Alcohol consumption'].unique()
-# smoking_values = df['Smoking status'].unique()
-# exercise_values = df['Exercise frequency'].unique()
-
-# # User inputs for conditions
-# #selected_awakenings = st.selectbox('Select Awakenings', awakenings_values)
-# selected_alcohol = st.selectbox('Select Alcohol Consumption', alcohol_values)
-# selected_smoking = st.selectbox('Select Smoking Status', smoking_values)
-# selected_exercise = st.selectbox('Select Exercise Frequency', exercise_values)
-
-# # Filter the dataframe based on user-selected conditions
-# filtered_df = df[(df['Alcohol consumption'] == selected_alcohol) &
-#                 (df['Smoking status'] == selected_smoking) &
-#                 (df['Exercise frequency'] == selected_exercise)]
-
-# # Create a scatter plot using Plotly Express
-# fig = px.density_heatmap(filtered_df, x=x_column, y=y_column,
-#                 labels={'x': 'Sleep Duration', 'y': 'Sleep Efficiency'})
-
-# # Customize the plot as needed
-# fig.update_layout(legend_title_text='Conditions')
-
-# # Display the plot
-# st.plotly_chart(fig, use_container_width=True)
-
-
-# # Sleep efficiency comparison between weekdays and weekends
-# st.subheader('Density Sleep Efficiency Comparison: Weekdays vs. Weekends')
-
-# # Get unique values for the 'DayType' column
-# day_values = df['DayType'].unique()
-
-# # User selects the weekdays and weekends
-# selected_days = st.multiselect('Select Weekdays/Weekends', day_values)
-
-# # Filter the data based on the selected days
-# selected_data = df[df['DayType'].isin(selected_days)]
-# fig, ax = plt.subplots()
-# for day in selected_days:
-#     data = selected_data[selected_data['DayType'] == day]
-#     density = data['Sleep efficiency'].plot.kde()
-#     density.set_label(day)
-
-# ax.set_xlabel('Sleep Efficiency')
-# ax.set_ylabel('Density')
-# # ax.set_title('Sleep Efficiency Distribution: Weekdays vs. Weekends')
-# ax.legend(labels=['Weekend','Weekday'])
-# st.pyplot(fig)
-
-
-
-#OLD PREPROC
-# preprocess:
-
-# df = pd.read_csv('mxmh_survey_results.csv')
-
-# genres_to_remove = ['Jazz', 'Lofi', 'Gospel', 'Latin','Rap','Country','K pop']
-# df = df[~df['Fav genre'].isin(genres_to_remove)]
-
-# genres_to_keep = ['Rock','Pop','Metal','Classical','Video game music','EDM','R&B','Hip hop','Folk']
-# for idx, row in df.iterrows():
-#     fav = row['Fav genre']
-#     if row[f'Frequency [{fav}]'] not in ['Sometimes','Very frequently']:
-#       df = df.drop(idx)
-
-# third_graph_df = pd.DataFrame(columns=['Genre','Target', 'Average Score'])
-# targets = ['Anxiety','Depression','Insomnia','OCD']
-# names = sorted(['Rock','Video game music','R&B','EDM', 'Hip hop','Pop','Classical', 'Metal', 'Folk'])
-# j=0
-# for name in names: 
-#     curr_df = df[df['Fav genre']==name]
-#     for target in targets:
-#         j+=1
-#         curr_avg = np.mean(curr_df[target])
-#         third_graph_df.loc[j] = [name ,target, curr_avg]
-    
-# df['targets_mean'] = df.apply(lambda row: row[['Anxiety', 'Depression', 'Insomnia', 'OCD']].mean(), axis=1)    
-
