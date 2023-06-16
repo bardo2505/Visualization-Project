@@ -73,17 +73,20 @@ for name in names:
     
     
     
-with st.container():
+
+# First Graph:
+st.subheader('Scatter Plot for Age Vs. Mental Health Scores')
+st.text("Would you like to see how age affects the average of the scores? Or compare between specific scores?")
+comparison = st.selectbox('Choose one of:', ['None', 'Average', 'Comparison'], key=0)
+
+if comparison == 'Comparison':
+    with st.container():
     col1, col2, col3, col4 = st.columns(4)
     checkbox1 = col1.checkbox('Anxiety', key=1)
     checkbox2 = col2.checkbox('Depression', key=2)
     checkbox3 = col3.checkbox('Insomnia', key=3)    
     checkbox4 = col4.checkbox('OCD', key=4) 
-# First Graph:
-st.subheader('Scatter Plot for Age Vs. Mental Health Scores')
-st.text("Would you like to see how age affects the average of the scores? Or compare between specific scores?")
-comparison = st.selectbox('Choose one of:', ['None', 'Average', 'Comparison'], key=0)
-if comparison == 'Comparison':
+   
     list_of_trues = [False, False, False, False]
     if (checkbox1):
         list_of_trues[0] = True
