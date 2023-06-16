@@ -141,7 +141,7 @@ if comparison == 'Comparison':
     
     OCD = px.scatter(df,x="Age", y = 'OCD',
                         color="Fav genre",
-                        title="Age Vs. OCD"),
+                        title="Age Vs. OCD",
                         color_discrete_sequence = cmap_graphs12)
     
     graphs = [Anxiety, Depression, Insomnia, OCD]
