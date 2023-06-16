@@ -170,13 +170,13 @@ if comparison == 'Comparison':
     elif graphs_amount == 4:
         col1, col2, col3, col4 = st.columns(4, gap="large")
         with col1:
-            st.plotly_chart(graphs[g1_idx], use_container_width=True)
+            st.plotly_chart(graphs[0], use_container_width=True)
         with col2:
-            st.plotly_chart(graphs[g2_idx], use_container_width=True)
+            st.plotly_chart(graphs[1], use_container_width=True)
         with col3:
-            st.plotly_chart(graphs[g3_idx], use_container_width=True)   
+            st.plotly_chart(graphs[2], use_container_width=True)   
         with col4:
-            st.plotly_chart(graphs[g4_idx], use_container_width=True)   
+            st.plotly_chart(graphs[3], use_container_width=True)   
 
 
 elif comparison == 'Average':
