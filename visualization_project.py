@@ -389,12 +389,12 @@ third_graph_fig1.update_layout(title="Put title here",
                                        title=dict(text="Mental Health Score", font=dict(size=20))  # Set font size for y-axis label
                                         ),
                                coloraxis=dict(
+                                      title =dict(text="Mental Health Disorder", font=dict(size=15)),  # Set font size for y-axis label
                                       colorbar=dict(
                                             title="Mental Health Disorder",
                                             titleside="top",
                                             titlefont=dict(size=15),
                                             tickfont=dict(size=15))))
-third_graph_fig1.update_traces(legendtitle_text="Mental Health Disorder")
 
 
 
