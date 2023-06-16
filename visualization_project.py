@@ -80,22 +80,22 @@ st.text("Would you like to see how age affects the average of the scores? Or com
 comparison = st.selectbox('Choose one of:', ['None', 'Average', 'Comparison'], key=0)
 if comparison == 'Comparison':
     list_of_trues = [False, False, False, False]
-    if (st.checkbox("Anxiety")):
+    if (st.checkbox("Anxiety",key=1)):
         list_of_trues[0] = True
     else:
         list_of_trues[0] = False
         
-    if (st.checkbox("Depression")):
+    if (st.checkbox("Depression",key=1)):
         list_of_trues[1] = True
     else:
         list_of_trues[1] = False
         
-    if (st.checkbox("Insomnia")):
+    if (st.checkbox("Insomnia",key=1)):
         list_of_trues[2] = True
     else:
         list_of_trues[2] = False
         
-    if (st.checkbox("OCD")):
+    if (st.checkbox("OCD",key=1)):
         list_of_trues[3] = True
     else:
         list_of_trues[3] = False
