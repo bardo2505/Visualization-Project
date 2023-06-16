@@ -324,6 +324,9 @@ elif comparison == 'Average':
         trace.update(marker=dict(size=10, opacity=0.7))
     g.update_layout(yaxis_title='Average of Mental Health Scores')
     g.update_xaxes(range=[-0.5, 24.5], tickmode='linear', dtick=1)
+    g.update_xaxes(title_font=dict(size=16))
+    g.update_yaxes(title_font=dict(size=16))
+    g.update_coloraxes(colorbar=dict(title_font=dict(size=16)))
     st.plotly_chart(g, use_container_width=True)
 
 
