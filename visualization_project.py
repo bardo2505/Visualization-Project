@@ -166,6 +166,7 @@ elif comparison == 'Average':
     g = px.scatter(df, x="Age", y="targets_mean",
                          color="Fav genre",
                          title="Scatterplot Matrix with Colors as Legend")
+    g.update_layout(yaxis_title='Average of Mental Health Scores')
     st.plotly_chart(g, use_container_width=True)
 
 
@@ -259,6 +260,8 @@ elif comparison == 'Average':
     g = px.scatter(df, x="Hours per day", y="targets_mean",
                          color="Fav genre",
                          title="Scatterplot Matrix with Colors as Legend")
+    g.update_layout(yaxis_title='Average of Mental Health Scores')
+
     st.plotly_chart(g, use_container_width=True)
 
 
