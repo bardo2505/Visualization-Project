@@ -107,6 +107,7 @@ if comparison == 'Comparison':
         list_of_trues[3] = True
     else:
         list_of_trues[3] = False
+        
     true_indices = [index for index, value in enumerate(list_of_trues) if value]
     graphs_amount = sum(list_of_trues)
     
@@ -191,27 +192,35 @@ st.subheader('Scatter Plot for Hours of listening per day Vs. Mental Health Scor
 st.text("Would you like to see how hours of listening per day affects the average of the scores? Or compare between specific scores?")
 comparison = st.selectbox('Choose one of:', ['None', 'Average', 'Comparison'], key=-1)
 if comparison == 'Comparison':
+    
+    with st.container():
+        col1, col2, col3, col4 = st.columns(4)
+        checkbox5 = col1.checkbox('Anxiety', key=5)
+        checkbox6 = col2.checkbox('Depression', key=6)
+        checkbox7 = col3.checkbox('Insomnia', key=7)    
+        checkbox8 = col4.checkbox('OCD', key=8) 
+        
     list_of_trues = [False, False, False, False]
-    st.text("Reached here")
-    if (st.checkbox("Anxiety")):
+    if (checkbox5):
         list_of_trues[0] = True
     else:
         list_of_trues[0] = False
         
-    if (st.checkbox("Depression")):
+    if (checkbox6):
         list_of_trues[1] = True
     else:
         list_of_trues[1] = False
         
-    if (st.checkbox("Insomnia")):
+    if (checkbox7):
         list_of_trues[2] = True
     else:
         list_of_trues[2] = False
         
-    if (st.checkbox("OCD")):
+    if (checkbox8):
         list_of_trues[3] = True
     else:
         list_of_trues[3] = False
+        
     true_indices = [index for index, value in enumerate(list_of_trues) if value]
     graphs_amount = sum(list_of_trues)
     Anxiety = px.scatter(df,x="Hours per day", y = 'Anxiety',
@@ -287,7 +296,29 @@ elif comparison == 'Average':
     
 # Graph 3 #
 
-third_graph_fig1 = px.histogram(third_graph_df, x="Genre", y='Average Score',
+with st.container():
+    col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(4)
+    classical = col1.checkbox('Classical', key=9)
+    edm = col2.checkbox('EDM', key=10)
+    folk = col3.checkbox('Folk', key=11)    
+    hiphop = col4.checkbox('Hip hop', key=12) 
+    metal = col5.checkbox('Metal', key=13)
+    pop = col6.checkbox('Pop', key=14)
+    rnb = col7.checkbox('R&B', key=15)    
+    rock = col8.checkbox('Rock', key=16) 
+    videogame = col8.checkbox('Video game music', key=17) 
+
+check_box_booleans = [classical,edm,folk,hiphop,metal,pop,rnb,rock,videogame]        
+genres = ['Classical','EDM','Folk','Hip hop','Metal','Pop','R&B','Rock','Video game music'] 
+to_show =[]
+for i in range(len(genres)):
+    if check_box_booleans[i]:
+        to_show.append(genres[i])
+ 
+
+to_show_df = third_graph_df[third_graph_df["Fav genre"].isin(to_show)]
+
+third_graph_fig1 = px.histogram(to_show_df, x="Genre", y='Average Score',
              color='Target', barmode='group',
              histfunc='avg',
              height=400)
