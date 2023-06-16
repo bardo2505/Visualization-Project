@@ -329,6 +329,11 @@ elif comparison == 'Average':
 
 st.markdown("---") 
     
+  
+  
+  
+  
+  
 ##################################### Third Graph #####################################
 st.subheader('Bar Plot for Genres Vs. Mental Health Scores')
 st.text("Use the checkboxes to observe specific genres")
@@ -377,6 +382,13 @@ third_graph_fig1 = px.histogram(to_show_df, x="Genre", y='Average Score',
 st.plotly_chart(third_graph_fig1, use_container_width=True)
 
 
+
+
+
+
+
+
+
 st.markdown("---") 
 
 ##################################### Fourth Graph #####################################
@@ -398,5 +410,9 @@ fourth_graph_fig1.update_layout(title="Average Mental Health Score by Hours Bins
                                yaxis=dict(
                                        tickfont=dict(size=17),  # Set font size for y-axis tick numbers
                                        title=dict(font=dict(size=20))  # Set font size for y-axis label
-                                        ))
+                                        )),
+                               legened=dict(title="Mental Health Average Score"))
+
+
+
 st.plotly_chart(fourth_graph_fig1, use_container_width=True)
