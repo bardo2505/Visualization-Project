@@ -411,7 +411,15 @@ fourth_graph_fig1.update_layout(title="Average Mental Health Score by Hours Bins
                                        tickfont=dict(size=17),  # Set font size for y-axis tick numbers
                                        title=dict(font=dict(size=20))  # Set font size for y-axis label
                                         ),
-                               legend=dict(title="Mental Health Average Score"))
+                               coloraxis=dict(
+                                      colorbar=dict(
+                                            title="Mental Health Average Score",
+                                            titleside="right",
+                                            titlefont=dict(size=20),
+                                            tickfont=dict(size=17)
+                                                    )
+                                              )
+                                )
 
 
 
