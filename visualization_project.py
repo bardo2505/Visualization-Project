@@ -121,6 +121,7 @@ if comparison == 'Comparison':
     
     graphs = [Anxiety, Depression, Insomnia, OCD]
     for g in graphs:
+        g.update_xaxes(tickmode='linear', dtick=10)
         for trace in g.data:
             trace.update(marker=dict(size=10, opacity=0.7))
     if graphs_amount == 0:
