@@ -34,6 +34,8 @@ st.title('PROJECT')
 
 df = pd.read_csv('mxmh_survey_results.csv') # read csv
 
+genre_order = sorted(list(np.unique(df['Fav genre']))) # reorder genres by alphabetical order
+df['Fav genre'] = pd.Categorical(df['Fav genre'], categories=genre_order, ordered=True)
 
 genres_to_remove = ['Jazz', 'Lofi', 'Gospel', 'Latin','Rap','Country','K pop'] # remove genres with num of records < 30
 df = df[~df['Fav genre'].isin(genres_to_remove)]
