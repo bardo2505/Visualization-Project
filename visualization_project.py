@@ -32,6 +32,32 @@ else:
   cmap_graphs12 = px.colors.qualitative.Prism # graphs 1 and 2
   cmap_graph_4 = "Oranges" # graph 4
 
+if color_blind == 'No':
+     color_map_graphs12 = {
+        "Classical":px.colors.qualitative.Dark24[5] # Black
+        "EDM":px.colors.qualitative.Dark24[7] # Purple
+        "Folk":px.colors.qualitative.T10[9]
+        "Hip hop":px.colors.qualitative.Vivid[2]
+        "Metal":px.colors.qualitative.Alphabet[19] # Light blue
+        "Pop":px.colors.qualitative.Set1[0] # Red
+        "R&B":px.colors.qualitative.Set1[4] # Orange
+        "Rock":px.colors.qualitative.Set1[5] # Yellow
+        "Video game music":px.colors.qualitative.Pastel1[8] # White
+    }  
+else:
+     color_map_graphs12 = {
+        "Classical":px.colors.qualitative.Dark24[5] # Black
+        "EDM":px.colors.qualitative.Dark24[7] # Purple
+        "Folk":px.colors.qualitative.T10[9]
+        "Hip hop":px.colors.qualitative.Vivid[2]
+        "Metal":px.colors.qualitative.Alphabet[19] # Light blue
+        "Pop":px.colors.qualitative.Set1[0] # Red
+        "R&B":px.colors.qualitative.Set1[4] # Orange
+        "Rock":px.colors.qualitative.Set1[5] # Yellow
+        "Video game music":px.colors.qualitative.Pastel1[8] # White
+    }   
+  
+  
 
 
 # Pre-Process #
@@ -126,23 +152,23 @@ if comparison == 'Comparison':
     Anxiety = px.scatter(df,x="Age", y = 'Anxiety',
                         color="Fav genre",
                         title="Age Vs. Anxiety",
-                        color_discrete_sequence = cmap_graphs12)
+                        color_discrete_sequence = color_map_graphs12)
 
     
     Depression = px.scatter(df,x="Age", y = 'Depression',
                         color="Fav genre",
                         title="Age Vs. Depression",
-                        color_discrete_sequence = cmap_graphs12)
+                        color_discrete_sequence = color_map_graphs12)
     
     Insomnia = px.scatter(df,x="Age", y = 'Insomnia',
                         color="Fav genre",
                         title="Age Vs. Insomnia",
-                        color_discrete_sequence = cmap_graphs12)
+                        color_discrete_sequence = color_map_graphs12)
     
     OCD = px.scatter(df,x="Age", y = 'OCD',
                         color="Fav genre",
                         title="Age Vs. OCD",
-                        color_discrete_sequence = cmap_graphs12)
+                        color_discrete_sequence = color_map_graphs12)
     
     graphs = [Anxiety, Depression, Insomnia, OCD]
     for g in graphs:
@@ -197,7 +223,7 @@ elif comparison == 'Average':
     g = px.scatter(df, x="Age", y="targets_mean",
                          color="Fav genre",
                          title="Scatterplot Matrix with Colors as Legend",
-                        color_discrete_sequence = cmap_graphs12)
+                        color_discrete_sequence = color_map_graphs12)
     for trace in g.data:
             trace.update(marker=dict(size=10, opacity=0.7))
     g.update_layout(yaxis_title='Average of Mental Health Scores')
@@ -252,19 +278,19 @@ if comparison == 'Comparison':
     Anxiety = px.scatter(df,x="Hours per day", y = 'Anxiety',
                         color="Fav genre",
                         title="Hours per day Vs. Anxiety",
-                        color_discrete_sequence = cmap_graphs12)
+                        color_discrete_sequence = color_map_graphs12)
     Depression = px.scatter(df,x="Hours per day", y = 'Depression',
                         color="Fav genre",
                         title="Hours per day Vs. Depression",
-                        color_discrete_sequence = cmap_graphs12)
+                        color_discrete_sequence = color_map_graphs12)
     Insomnia = px.scatter(df,x="Hours per day", y = 'Insomnia',
                         color="Fav genre",
                         title="Hours per day Vs. Insomnia",
-                        color_discrete_sequence = cmap_graphs12)
+                        color_discrete_sequence = color_map_graphs12)
     OCD = px.scatter(df,x="Hours per day", y = 'OCD',
                         color="Fav genre",
                         title="Hours per day Vs. OCD",
-                        color_discrete_sequence = cmap_graphs12)
+                        color_discrete_sequence = color_map_graphs12)
 
     graphs = [Anxiety, Depression, Insomnia, OCD]
     for g in graphs:
@@ -319,7 +345,7 @@ elif comparison == 'Average':
     g = px.scatter(df, x="Hours per day", y="targets_mean",
                          color="Fav genre",
                          title="Scatterplot Matrix with Colors as Legend",
-                        color_discrete_sequence = cmap_graphs12)
+                        color_discrete_sequence = color_map_graphs12)
     for trace in g.data:
         trace.update(marker=dict(size=10, opacity=0.7))
     g.update_layout(yaxis_title='Average of Mental Health Scores')
