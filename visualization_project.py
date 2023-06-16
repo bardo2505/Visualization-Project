@@ -30,7 +30,7 @@ if color_blind == 'Yes':
   cmap_graph_4 = "Cividis" # graph 4
 else:
   cmap_graph_12 = "Virdis" # graphs 1 and 2
-  cmap_graph_4 = "RdYlBu_r" # graph 4
+  cmap_graph_4 = "OrRd" # graph 4
 
 
 
