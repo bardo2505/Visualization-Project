@@ -137,26 +137,26 @@ if comparison == 'Comparison':
          g2_idx = true_indices[1]
          g3_idx = true_indices[2]
          with col1:
-            st.plotly_chart(graphs[g1_idx], use_container_width=True)
+            st.plotly_chart(graphs[g1_idx], use_container_width=False)
          with col2:
-            st.plotly_chart(graphs[g2_idx], use_container_width=True)
-         col3 = st.columns(1, gap="large")
+            st.plotly_chart(graphs[g2_idx], use_container_width=False)
+         col3, _ = st.columns(2, gap="large")
          with col3:
-            st.plotly_chart(graphs[g3_idx], use_container_width=True)
+            st.plotly_chart(graphs[g3_idx], use_container_width=False)
 
     elif graphs_amount == 4:
         col1, col2 = st.columns(2, gap="large")
 
         with col1:
-            st.plotly_chart(graphs[0], use_container_width=True)
+            st.plotly_chart(graphs[0], use_container_width=False)
         with col2:
-            st.plotly_chart(graphs[1], use_container_width=True)
+            st.plotly_chart(graphs[1], use_container_width=False)
             
         col3, col4 = st.columns(2, gap="large")
         with col3:
-            st.plotly_chart(graphs[2], use_container_width=True)   
+            st.plotly_chart(graphs[2], use_container_width=False)   
         with col4:
-            st.plotly_chart(graphs[3], use_container_width=True)   
+            st.plotly_chart(graphs[3], use_container_width=False)   
 
 
 elif comparison == 'Average':
