@@ -85,17 +85,17 @@ if comparison == 'Comparison':
     else:
         list_of_trues[0] = False
         
-    if (st.checkbox("Depression",key=1)):
+    if (st.checkbox("Depression",key=2)):
         list_of_trues[1] = True
     else:
         list_of_trues[1] = False
         
-    if (st.checkbox("Insomnia",key=1)):
+    if (st.checkbox("Insomnia",key=3)):
         list_of_trues[2] = True
     else:
         list_of_trues[2] = False
         
-    if (st.checkbox("OCD",key=1)):
+    if (st.checkbox("OCD",key=4)):
         list_of_trues[3] = True
     else:
         list_of_trues[3] = False
