@@ -129,7 +129,7 @@ if comparison == 'Comparison':
     else:
         list_of_trues[3] = False
     
-    graphs_amount = sum(boolean_list)
+    graphs_amount = sum(list_of_trues)
     Anxiety = px.scatter(df,x="Age", y = 'Anxiety',
                         color="Fav genre",
                         title="Scatterplot Matrix with Colors as Legend")
