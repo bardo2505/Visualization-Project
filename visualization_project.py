@@ -103,16 +103,16 @@ if comparison == 'Comparison':
     graphs_amount = sum(list_of_trues)
     Anxiety = px.scatter(df,x="Age", y = 'Anxiety',
                         color="Fav genre",
-                        title="Scatterplot Matrix with Colors as Legend")
+                        title="Age Vs. Anxiety")
     Depression = px.scatter(df,x="Age", y = 'Depression',
                         color="Fav genre",
-                        title="Scatterplot Matrix with Colors as Legend")
+                        title="Age Vs. Depression")
     Insomnia = px.scatter(df,x="Age", y = 'Insomnia',
                         color="Fav genre",
-                        title="Scatterplot Matrix with Colors as Legend")
+                        title="Age Vs. Insomnia")
     OCD = px.scatter(df,x="Age", y = 'OCD',
                         color="Fav genre",
-                        title="Scatterplot Matrix with Colors as Legend")
+                        title="Age Vs. OCD")
     graphs = [Anxiety, Depression, Insomnia, OCD]
     if graphs_amount == 0:
         pass
@@ -198,16 +198,16 @@ if comparison == 'Comparison':
     graphs_amount = sum(list_of_trues)
     Anxiety = px.scatter(df,x="Hours per day", y = 'Anxiety',
                         color="Fav genre",
-                        title="Scatterplot Matrix with Colors as Legend")
+                        title="Hours per day Vs. Anxiety")
     Depression = px.scatter(df,x="Hours per day", y = 'Depression',
                         color="Fav genre",
-                        title="Scatterplot Matrix with Colors as Legend")
+                        title="Hours per day Vs. Depression")
     Insomnia = px.scatter(df,x="Hours per day", y = 'Insomnia',
                         color="Fav genre",
-                        title="Scatterplot Matrix with Colors as Legend")
+                        title="Hours per day Vs. Insomnia")
     OCD = px.scatter(df,x="Hours per day", y = 'OCD',
                         color="Fav genre",
-                        title="Scatterplot Matrix with Colors as Legend")
+                        title="Hours per day Vs. OCD")
     graphs = [Anxiety, Depression, Insomnia, OCD]
     if graphs_amount == 0:
         pass
