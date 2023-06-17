@@ -257,32 +257,73 @@ if comparison == 'Comparison':
 
 elif comparison == 'Average':
 
-    st.text("Please choose Genres to observe - ")
-    with st.container():
-        col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
-        classical = col1.checkbox('Classical', key=90)
-        edm = col2.checkbox('EDM', key=100)
-        folk = col3.checkbox('Folk', key=110)    
-        hiphop = col4.checkbox('Hip hop', key=120) 
-        metal = col5.checkbox('Metal', key=130)
-        pop = col6.checkbox('Pop', key=140)
-        rnb = col7.checkbox('R&B', key=150)    
-        rock = col8.checkbox('Rock', key=160) 
-        videogame = col9.checkbox('Video game music', key=170) 
 
-    check_box_booleans_graph_12 = [classical,edm,folk,hiphop,metal,pop,rnb,rock,videogame]        
-    genres = ['Classical','EDM','Folk','Hip hop','Metal','Pop','R&B','Rock','Video game music'] 
-    to_show_graph12 =[]
-    for i in range(len(genres)):
-      if check_box_booleans_graph_12[i]:
-          to_show_graph12.append(genres[i])
+      bool_genres = st.radio("Choose view method for genres:",['I prefer to choose the genres manually','Select all genres'],key=779)
+      if bool_genres=='I prefer to choose the genres manually':
+        with st.container():
+          col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
+          classical = col1.checkbox('Classical', key=93)
+          edm = col2.checkbox('EDM', key=1330)
+          folk = col3.checkbox('Folk', key=1331)    
+          hiphop = col4.checkbox('Hip hop', key=1332) 
+          metal = col5.checkbox('Metal', key=13333)
+          pop = col6.checkbox('Pop', key=1334)  
+          rnb = col7.checkbox('R&B', key=1335)    
+          rock = col8.checkbox('Rock', key=333333) 
+          videogame = col9.checkbox('Video game music', key=1337) 
+      elif bool_genres=='Select all genres':
+        with st.container():
+          col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
+          classical = col1.checkbox('Classical',value=True, key=95653355)
+          edm = col2.checkbox('EDM',value=True, key=1053355)
+          folk = col3.checkbox('Folk',value=True, key=1555331)    
+          hiphop = col4.checkbox('Hip hop',value=True, key=33333333333333333) 
+          metal = col5.checkbox('Metal',value=True, key=155533553)
+          pop = col6.checkbox('Pop',value=True, key=145333555)  
+          rnb = col7.checkbox('R&B',value=True, key=15553335)    
+          rock = col8.checkbox('Rock',value=True, key=165533355) 
+          videogame = col9.checkbox('Video game music',value=True, key=1533557) 
+      check_box_booleans_graph_1 = [classical,edm,folk,hiphop,metal,pop,rnb,rock,videogame]        
+      genres = ['Classical','EDM','Folk','Hip hop','Metal','Pop','R&B','Rock','Video game music'] 
+      to_show_graph1 =[]
+      for i in range(len(genres)):
+          if check_box_booleans_graph_1[i]:
+              to_show_graph1.append(genres[i])
  
 
-    to_show_df_graph12 = df[df["Favorite Genre"].isin(to_show_graph12)]
+      to_show_df_graph1 = df[df["Favorite Genre"].isin(to_show_graph1)]
+
+
+
+
+
+  
+    # st.text("Please choose Genres to observe - ")
+    # with st.container():
+    #     col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
+    #     classical = col1.checkbox('Classical', key=90)
+    #     edm = col2.checkbox('EDM', key=100)
+    #     folk = col3.checkbox('Folk', key=110)    
+    #     hiphop = col4.checkbox('Hip hop', key=120) 
+    #     metal = col5.checkbox('Metal', key=130)
+    #     pop = col6.checkbox('Pop', key=140)
+    #     rnb = col7.checkbox('R&B', key=150)    
+    #     rock = col8.checkbox('Rock', key=160) 
+    #     videogame = col9.checkbox('Video game music', key=170) 
+
+    # check_box_booleans_graph_12 = [classical,edm,folk,hiphop,metal,pop,rnb,rock,videogame]        
+    # genres = ['Classical','EDM','Folk','Hip hop','Metal','Pop','R&B','Rock','Video game music'] 
+    # to_show_graph12 =[]
+    # for i in range(len(genres)):
+    #   if check_box_booleans_graph_12[i]:
+    #       to_show_graph12.append(genres[i])
+ 
+
+    # to_show_df_graph12 = df[df["Favorite Genre"].isin(to_show_graph12)]
 
 
       
-    g = px.scatter(to_show_df_graph12, x="Age", y="Average Score",
+    g = px.scatter(to_show_df_graph1, x="Age", y="Average Score",
                          color="Favorite Genre",
                          title="Scatterplot Matrix with Colors as Legend",
                         color_discrete_map = color_map_graphs12)
