@@ -497,6 +497,10 @@ st.markdown("---")
 ##################################### Third Graph #####################################
 
 st.subheader('Genres & Mental Health Scores, by Mental Health Disorder - Histogram')
+order = st.radio("Please choose order method:",['Alphabetical order (can view all Mental Health Disorders at once)','Order by sum of values (Can view one Disorder at a time)'],key=40000)
+if order != 'Alphabetical order (can view all Mental Health Disorders at once)':
+  disorder = st.radio("Please choose disorder to view:",['Anxiety','Depression','Insomnia','OCD'],key=40001)
+  
 st.text("Would you like to view all Genres at once?")
 select_all = st.radio("Choose one of: ",['Yes please.','No, I will choose myself.'])
 if select_all == 'Yes please.': 
@@ -534,7 +538,7 @@ for i in range(len(genres)):
 
 to_show_df = third_graph_df[third_graph_df["Genre"].isin(to_show)]
 
-order = st.radio("Please choose order method:",['Alphabetical order (can view all Mental Health Disorders at once)','Order by sum of values (Can view one Disorder at a time)'],key=40000)
+
 if order == 'Alphabetical order (can view all Mental Health Disorders at once)':
     third_graph_fig1 = px.histogram(to_show_df, x="Genre", y='Average Score',
                color='Mental Disorder', barmode='group',
@@ -554,7 +558,7 @@ if order == 'Alphabetical order (can view all Mental Health Disorders at once)':
 
 
 elif order == 'Order by sum of values (Can view one Disorder at a time)':
-  disorder = st.radio("Please choose disorder to view:",['Anxiety','Depression','Insomnia','OCD'],key=40001)
+  
   disorder_df = to_show_df[to_show_df['Mental Disorder']==disorder]
   third_graph_fig1 = px.histogram(disorder_df, x="Genre", y='Average Score',
                barmode='group',
