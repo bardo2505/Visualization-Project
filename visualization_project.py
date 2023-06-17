@@ -30,10 +30,10 @@ if color_blind == 'Yes':
         "Video game music":  px.colors.qualitative.Set1[4], # Orange
     }
   color_map_graph3 = {
-        "Anxiety": px.colors.qualitative.Bold[2],  # Blue
-        "Depression": px.colors.qualitative.Bold[3],  # Pink
-        "Insomnia": px.colors.qualitative.Bold[4],  # Yellow
-        "OCD": px.colors.qualitative.Bold[5]  # Green
+        "Anxiety": px.colors.qualitative.Dark24[5],  # Black
+        "Depression": px.colors.qualitative.Set1[0],  # Red
+        "Insomnia": px.colors.qualitative.Set1[1],  # Blue
+        "OCD": px.colors.qualitative.Set1[5]  # Yellow
     } 
 else:
   cmap_graph_4 = "Tempo" # graph 4
