@@ -574,7 +574,7 @@ fourth_graph_fig1.update_layout(title="Average Mental Health Score by Hours Bins
                                             tickfont=dict(size=15))
                                               ),
                                 font=dict(
-                                      size=40  # Set the font size here
+                                      size=32  # Set the font size here
                                           )
                                  )
 
