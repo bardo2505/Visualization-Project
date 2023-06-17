@@ -548,13 +548,13 @@ for i in range(len(genres)):
 to_show_df = third_graph_df[third_graph_df["Genre"].isin(to_show)]
 
 order = st.radio("Please choose order method:",['Alphabetical order (can view all Mental Health Disorders at once)','Order by sum of values (Can view one disorder at a time)'],key=40000)
-if order == 'Alphabetical order':
+if order == 'Alphabetical order (can view all Mental Health Disorders at once)':
     third_graph_fig1 = px.histogram(to_show_df, x="Genre", y='Average Score',
                color='Mental Disorder', barmode='group',
                histfunc='avg',
                height=400,
                color_discrete_map=color_map_graph3)
-    third_graph_fig1.update_layout(title="Put title here",
+    third_graph_fig1.update_layout(title="Histogram ordered alphabetically",
                                  xaxis=dict(
                                          tickfont=dict(size=17),  # Set font size for x-axis tick numbers
                                          title=dict(text="Favorite Genre",font=dict(size=20))  # Set font size for x-axis label
@@ -570,11 +570,11 @@ elif order == 'Order by sum of values (Can view one disorder at a time)':
   disorder = st.radio("Please choose disorder to view:",['Anxiety','Depression','Insomnia','OCD'],key=40001)
   disorder_df = to_show_df[to_show_df['Mental Disorder']==disorder]
   third_graph_fig1 = px.histogram(disorder_df, x="Genre", y='Average Score',
-               color='Mental Disorder', barmode='group',
+               barmode='group',
                histfunc='avg',
                height=400,
                color_discrete_map=color_map_graph3)
-  third_graph_fig1.update_layout(title="Put title here",
+  third_graph_fig1.update_layout(title=f'Histogram ordered by {disorder} Score',
                                  xaxis=dict(
                                          tickfont=dict(size=17),  # Set font size for x-axis tick numbers
                                          title=dict(text="Favorite Genre",font=dict(size=20))  # Set font size for x-axis label
