@@ -36,6 +36,12 @@ if color_blind == 'Yes':
         "Rock": px.colors.qualitative.Alphabet[5], # Dark Green
         "Video game music":  px.colors.qualitative.Set1[4], # Orange
     }
+  color_map_graph3 = {
+        "Anxiety": px.colors.qualitative.Bold[2],  # Blue
+        "Depression": px.colors.qualitative.Bold[3],  # Pink
+        "Insomnia": px.colors.qualitative.Bold[4],  # Yellow
+        "OCD": px.colors.qualitative.Bold[5]  # Green
+    } 
 else:
 
   cmap_graph_4 = "Oranges" # graph 4
@@ -50,6 +56,12 @@ else:
         "Rock": px.colors.qualitative.Dark2[0], # Dark Green
         "Video game music":  px.colors.qualitative.Prism[6], # Orange
       }
+  color_map_graph3 = {
+        "Anxiety": px.colors.qualitative.Bold[2],  # Blue
+        "Depression": px.colors.qualitative.Bold[3],  # Pink
+        "Insomnia": px.colors.qualitative.Bold[4],  # Yellow
+        "OCD": px.colors.qualitative.Bold[5]  # Green
+    } 
 
      
   
@@ -499,27 +511,13 @@ for i in range(len(genres)):
  
 
 to_show_df = third_graph_df[third_graph_df["Genre"].isin(to_show)]
-if color_blind == 'No':
-    color_map = {
-        "Anxiety": "#FF0000",  # Red
-        "Depression": "#2CA02C",  # Green
-        "Insomnia": "#0000FF",  # Blue
-        "OCD": "#FF8000",  # Orange
-    }
-else:
-     color_map = {
-        "Anxiety": px.colors.qualitative.Set1[4],  # Orange
-        "Depression": px.colors.qualitative.Set1[5],  # Yellow
-        "Insomnia": px.colors.qualitative.Set1[6],  # Brown
-        "OCD": px.colors.qualitative.Set1[7]  # Pink
-    } 
 
 
 third_graph_fig1 = px.histogram(to_show_df, x="Genre", y='Average Score',
              color='Target', barmode='group',
              histfunc='avg',
              height=400,
-             color_discrete_map=color_map)
+             color_discrete_map=color_map_graph3)
 third_graph_fig1.update_layout(title="Put title here",
                                xaxis=dict(
                                        tickfont=dict(size=17),  # Set font size for x-axis tick numbers
