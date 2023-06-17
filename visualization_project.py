@@ -25,17 +25,6 @@ color_blind = st.radio("Are you color blind?",['No','Yes'],key=51) # Did you kno
 if color_blind == 'Yes': 
 
   cmap_graph_4 = "RdBu" # graph 4
-  # color_map_graphs12 = [
-  #       px.colors.qualitative.Dark24[5], # Black
-  #       px.colors.qualitative.Dark24[7], # Purple
-  #       px.colors.qualitative.T10[9], # Grey
-  #       px.colors.qualitative.Vivid[2], # Torquise
-  #       px.colors.qualitative.Alphabet[19], # Light blue
-  #       px.colors.qualitative.Set1[0], # Red
-  #       px.colors.qualitative.Set1[4], # Orange
-  #       px.colors.qualitative.Set1[5], # Yellow
-  #       px.colors.qualitative.Pastel1[8] # White
-  #    ]  
   color_map_graphs12 = {
         "Classical": px.colors.qualitative.Dark24[19], # Deep Blue
         "EDM":  px.colors.qualitative.Dark24[21], # Brown
@@ -50,18 +39,7 @@ if color_blind == 'Yes':
 else:
 
   cmap_graph_4 = "Oranges" # graph 4
-  # color_map_graphs12 = [
-  #       px.colors.qualitative.Dark24[19], # Deep Blue
-  #       px.colors.qualitative.Dark24[21], # Brown
-  #       px.colors.qualitative.T10[9], # Grey
-  #       px.colors.qualitative.Alphabet[6], # Light Green
-  #       px.colors.qualitative.Alphabet[24], # Yellow
-  #       px.colors.qualitative.Set1[0], # Red
-  #       px.colors.qualitative.Dark24[5], # Black
-  #       px.colors.qualitative.Alphabet[5], # Dark Green
-  #       px.colors.qualitative.Set1[4], # Orange
-  #    ]  
-color_map_graphs12 = {
+  color_map_graphs12 = {
         "Classical": px.colors.qualitative.Dark24[19], # Deep Blue
         "EDM":  px.colors.qualitative.Dark24[21], # Brown
         "Folk":  px.colors.qualitative.T10[9], # Grey
@@ -71,7 +49,7 @@ color_map_graphs12 = {
         "R&b": px.colors.qualitative.Dark24[5], # Black
         "Rock": px.colors.qualitative.Alphabet[5], # Dark Green
         "Video game music":  px.colors.qualitative.Set1[4], # Orange
-    }
+      }
 
      
   
@@ -267,7 +245,7 @@ elif comparison == 'Average':
     g = px.scatter(df, x="Age", y="targets_mean",
                          color="Fav genre",
                          title="Scatterplot Matrix with Colors as Legend",
-                        color_discrete_sequence = color_map_graphs12)
+                        color_discrete_map = color_map_graphs12)
     for trace in g.data:
             trace.update(marker=dict(size=10, opacity=0.7))
     g.update_layout(yaxis_title='Average of Mental Health Scores')
@@ -518,3 +496,17 @@ fourth_graph_fig1.update_layout(title="Average Mental Health Score by Hours Bins
 
 
 st.plotly_chart(fourth_graph_fig1, use_container_width=True)
+
+
+# colors list for sequence 
+  # color_map_graphs12 = [
+  #       px.colors.qualitative.Dark24[5], # Black
+  #       px.colors.qualitative.Dark24[7], # Purple
+  #       px.colors.qualitative.T10[9], # Grey
+  #       px.colors.qualitative.Vivid[2], # Torquise
+  #       px.colors.qualitative.Alphabet[19], # Light blue
+  #       px.colors.qualitative.Set1[0], # Red
+  #       px.colors.qualitative.Set1[4], # Orange
+  #       px.colors.qualitative.Set1[5], # Yellow
+  #       px.colors.qualitative.Pastel1[8] # White
+  #    ]  
