@@ -493,15 +493,15 @@ if select_all == 'Yes please.':
 else:
   with st.container():
       col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
-      classical = col1.checkbox('Classical', key=9)
-      edm = col2.checkbox('EDM', key=10)
-      folk = col3.checkbox('Folk', key=11)    
-      hiphop = col4.checkbox('Hip hop', key=12) 
-      metal = col5.checkbox('Metal', key=13)
-      pop = col6.checkbox('Pop', key=14)
-      rnb = col7.checkbox('R&B', key=15)    
-      rock = col8.checkbox('Rock', key=16) 
-      videogame = col9.checkbox('Video game music', key=17) 
+      classical = col1.checkbox('Classical', key=97777777777)
+      edm = col2.checkbox('EDM', key=1077777777)
+      folk = col3.checkbox('Folk', key=117777777777)    
+      hiphop = col4.checkbox('Hip hop', key=12777777) 
+      metal = col5.checkbox('Metal', key=1377777777)
+      pop = col6.checkbox('Pop', key=14777777777)
+      rnb = col7.checkbox('R&B', key=159595)    
+      rock = col8.checkbox('Rock', key=1677777777) 
+      videogame = col9.checkbox('Video game music', key=7777777717) 
 
 check_box_booleans = [classical,edm,folk,hiphop,metal,pop,rnb,rock,videogame]        
 genres = ['Classical','EDM','Folk','Hip hop','Metal','Pop','R&B','Rock','Video game music'] 
