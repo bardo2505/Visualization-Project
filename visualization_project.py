@@ -21,7 +21,7 @@ st.set_page_config(page_title="Streamlit Project",
                   layout="wide")
 st.title('PROJECT')
 
-color_blind = st.radio("Are you color blind?",['No','Yes']key=51) # Did you know that 9% of men are color blind?
+color_blind = st.radio("Are you color blind?",['No','Yes'],key=51) # Did you know that 9% of men are color blind?
 if color_blind == 'Yes': 
 
   cmap_graph_4 = "RdBu" # graph 4
