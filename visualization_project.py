@@ -323,15 +323,15 @@ elif comparison == 'Average':
 
 
       
-    g = px.scatter(to_show_df_graph1, x="Age", y="Average Score",
+      g = px.scatter(to_show_df_graph1, x="Age", y="Average Score",
                          color="Favorite Genre",
                          title="Scatterplot Matrix with Colors as Legend",
                         color_discrete_map = color_map_graphs12)
-    for trace in g.data:
+      for trace in g.data:
             trace.update(marker=dict(size=10, opacity=0.7))
-    g.update_layout(yaxis_title='Average of Mental Health Scores')
-    g.update_xaxes(range=[-0.5, 90.5], tickmode='linear', dtick=10)  
-    st.plotly_chart(g, use_container_width=True)
+      g.update_layout(yaxis_title='Average of Mental Health Scores')
+      g.update_xaxes(range=[-0.5, 90.5], tickmode='linear', dtick=10)  
+      st.plotly_chart(g, use_container_width=True)
 
 st.markdown("---") 
 st.markdown("---")     
