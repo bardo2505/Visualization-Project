@@ -26,7 +26,8 @@ with st.container():
 st.subheader("Intro - ")
 st.text(
   """
-  The subject of our visualization is the relationship between music consumption habits and preferences and their self reported mental health state.
+  The subject of our visualization is the relationship between music consumption habits and preferences and their self
+  reported mental health state.
 
 Mental health is an issue that affects millions of people around the world, with no signs of improvement and becoming increasingly alarming.
 According to the World Health Organization, mental health disorders have become the leading cause of disability,
