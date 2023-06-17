@@ -146,24 +146,48 @@ if comparison == 'Comparison':
         
     true_indices = [index for index, value in enumerate(list_of_trues) if value]
     graphs_amount = sum(list_of_trues)
+
     
-    Anxiety = px.scatter(df,x="Age", y = 'Anxiety',
+    with st.container():
+      col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
+      classical = col1.checkbox('Classical', key=9)
+      edm = col2.checkbox('EDM', key=10)
+      folk = col3.checkbox('Folk', key=11)    
+      hiphop = col4.checkbox('Hip hop', key=12) 
+      metal = col5.checkbox('Metal', key=13)
+      pop = col6.checkbox('Pop', key=14)
+      rnb = col7.checkbox('R&B', key=15)    
+      rock = col8.checkbox('Rock', key=16) 
+      videogame = col9.checkbox('Video game music', key=17) 
+
+    check_box_booleans_graph_1 = [classical,edm,folk,hiphop,metal,pop,rnb,rock,videogame]        
+    genres = ['Classical','EDM','Folk','Hip hop','Metal','Pop','R&B','Rock','Video game music'] 
+    to_show_graph1 =[]
+    for i in range(len(genres)):
+        if check_box_booleans_graph_1[i]:
+            to_show_graph1.append(genres[i])
+ 
+
+    to_show_df_graph1 = df[df["Genre"].isin(to_show_graph1)]
+
+  
+    Anxiety = px.scatter(to_show_df_graph1,x="Age", y = 'Anxiety',
                         color="Fav genre",
                         title="Age Vs. Anxiety",
                         color_discrete_sequence = color_map_graphs12)
 
     
-    Depression = px.scatter(df,x="Age", y = 'Depression',
+    Depression = px.scatter(to_show_df_graph1,x="Age", y = 'Depression',
                         color="Fav genre",
                         title="Age Vs. Depression",
                         color_discrete_sequence = color_map_graphs12)
     
-    Insomnia = px.scatter(df,x="Age", y = 'Insomnia',
+    Insomnia = px.scatter(to_show_df_graph1,x="Age", y = 'Insomnia',
                         color="Fav genre",
                         title="Age Vs. Insomnia",
                         color_discrete_sequence = color_map_graphs12)
     
-    OCD = px.scatter(df,x="Age", y = 'OCD',
+    OCD = px.scatter(to_show_df_graph1,x="Age", y = 'OCD',
                         color="Fav genre",
                         title="Age Vs. OCD",
                         color_discrete_sequence = color_map_graphs12)
