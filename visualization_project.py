@@ -575,7 +575,7 @@ fourth_graph_fig1.update_layout(title="Average Mental Health Score by Hours Bins
                                       size=40  # Set the font size here
                                           )
                                  )
-fourth_graph_fig1.update_traces(textposition='inside', textfont_size=20)
-      
+
+fourth_graph_fig1.update_layout(uniformtext_minsize=20, uniformtext_mode='hide')      
 st.plotly_chart(fourth_graph_fig1, use_container_width=True)
 
