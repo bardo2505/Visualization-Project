@@ -117,7 +117,7 @@ comparison = st.radio("Would you like to see how age affects the average of the 
 if comparison == 'Comparison':
     st.text("Please choose Mental health scores to observe (target values)")
     with st.container():
-        col1, col2, col3, col4 = st.columns(4,spec=1)
+        col1, col2, col3, col4 = st.columns(4,spec=[0.1, 0.1,0.1,0.7])
         checkbox1 = col1.checkbox('Anxiety', key=1)
         checkbox2 = col2.checkbox('Depression', key=2)
         checkbox3 = col3.checkbox('Insomnia', key=3)    
