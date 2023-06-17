@@ -23,7 +23,7 @@ with st.container():
 with st.container():
     col1, col2, col3 = st.columns([0.30, 0.5, 0.20])
     col2.header(' Bar Dolev - 318419512')
-st.subheader("Intro - ")
+st.subheader("Intro")
 st.text(
   """
   The subject of our visualization is the relationship between music consumption habits and preferences and their self
