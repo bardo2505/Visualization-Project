@@ -21,7 +21,7 @@ with st.container():
     col1, col2, col3 = st.columns([0.30, 0.5, 0.20])
     col2.header('Beni Ifland - 208906255')
 with st.container():
-    col1, col2, col3 = st.columns([0.30, 0.5, 0.20])
+    col1, col2, col3 = st.columns([0.32, 0.5, 0.20])
     col2.header(' Bar Dolev - 318419512')
 st.subheader("Intro")
 st.text(
