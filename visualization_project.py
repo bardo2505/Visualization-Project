@@ -55,17 +55,7 @@ if color_blind == 'No':
         px.colors.qualitative.Pastel1[8] # White
      ]  
 else:
-     color_map_graphs12 = [
-        px.colors.qualitative.Dark24[5], # Black
-        px.colors.qualitative.Dark24[7], # Purple
-        px.colors.qualitative.T10[9], # Grey
-        px.colors.qualitative.Vivid[2], # Torquise
-        px.colors.qualitative.Alphabet[19], # Light blue
-        px.colors.qualitative.Set1[0], # Red
-        px.colors.qualitative.Set1[4], # Orange
-        px.colors.qualitative.Set1[5], # Yellow
-        px.colors.qualitative.Pastel1[8] # White
-     ]  
+     color_map_graphs12 = px.colors.qualitative.Dark24
   
   
 
