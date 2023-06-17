@@ -96,7 +96,7 @@ df['Hours bins'] = df['Hours per day'].apply(apply_bins_hours)
 
 # calculate the mean of targets for graph number 4
 df['Average Score'] = df.apply(lambda row: row[['Anxiety', 'Depression', 'Insomnia', 'OCD']].mean(), axis=1)
-
+          
 # make a DF for graph number 3 : 
 third_graph_df = pd.DataFrame(columns=['Genre','Target', 'Average Score'])
 targets = ['Anxiety','Depression','Insomnia','OCD']
@@ -161,18 +161,31 @@ if comparison == 'Comparison':
     graphs_amount = sum(list_of_trues)
 
     st.text("Please choose Genres to observe - ")
-    with st.container():
-      col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
-      classical = col1.checkbox('Classical', key=9)
-      edm = col2.checkbox('EDM', key=10)
-      folk = col3.checkbox('Folk', key=11)    
-      hiphop = col4.checkbox('Hip hop', key=12) 
-      metal = col5.checkbox('Metal', key=13)
-      pop = col6.checkbox('Pop', key=14)
-      rnb = col7.checkbox('R&B', key=15)    
-      rock = col8.checkbox('Rock', key=16) 
-      videogame = col9.checkbox('Video game music', key=17) 
-
+    bool_genres = st.radio("Choose view method for genres:",['I prefer to choose the genres manually','Select all genres'])
+    if bool_genres=='I prefer to choose the genres manually':
+      with st.container():
+        col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
+        classical = col1.checkbox('Classical', key=9)
+        edm = col2.checkbox('EDM', key=10)
+        folk = col3.checkbox('Folk', key=11)    
+        hiphop = col4.checkbox('Hip hop', key=12) 
+        metal = col5.checkbox('Metal', key=13)
+        pop = col6.checkbox('Pop', key=14)  
+        rnb = col7.checkbox('R&B', key=15)    
+        rock = col8.checkbox('Rock', key=16) 
+        videogame = col9.checkbox('Video game music', key=17) 
+    else:
+      with st.container():
+        col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
+        classical = col1.checkbox('Classical',value=False, key=9)
+        edm = col2.checkbox('EDM',value=False, key=10)
+        folk = col3.checkbox('Folk',value=False, key=11)    
+        hiphop = col4.checkbox('Hip hop',value=False, key=12) 
+        metal = col5.checkbox('Metal',value=False, key=13)
+        pop = col6.checkbox('Pop',value=False, key=14)  
+        rnb = col7.checkbox('R&B',value=False, key=15)    
+        rock = col8.checkbox('Rock',value=False key=16) 
+        videogame = col9.checkbox('Video game music',value=False, key=17) 
     check_box_booleans_graph_1 = [classical,edm,folk,hiphop,metal,pop,rnb,rock,videogame]        
     genres = ['Classical','EDM','Folk','Hip hop','Metal','Pop','R&B','Rock','Video game music'] 
     to_show_graph1 =[]
