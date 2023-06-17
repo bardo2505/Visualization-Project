@@ -18,7 +18,7 @@ with st.container():
     col1, col2, col3 = st.columns([0.25, 0.5, 0.25])
     col2.title('Visualization Final Project')
    
-st.subtitle
+
 color_blind = st.radio("Are you color blind?",['No','Yes'],key=51) # Did you know that 9% of men are color blind?
 if color_blind == 'Yes': 
   cmap_graph_4 = "balance" # graph 4
