@@ -243,23 +243,23 @@ if comparison == 'Comparison':
 
 elif comparison == 'Average':
 
-  st.text("Please choose Genres to observe - ")
-  with st.container():
-      col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
-      classical = col1.checkbox('Classical', key=90)
-      edm = col2.checkbox('EDM', key=100)
-      folk = col3.checkbox('Folk', key=110)    
-      hiphop = col4.checkbox('Hip hop', key=120) 
-      metal = col5.checkbox('Metal', key=130)
-      pop = col6.checkbox('Pop', key=140)
-      rnb = col7.checkbox('R&B', key=150)    
-      rock = col8.checkbox('Rock', key=160) 
-      videogame = col9.checkbox('Video game music', key=170) 
+    st.text("Please choose Genres to observe - ")
+    with st.container():
+        col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
+        classical = col1.checkbox('Classical', key=90)
+        edm = col2.checkbox('EDM', key=100)
+        folk = col3.checkbox('Folk', key=110)    
+        hiphop = col4.checkbox('Hip hop', key=120) 
+        metal = col5.checkbox('Metal', key=130)
+        pop = col6.checkbox('Pop', key=140)
+        rnb = col7.checkbox('R&B', key=150)    
+        rock = col8.checkbox('Rock', key=160) 
+        videogame = col9.checkbox('Video game music', key=170) 
 
-  check_box_booleans_graph_12 = [classical,edm,folk,hiphop,metal,pop,rnb,rock,videogame]        
-  genres = ['Classical','EDM','Folk','Hip hop','Metal','Pop','R&B','Rock','Video game music'] 
-  to_show_graph12 =[]
-  for i in range(len(genres)):
+    check_box_booleans_graph_12 = [classical,edm,folk,hiphop,metal,pop,rnb,rock,videogame]        
+    genres = ['Classical','EDM','Folk','Hip hop','Metal','Pop','R&B','Rock','Video game music'] 
+    to_show_graph12 =[]
+    for i in range(len(genres)):
       if check_box_booleans_graph_12[i]:
           to_show_graph12.append(genres[i])
  
