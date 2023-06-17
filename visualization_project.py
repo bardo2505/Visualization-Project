@@ -39,7 +39,17 @@ if color_blind == 'Yes':
 else:
 
   cmap_graph_4 = "Oranges" # graph 4
-  color_map_graphs12 = px.colors.qualitative.D3
+  color_map_graphs12 = [
+        px.colors.qualitative.Dark24[19], # Deep Blue
+        px.colors.qualitative.Dark24[21], # Brown
+        px.colors.qualitative.T10[9], # Grey
+        px.colors.qualitative.Alphabet[6], # Light Green
+        px.colors.qualitative.Alphabet[24], # Yellow
+        px.colors.qualitative.Set1[0], # Red
+        px.colors.qualitative.Dark24[5], # Black
+        px.colors.qualitative.Alphabet[5], # Dark Green
+        px.colors.qualitative.Set1[4], # Orange
+     ]  
 
      
   
