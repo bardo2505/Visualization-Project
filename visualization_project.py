@@ -563,7 +563,7 @@ third_graph_fig1.update_layout(title="Put title here",
                                        title=dict(text="Mental Health Score", font=dict(size=20))  # Set font size for y-axis label
                                         ))
 
-
+third_graph_fig1.update_xaxes(categoryorder=“total descending”)
 st.plotly_chart(third_graph_fig1, use_container_width=True)#
 
 
