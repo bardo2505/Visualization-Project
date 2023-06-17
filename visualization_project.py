@@ -159,9 +159,10 @@ if comparison == 'Comparison':
         
     true_indices = [index for index, value in enumerate(list_of_trues) if value]
     graphs_amount = sum(list_of_trues)
-
+    
     st.text("Please choose Genres to observe - ")
-    bool_genres = st.radio("Choose view method for genres:",['I prefer to choose the genres manually','Select all genres'])
+    if sum(list_of_trues) > 0:
+      bool_genres = st.radio("Choose view method for genres:",['I prefer to choose the genres manually','Select all genres'])
     if bool_genres=='I prefer to choose the genres manually':
       with st.container():
         col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
@@ -174,7 +175,7 @@ if comparison == 'Comparison':
         rnb = col7.checkbox('R&B', key=15)    
         rock = col8.checkbox('Rock', key=16) 
         videogame = col9.checkbox('Video game music', key=17) 
-    else:
+    elif bool_genres=='Select all genres':
       with st.container():
         col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
         classical = col1.checkbox('Classical',value=True, key=956555)
