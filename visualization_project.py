@@ -30,15 +30,15 @@ with st.container():
     col2.header(' Bar Dolev - 318419512')
 st.header("Intro")
 st.subheader("""The subject of our visualization is the relationship between music consumption habits and preferences and their self
-reported mental health state.
-Mental health is an issue that affects millions of people around the world, with no signs of improvement and becoming increasingly alarming.
+reported mental health state.""")
+st.subheader("""Mental health is an issue that affects millions of people around the world, with no signs of improvement and becoming increasingly alarming.
 According to the World Health Organization, mental health disorders have become the leading cause of disability,
-affecting a staggering 450 million people.
-Music, often revered as a universal language, has been used for centuries to convey emotions and thoughts. Music is valued,
+affecting a staggering 450 million people.""")
+st.subheader("""Music, often revered as a universal language, has been used for centuries to convey emotions and thoughts. Music is valued,
 among other things, for its therapeutic potential, especially in the treatment of mental health problems in situations such as depression,
 anxiety, post-traumatic stress disorder (PTSD) and more. However, the mechanisms underlying music's apparent positive effects on mental 
-health remain elusive and unclear to this day.
-The main question we chose is whether there is a connection between the nature of a certain person's music consumption and his mental health?
+health remain elusive and unclear to this day.""")
+st.subheader("""The main question we chose is whether there is a connection between the nature of a certain person's music consumption and his mental health?
 He wants to allow through visualization a critical observation of the connections between the consumption characteristics and the personal 
 characteristics of the listeners and their mental health.""")
 
