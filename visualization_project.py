@@ -20,7 +20,7 @@ st.set_page_config(page_title="Streamlit Project",
 
 with st.sidebar:
   selected = option_menu(
-    menu_title='Title'
+    menu_title='Title',
     options = ['opt1','opt2']
   )
 
