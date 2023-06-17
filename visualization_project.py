@@ -29,7 +29,7 @@ from plotly.subplots import make_subplots
 #      ]  
 
 # Intro #
-st.set_page_config(page_title="Pascaro yeled kaka",
+st.set_page_config(page_title="Streamlit Project",
                    page_icon=":bar_chart:",
                   layout="wide")
 st.title('PROJECT')
