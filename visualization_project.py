@@ -123,7 +123,7 @@ for name in names:
 
 ##################################### First Graph #####################################
 st.subheader('Age & Mental Health Disorders scores - Scatter plot')
-st.text('Would you like to see how age affects the Average of the Mental Hleath scores? Or compare between two or more specific scores?')
+st.text('Would you like to see how age affects the Average of the Mental health scores? Or compare between two or more specific scores?')
 comparison = st.radio("Choose one of:", ['None', 'Average', 'Comparison'], key=50)
 
 if comparison == 'Comparison':
@@ -316,7 +316,7 @@ st.markdown("---")
   
 ##################################### Second Graph #####################################
 st.subheader('Hours of listening (Daily) & Mental Health Disorders scores - Scatter plot')
-st.text('Would you like to see how Hours of listening affects the Average of the Mental Hleath scores? Or compare between two or more specific scores?')
+st.text('Would you like to see how Hours of listening affects the Average of the Mental health scores? Or compare between two or more specific scores?')
 
 comparison = st.radio("Choose one of:", ['None', 'Average', 'Comparison'], key=52)
 if comparison == 'Comparison':
