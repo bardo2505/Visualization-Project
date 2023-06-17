@@ -234,12 +234,11 @@ if comparison == 'Comparison':
           g.update_xaxes(tickmode='linear', dtick=10)
           g.update_xaxes(title_font=dict(size=20), tickfont=dict(size=14))
           g.update_yaxes(title_font=dict(size=20), tickfont=dict(size=14))
-          g.update_layout(coloraxis=dict(colorbar=dict(
-                                            title="Favorite Genre",
-                                            titleside="top",
-                                            titlefont=dict(size=15),
-                                            tickfont=dict(size=15))))
-          
+          g.update_layout(font=dict(size=18))
+                  
+
+
+        
           for trace in g.data:
               trace.update(marker=dict(size=10, opacity=0.7))
       if graphs_amount == 0:
