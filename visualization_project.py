@@ -123,7 +123,8 @@ for name in names:
 
 ##################################### First Graph #####################################
 st.subheader('Scatter Plot for Age Vs. Mental Health Scores')
-comparison = st.radio("Would you like to see how age affects the average of the scores? Or compare between specific scores?, Choose one of:", ['None', 'Average', 'Comparison'], key=50)
+st.text('Would you like to see how age affects the average of the scores? Or compare between specific scores?')
+comparison = st.radio(", Choose one of:", ['None', 'Average', 'Comparison'], key=50)
 
 if comparison == 'Comparison':
     st.text("Which Mental Health Disorders would you like to compare?")
