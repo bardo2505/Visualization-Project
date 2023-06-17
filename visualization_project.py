@@ -19,7 +19,7 @@ color_blind = st.radio("Are you color blind?",['No','Yes'],key=51) # Did you kno
 if color_blind == 'Yes': 
   cmap_graph_4 = "balance" # graph 4
   color_map_graphs12 = {
-        "Classical":  px.colors.qualitative.Set1[1],  # Blue
+        "Classical":  px.colors.qualitative.Dark24[19],  # Blue
         "EDM":  px.colors.qualitative.Dark2[4], # Green
         "Folk":  px.colors.qualitative.Antique[5], # Purple
         "Hip hop": px.colors.qualitative.Dark24[14], # Olive
