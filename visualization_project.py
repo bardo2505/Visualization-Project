@@ -94,7 +94,7 @@ def apply_bins_hours(time): # divide to hour bins for graph number 4
 df['Hours bins'] = df['Hours per day'].apply(apply_bins_hours)
 
 # calculate the mean of targets for graph number 4
-df['targets_mean'] = df.apply(lambda row: row[['Anxiety', 'Depression', 'Insomnia', 'OCD']].mean(), axis=1)
+df['Average Score'] = df.apply(lambda row: row[['Anxiety', 'Depression', 'Insomnia', 'OCD']].mean(), axis=1)
 
 # make a DF for graph number 3 : 
 third_graph_df = pd.DataFrame(columns=['Genre','Target', 'Average Score'])
@@ -280,7 +280,7 @@ elif comparison == 'Average':
 
 
       
-    g = px.scatter(to_show_df_graph12, x="Age", y="targets_mean",
+    g = px.scatter(to_show_df_graph12, x="Age", y="Average Score",
                          color="Fav genre",
                          title="Scatterplot Matrix with Colors as Legend",
                         color_discrete_map = color_map_graphs12)
@@ -453,7 +453,7 @@ elif comparison == 'Average':
  
 
     to_show_df_graph22 = df[df["Fav genre"].isin(to_show_graph22)]
-    g = px.scatter(to_show_df_graph22, x="Hours per day", y="targets_mean",
+    g = px.scatter(to_show_df_graph22, x="Hours per day", y="Average Score",
                          color="Fav genre",
                          title="Scatterplot Matrix with Colors as Legend",
                         color_discrete_map = color_map_graphs12)
@@ -549,7 +549,7 @@ hours_bins_order = ["[0-2]","(2-3]","(3-4]","(4-24]"]
 df["Hours bins"] = pd.Categorical(df["Hours bins"], categories=hours_bins_order, ordered=True)
 
 df_avg = df.groupby(["Hours bins", "Fav genre"]).mean().reset_index()
-df_avg.rename(columns={"targets_mean": "Average Score"})
+
 st.text(df_avg.columns)
 fourth_graph_fig1 = px.density_heatmap(df_avg, x="Fav genre", y="Hours bins", z="Average Score",
                          labels=dict(x="Favorite Genre", y="Hours Bins", z="Average Score"),
