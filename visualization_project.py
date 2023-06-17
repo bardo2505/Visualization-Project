@@ -1,29 +1,22 @@
 # -*- coding: utf-8 -*-
 """Visualization Final Project.ipynb
 """
-
-# Imports #
+####################################### Imports #######################################
 import streamlit as st
-
 import pandas as pd
 import numpy as np
-
 import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
-
-
-# Intro #
+####################################### Intro #######################################
 st.set_page_config(page_title="Streamlit Project",
                    page_icon=":bar_chart:",
                   layout="wide")
 st.title('PROJECT')
-
 color_blind = st.radio("Are you color blind?",['No','Yes'],key=51) # Did you know that 9% of men are color blind?
 if color_blind == 'Yes': 
-
   cmap_graph_4 = "balance" # graph 4
   color_map_graphs12 = {
         "Classical": px.colors.qualitative.Dark24[19], # Deep Blue
@@ -43,7 +36,6 @@ if color_blind == 'Yes':
         "OCD": px.colors.qualitative.Bold[5]  # Green
     } 
 else:
-
   cmap_graph_4 = "Tempo" # graph 4
   color_map_graphs12 = {
         "Classical": px.colors.qualitative.Dark24[19], # Deep Blue
@@ -61,15 +53,9 @@ else:
         "Depression": px.colors.qualitative.Bold[3],  # Pink
         "Insomnia": px.colors.qualitative.Bold[4],  # Yellow
         "OCD": px.colors.qualitative.Bold[5]  # Green
-    } 
-
-     
+    }
   
-  
-
-
-# Pre-Process #
-
+##################################### Pre-Process ###################################### 
 df = pd.read_csv('mxmh_survey_results.csv') # read csv
 df = df.sort_values('Fav genre')
 df = df.rename(columns={"Fav genre": "Favorite Genre"})
@@ -118,7 +104,7 @@ for name in names:
     
     
     
-# OUR GRAPHS # 
+####################################### OUR GRAPHS ####################################### 
 
 
 ##################################### First Graph #####################################
@@ -307,7 +293,7 @@ elif comparison == 'Average':
     st.plotly_chart(g, use_container_width=True)
 
 st.markdown("---") 
-    
+st.markdown("---")     
   
   
   
@@ -502,13 +488,14 @@ elif comparison == 'Average':
     st.plotly_chart(g, use_container_width=True)#fix this
 
 st.markdown("---") 
-    
+st.markdown("---") 
   
   
   
   
   
 ##################################### Third Graph #####################################
+
 st.subheader('Genres & Mental Health Scores, by Mental Health Disorder - Histogram')
 st.text("Would you like to view all Genres at once?")
 select_all = st.radio("Choose one of: ",['Yes please.','No, I will choose myself.'])
@@ -562,7 +549,11 @@ if order == 'Alphabetical order (can view all Mental Health Disorders at once)':
                                  yaxis=dict(
                                          tickfont=dict(size=17),  # Set font size for y-axis tick numbers
                                          title=dict(text="Mental Health Score", font=dict(size=20))  # Set font size for y-axis label
-                                          ))
+                                          ),
+                                 coloraxis=dict(
+                                   tickfont=dict(size=17),  # Set font size for y-axis tick numbers
+                                   title=dict(font=dict(size=20))  # Set font size for y-axis label
+                                 ))
     st.plotly_chart(third_graph_fig1, use_container_width=True)
 
 
@@ -596,7 +587,7 @@ elif order == 'Order by sum of values (Can view one Disorder at a time)':
 
 
 st.markdown("---") 
-
+st.markdown("---") 
 ##################################### Fourth Graph #####################################
 
 st.subheader('Hours of listening per day & Genres, Aggregating Mental Health Scores - Heatmap')
