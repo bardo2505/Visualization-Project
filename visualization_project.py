@@ -440,7 +440,7 @@ elif comparison == 'Average':
             to_show_graph22.append(genres[i])
  
 
-    to_show_df_graph22 = df[df["Fav genre"].isin(to_show_graph2)]
+    to_show_df_graph22 = df[df["Fav genre"].isin(to_show_graph22)]
     g = px.scatter(to_show_df_graph22, x="Hours per day", y="targets_mean",
                          color="Fav genre",
                          title="Scatterplot Matrix with Colors as Legend",
