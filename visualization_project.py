@@ -530,7 +530,7 @@ third_graph_fig1.update_layout(title="Put title here",
                                         ))
 
 
-st.plotly_chart(third_graph_fig1, use_container_width=True)
+st.plotly_chart(third_graph_fig1, use_container_width=True)#
 
 
 
