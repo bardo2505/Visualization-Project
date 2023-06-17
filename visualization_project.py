@@ -28,8 +28,8 @@ with st.container():
 with st.container():
     col1, col2, col3 = st.columns([0.32, 0.5, 0.20])
     col2.header(' Bar Dolev - 318419512')
-st.subheader("Intro")
-st.text(
+st.header("Intro")
+st.subheader(
   """
 The subject of our visualization is the relationship between music consumption habits and preferences and their self
 reported mental health state.
@@ -704,5 +704,6 @@ fourth_graph_fig1.update_layout(title="Average Mental Health Score by Hours Bins
 
 #fourth_graph_fig1.update_layout(uniformtext_minsize=20, uniformtext_mode='hide')      
 st.plotly_chart(fourth_graph_fig1, use_container_width=True)
-st.text("Note - the brackets we use indicate whether or not the number near the bracket is included in the bin. Exmaple: (2,3] means 2 < x <= 3")
+st.text("Note - the brackets we use indicate whether or not the number
+near the bracket is included in the bin. Exmaple: (2,3] means 2 < x <= 3")
 
