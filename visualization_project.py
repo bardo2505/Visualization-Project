@@ -554,7 +554,14 @@ st.text(df_avg.columns)
 fourth_graph_fig1 = px.density_heatmap(df_avg, x="Fav genre", y="Hours bins", z="Average Score",
                          labels=dict(x="Favorite Genre", y="Hours Bins", z="Average Score"),
                          text_auto ="Average Score",
-                         color_continuous_scale=cmap_graph_4)
+                         color_continuous_scale=cmap_graph_4,
+                                      
+                         hover_data={'sum of Average Score':False,
+                             'Average Score':False, 
+                             'Fav genre':True, 
+                             'Hours bins':True}
+                                      )
+                                      
 fourth_graph_fig1.update_layout(title="Average Mental Health Score by Hours Bins and Favorite Genre",
                                xaxis=dict(
                                        tickfont=dict(size=17),  # Set font size for x-axis tick numbers
@@ -576,6 +583,6 @@ fourth_graph_fig1.update_layout(title="Average Mental Health Score by Hours Bins
                                           )
                                  )
 
-fourth_graph_fig1.update_layout(uniformtext_minsize=20, uniformtext_mode='hide')      
+#fourth_graph_fig1.update_layout(uniformtext_minsize=20, uniformtext_mode='hide')      
 st.plotly_chart(fourth_graph_fig1, use_container_width=True)
 
