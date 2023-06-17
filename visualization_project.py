@@ -41,14 +41,14 @@ else:
   cmap_graph_4 = "Oranges" # graph 4
   color_map_graphs12 = {
         "Classical": px.colors.qualitative.Dark24[19], # Deep Blue
-        "EDM":  px.colors.qualitative.Dark24[21], # Brown
+        "EDM":  px.colors.qualitative.D3[5], # Brown
         "Folk":  px.colors.qualitative.T10[9], # Grey
         "Hip hop": px.colors.qualitative.Alphabet[6], # Light Green
         "Metal": px.colors.qualitative.Alphabet[24], # Yellow
-        "Pop": px.colors.qualitative.Set1[0], # Red
+        "Pop": px.colors.qualitative.light24[0], # Red
         "R&B": px.colors.qualitative.Dark24[5], # Black
-        "Rock": px.colors.qualitative.Alphabet[5], # Dark Green
-        "Video game music":  px.colors.qualitative.Set1[4], # Orange
+        "Rock": px.colors.qualitative.Dark2[0], # Dark Green
+        "Video game music":  px.colors.qualitative.Prism[6], # Orange
       }
 
      
