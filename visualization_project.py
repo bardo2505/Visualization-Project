@@ -388,7 +388,7 @@ else:
       pop = col6.checkbox('Pop', key=14)
       rnb = col7.checkbox('R&B', key=15)    
       rock = col8.checkbox('Rock', key=16) 
-      videogame = col9.checkbox('Video game music',value=True, key=17) 
+      videogame = col9.checkbox('Video game music', key=17) 
 
 check_box_booleans = [classical,edm,folk,hiphop,metal,pop,rnb,rock,videogame]        
 genres = ['Classical','EDM','Folk','Hip hop','Metal','Pop','R&B','Rock','Video game music'] 
