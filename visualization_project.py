@@ -575,19 +575,7 @@ fourth_graph_fig1.update_layout(title="Average Mental Health Score by Hours Bins
                                       size=40  # Set the font size here
                                           )
                                  )
+fourth_graph_fig1.update_traces(textposition='inside', textfont_size=20)
       
 st.plotly_chart(fourth_graph_fig1, use_container_width=True)
 
-
-# colors list for sequence 
-  # color_map_graphs12 = [
-  #       px.colors.qualitative.Dark24[5], # Black
-  #       px.colors.qualitative.Dark24[7], # Purple
-  #       px.colors.qualitative.T10[9], # Grey
-  #       px.colors.qualitative.Vivid[2], # Torquise
-  #       px.colors.qualitative.Alphabet[19], # Light blue
-  #       px.colors.qualitative.Set1[0], # Red
-  #       px.colors.qualitative.Set1[4], # Orange
-  #       px.colors.qualitative.Set1[5], # Yellow
-  #       px.colors.qualitative.Pastel1[8] # White
-  #    ]  
