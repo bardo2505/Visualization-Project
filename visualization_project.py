@@ -24,7 +24,7 @@ st.title('PROJECT')
 color_blind = st.radio("Are you color blind?",['No','Yes'],key=51) # Did you know that 9% of men are color blind?
 if color_blind == 'Yes': 
 
-  cmap_graph_4 = "RdBu" # graph 4
+  cmap_graph_4 = "balance" # graph 4
   color_map_graphs12 = {
         "Classical": px.colors.qualitative.Dark24[19], # Deep Blue
         "EDM":  px.colors.qualitative.Dark24[21], # Brown
