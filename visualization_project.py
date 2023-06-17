@@ -147,7 +147,7 @@ if comparison == 'Comparison':
     true_indices = [index for index, value in enumerate(list_of_trues) if value]
     graphs_amount = sum(list_of_trues)
 
-    
+    st.text("Please choose Genres to observe - ")
     with st.container():
       col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
       classical = col1.checkbox('Classical', key=9)
@@ -242,7 +242,33 @@ if comparison == 'Comparison':
 
 
 elif comparison == 'Average':
-    g = px.scatter(df, x="Age", y="targets_mean",
+
+  st.text("Please choose Genres to observe - ")
+  with st.container():
+      col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
+      classical = col1.checkbox('Classical', key=90)
+      edm = col2.checkbox('EDM', key=100)
+      folk = col3.checkbox('Folk', key=110)    
+      hiphop = col4.checkbox('Hip hop', key=120) 
+      metal = col5.checkbox('Metal', key=130)
+      pop = col6.checkbox('Pop', key=140)
+      rnb = col7.checkbox('R&B', key=150)    
+      rock = col8.checkbox('Rock', key=160) 
+      videogame = col9.checkbox('Video game music', key=170) 
+
+  check_box_booleans_graph_12 = [classical,edm,folk,hiphop,metal,pop,rnb,rock,videogame]        
+  genres = ['Classical','EDM','Folk','Hip hop','Metal','Pop','R&B','Rock','Video game music'] 
+  to_show_graph12 =[]
+  for i in range(len(genres)):
+      if check_box_booleans_graph_12[i]:
+          to_show_graph12.append(genres[i])
+ 
+
+    to_show_df_graph12 = df[df["Fav genre"].isin(to_show_graph1)]
+
+
+      
+    g = px.scatter(to_show_df_graph12, x="Age", y="targets_mean",
                          color="Fav genre",
                          title="Scatterplot Matrix with Colors as Legend",
                         color_discrete_map = color_map_graphs12)
