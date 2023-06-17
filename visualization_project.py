@@ -168,7 +168,7 @@ if comparison == 'Comparison':
             to_show_graph1.append(genres[i])
  
 
-    to_show_df_graph1 = df[df["Genre"].isin(to_show_graph1)]
+    to_show_df_graph1 = df[df["Fav genre"].isin(to_show_graph1)]
 
   
     Anxiety = px.scatter(to_show_df_graph1,x="Age", y = 'Anxiety',
