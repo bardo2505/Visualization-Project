@@ -578,7 +578,7 @@ st.markdown("---")
 
 ##################################### Fourth Graph #####################################
 
-st.subheader('Heatmap for Hours of listening per day Vs. Mental Health Scores')
+st.subheader('Hours of listening per day & Genres, Aggregating Mental Health Scores - Heatmap')
 
 hours_bins_order = ["[0-2]","(2-3]","(3-4]","(4-24]"]
 df["Hours bins"] = pd.Categorical(df["Hours bins"], categories=hours_bins_order, ordered=True)
