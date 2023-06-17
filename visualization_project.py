@@ -17,6 +17,8 @@ st.set_page_config(page_title="Streamlit Project",
 with st.container():
     col1, col2, col3 = st.columns([0.25, 0.5, 0.25])
     col2.title('Visualization Final Project')
+    col2.subtitle('Beni Ifland - 208906255')
+    col2.subtitle('Bar Dolev - 318419512')
    
 
 color_blind = st.radio("Are you color blind?",['No','Yes'],key=51) # Did you know that 9% of men are color blind?
