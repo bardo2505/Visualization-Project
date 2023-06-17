@@ -556,7 +556,7 @@ fourth_graph_fig1 = px.density_heatmap(df_avg, x="Fav genre", y="Hours bins", z=
                          text_auto ="Average Score",
                          color_continuous_scale=cmap_graph_4,
                                       
-                         hover_data={'sum of Average Score':False,
+                         hover_data={
                              'Average Score':False, 
                              'Fav genre':True, 
                              'Hours bins':True}
