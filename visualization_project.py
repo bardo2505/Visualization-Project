@@ -23,7 +23,7 @@ st.title('PROJECT')
 
 color_blind = st.selectbox("Are you color blind?",['No','Yes']) # Did you know that 9% of men are color blind?
 if color_blind == 'Yes': 
-  # cmap_graphs12 = px.colors.qualitative.Safe # graphs 1 and 2
+
   cmap_graph_4 = "RdBu" # graph 4
   color_map_graphs12 = [
         px.colors.qualitative.Dark24[5], # Black
@@ -37,9 +37,9 @@ if color_blind == 'Yes':
         px.colors.qualitative.Pastel1[8] # White
      ]  
 else:
-  # cmap_graphs12 = px.colors.qualitative.D3 # graphs 1 and 2
+
   cmap_graph_4 = "Oranges" # graph 4
-  color_map_graphs12 = px.colors.qualitative.Dark24
+  color_map_graphs12 = px.colors.qualitative.D3
 
      
   
