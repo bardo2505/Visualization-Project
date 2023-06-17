@@ -29,9 +29,7 @@ with st.container():
     col1, col2, col3 = st.columns([0.32, 0.5, 0.20])
     col2.header(' Bar Dolev - 318419512')
 st.header("Intro")
-st.subheader(
-"""
-The subject of our visualization is the relationship between music consumption habits and preferences and their self
+st.subheader("""The subject of our visualization is the relationship between music consumption habits and preferences and their self
 reported mental health state.
 Mental health is an issue that affects millions of people around the world, with no signs of improvement and becoming increasingly alarming.
 According to the World Health Organization, mental health disorders have become the leading cause of disability,
@@ -42,9 +40,7 @@ anxiety, post-traumatic stress disorder (PTSD) and more. However, the mechanisms
 health remain elusive and unclear to this day.
 The main question we chose is whether there is a connection between the nature of a certain person's music consumption and his mental health?
 He wants to allow through visualization a critical observation of the connections between the consumption characteristics and the personal 
-characteristics of the listeners and their mental health.
-"""
-)
+characteristics of the listeners and their mental health.""")
 
 color_blind = st.radio("This Project is Color-blind friendly, Are you color blind?",['No','Yes'],key=51) # Did you know that 9% of men are color blind?
 if color_blind == 'Yes': 
