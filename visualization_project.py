@@ -36,14 +36,9 @@ st.title('PROJECT')
 
 color_blind = st.selectbox("Are you color blind?",['No','Yes']) # Did you know that 9% of men are color blind?
 if color_blind == 'Yes': 
-  cmap_graphs12 = px.colors.qualitative.Safe # graphs 1 and 2
+  # cmap_graphs12 = px.colors.qualitative.Safe # graphs 1 and 2
   cmap_graph_4 = "RdBu" # graph 4
-else:
-  cmap_graphs12 = px.colors.qualitative.Prism # graphs 1 and 2
-  cmap_graph_4 = "Oranges" # graph 4
-
-if color_blind == 'No':
-     color_map_graphs12 = [
+  color_map_graphs12 = [
         px.colors.qualitative.Dark24[5], # Black
         px.colors.qualitative.Dark24[7], # Purple
         px.colors.qualitative.T10[9], # Grey
@@ -55,7 +50,11 @@ if color_blind == 'No':
         px.colors.qualitative.Pastel1[8] # White
      ]  
 else:
-     color_map_graphs12 = px.colors.qualitative.Dark24
+  # cmap_graphs12 = px.colors.qualitative.Prism # graphs 1 and 2
+  cmap_graph_4 = "Oranges" # graph 4
+  color_map_graphs12 = px.colors.qualitative.Dark24
+
+     
   
   
 
@@ -365,17 +364,31 @@ st.markdown("---")
 ##################################### Third Graph #####################################
 st.subheader('Bar Plot for Genres Vs. Mental Health Scores')
 st.text("Use the checkboxes to observe specific genres")
-with st.container():
-    col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
-    classical = col1.checkbox('Classical', key=9)
-    edm = col2.checkbox('EDM', key=10)
-    folk = col3.checkbox('Folk', key=11)    
-    hiphop = col4.checkbox('Hip hop', key=12) 
-    metal = col5.checkbox('Metal', key=13)
-    pop = col6.checkbox('Pop', key=14)
-    rnb = col7.checkbox('R&B', key=15)    
-    rock = col8.checkbox('Rock', key=16) 
-    videogame = col9.checkbox('Video game music', key=17) 
+select_all = st.radio("Would you like to view all Genres at once?",['Yes please.','No, I will choose myself.']
+if select_all == 'Yes please.': 
+  with st.container():
+      col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
+      classical = col1.checkbox('Classical',value=True, key=9)
+      edm = col2.checkbox('EDM',value=True, key=10)
+      folk = col3.checkbox('Folk',value=True, key=11)    
+      hiphop = col4.checkbox('Hip hop',value=True, key=12) 
+      metal = col5.checkbox('Metal',value=True, key=13)
+      pop = col6.checkbox('Pop',value=True, key=14)
+      rnb = col7.checkbox('R&B',value=True, key=15)    
+      rock = col8.checkbox('Rock',value=True, key=16) 
+      videogame = col9.checkbox('Video game music',value=True, key=17) 
+else:
+  with st.container():
+      col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
+      classical = col1.checkbox('Classical', key=9)
+      edm = col2.checkbox('EDM', key=10)
+      folk = col3.checkbox('Folk', key=11)    
+      hiphop = col4.checkbox('Hip hop', key=12) 
+      metal = col5.checkbox('Metal', key=13)
+      pop = col6.checkbox('Pop', key=14)
+      rnb = col7.checkbox('R&B', key=15)    
+      rock = col8.checkbox('Rock', key=16) 
+      videogame = col9.checkbox('Video game music',value=True, key=17) 
 
 check_box_booleans = [classical,edm,folk,hiphop,metal,pop,rnb,rock,videogame]        
 genres = ['Classical','EDM','Folk','Hip hop','Metal','Pop','R&B','Rock','Video game music'] 
