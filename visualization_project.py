@@ -112,8 +112,8 @@ for name in names:
 st.subheader('Scatter Plot for Age Vs. Mental Health Scores')
 #st.text("Would you like to see how age affects the average of the scores? Or compare between specific scores?")
 #comparison = st.selectbox('Choose one of:', ['None', 'Average', 'Comparison'], key=0)
-comparison = st.radio("Would you like to see how age affects the average of the scores? Or compare between specific scores?, Choose one of:", ['None', 'Average', 'Comparison'], key=1)
-
+comparison = st.radio("Would you like to see how age affects the average of the scores? Or compare between specific scores?, Choose one of:", ['None', 'Average', 'Comparison'], key=50)
+st.text(comparison)
 if comparison == 'Comparison':
     with st.container():
         col1, col2, col3, col4 = st.columns(4)
