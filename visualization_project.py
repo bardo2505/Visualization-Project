@@ -73,6 +73,7 @@ else:
 df = pd.read_csv('mxmh_survey_results.csv') # read csv
 df = df.sort_values('Fav genre')
 df.rename(columns={"Fav genre": "Favorite Genre"})
+st.text(df.columns)
 genres_to_remove = ['Jazz', 'Lofi', 'Gospel', 'Latin','Rap','Country','K pop'] # remove genres with num of records < 30
 df = df[~df['Favorite Genre'].isin(genres_to_remove)]
 
