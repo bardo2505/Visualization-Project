@@ -234,7 +234,7 @@ if comparison == 'Comparison':
           g.update_xaxes(tickmode='linear', dtick=10)
           g.update_xaxes(title_font=dict(size=20), tickfont=dict(size=14))
           g.update_yaxes(title_font=dict(size=20), tickfont=dict(size=14))
-          g.update_layout(font=dict(size=18))
+          g.update_layout(font=dict(size=28))
                   
 
 
