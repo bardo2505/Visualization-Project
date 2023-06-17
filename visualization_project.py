@@ -25,7 +25,7 @@ if color_blind == 'Yes':
         "Hip hop": px.colors.qualitative.Dark24[14], # Olive
         "Metal": px.colors.qualitative.Set1[5],  # Yellow
         "Pop": px.colors.qualitative.Set1[0],  # Red
-        "R&b": px.colors.qualitative.Dark24[5], # Black
+        "R&B": px.colors.qualitative.Dark24[5], # Black
         "Rock": px.colors.qualitative.Dark2[0], # Dark Green
         "Video game music":  px.colors.qualitative.Plotly[8] # Pink
     }
