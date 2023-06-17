@@ -527,7 +527,7 @@ st.markdown("---")
 ##################################### Third Graph #####################################
 
 st.subheader('Genres & Mental Health Scores, by Mental Health Disorder - Histogram')
-order = st.radio("Which type of view would you prefer?:",['Overall view (Compare all 4 disorders)','Specific view (Zoom in on one disorder)'],key=40000)
+order = st.radio("Which type of view would you prefer?",['Overall view (Compare all 4 disorders)','Specific view (Zoom in on one disorder)'],key=40000)
 if order != 'Overall view (Compare all 4 disorders)':
   disorder = st.radio("Please choose disorder to view:",['Anxiety','Depression','Insomnia','OCD'],key=40001)
   
