@@ -571,8 +571,10 @@ fourth_graph_fig1.update_layout(title="Average Mental Health Score by Hours Bins
                                             titlefont=dict(size=15),
                                             tickfont=dict(size=15))
                                               ),
-                                font={size:30}
-                               )
+                                font=dict(
+                                      size=20  # Set the font size here
+                                          )
+                                 )
       
 st.plotly_chart(fourth_graph_fig1, use_container_width=True)
 
