@@ -108,205 +108,207 @@ for name in names:
 
 
 ##################################### First Graph #####################################
-st.subheader('Age & Mental Health Disorders scores - Scatter plot')
-st.text('Would you like to see how age affects the Average of the Mental health scores? Or compare between two or more specific scores?')
-comparison = st.radio("Choose one of:", ['None', 'Average', 'Comparison'], key=50)
-
-if comparison == 'Comparison':
-    st.text("Which Mental Health Disorders would you like to compare?")
-    with st.container():
-        col1, col2, col3, col4 = st.columns([0.15, 0.15, 0.15, 0.55])
-        checkbox1 = col1.checkbox('Anxiety', key=1)
-        checkbox2 = col2.checkbox('Depression', key=2)
-        checkbox3 = col3.checkbox('Insomnia', key=3)    
-        checkbox4 = col4.checkbox('OCD', key=4) 
-   
-    list_of_trues = [False, False, False, False]
-    if (checkbox1):
-        list_of_trues[0] = True
-    else:
-        list_of_trues[0] = False
-        
-    if (checkbox2):
-        list_of_trues[1] = True
-    else:
-        list_of_trues[1] = False
-        
-    if (checkbox3):
-        list_of_trues[2] = True
-    else:
-        list_of_trues[2] = False
-        
-    if (checkbox4):
-        list_of_trues[3] = True
-    else:
-        list_of_trues[3] = False
-        
-    true_indices = [index for index, value in enumerate(list_of_trues) if value]
-    graphs_amount = sum(list_of_trues)
+with st.expander("More content"):
     
-   
-
-    if sum(list_of_trues) > 0:
-      st.text("Please choose Genres to observe - ")
-      bool_genres = st.radio("Choose view method for genres:",['I prefer to choose the genres manually','Select all genres'],key=777)
-      if bool_genres=='I prefer to choose the genres manually':
-        with st.container():
-          col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
-          classical = col1.checkbox('Classical', key=9)
-          edm = col2.checkbox('EDM', key=10)
-          folk = col3.checkbox('Folk', key=11)    
-          hiphop = col4.checkbox('Hip hop', key=12) 
-          metal = col5.checkbox('Metal', key=13)
-          pop = col6.checkbox('Pop', key=14)  
-          rnb = col7.checkbox('R&B', key=15)    
-          rock = col8.checkbox('Rock', key=16) 
-          videogame = col9.checkbox('Video game music', key=17) 
-      elif bool_genres=='Select all genres':
-        with st.container():
-          col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
-          classical = col1.checkbox('Classical',value=True, key=956555)
-          edm = col2.checkbox('EDM',value=True, key=10555)
-          folk = col3.checkbox('Folk',value=True, key=155551)    
-          hiphop = col4.checkbox('Hip hop',value=True, key=125555) 
-          metal = col5.checkbox('Metal',value=True, key=1555553)
-          pop = col6.checkbox('Pop',value=True, key=145555)  
-          rnb = col7.checkbox('R&B',value=True, key=15555)    
-          rock = col8.checkbox('Rock',value=True, key=165555) 
-          videogame = col9.checkbox('Video game music',value=True, key=15557) 
-      check_box_booleans_graph_1 = [classical,edm,folk,hiphop,metal,pop,rnb,rock,videogame]        
-      genres = ['Classical','EDM','Folk','Hip hop','Metal','Pop','R&B','Rock','Video game music'] 
-      to_show_graph1 =[]
-      for i in range(len(genres)):
-          if check_box_booleans_graph_1[i]:
-              to_show_graph1.append(genres[i])
- 
-
-      to_show_df_graph1 = df[df["Favorite Genre"].isin(to_show_graph1)]
-
+  st.subheader('Age & Mental Health Disorders scores - Scatter plot')
+  st.text('Would you like to see how age affects the Average of the Mental health scores? Or compare between two or more specific scores?')
+  comparison = st.radio("Choose one of:", ['None', 'Average', 'Comparison'], key=50)
   
-      Anxiety = px.scatter(to_show_df_graph1,x="Age", y = 'Anxiety',
-                        color="Favorite Genre",
-                        title="Age Vs. Anxiety",
-                        color_discrete_map = color_map_graphs12)
-
+  if comparison == 'Comparison':
+      st.text("Which Mental Health Disorders would you like to compare?")
+      with st.container():
+          col1, col2, col3, col4 = st.columns([0.15, 0.15, 0.15, 0.55])
+          checkbox1 = col1.checkbox('Anxiety', key=1)
+          checkbox2 = col2.checkbox('Depression', key=2)
+          checkbox3 = col3.checkbox('Insomnia', key=3)    
+          checkbox4 = col4.checkbox('OCD', key=4) 
+     
+      list_of_trues = [False, False, False, False]
+      if (checkbox1):
+          list_of_trues[0] = True
+      else:
+          list_of_trues[0] = False
+          
+      if (checkbox2):
+          list_of_trues[1] = True
+      else:
+          list_of_trues[1] = False
+          
+      if (checkbox3):
+          list_of_trues[2] = True
+      else:
+          list_of_trues[2] = False
+          
+      if (checkbox4):
+          list_of_trues[3] = True
+      else:
+          list_of_trues[3] = False
+          
+      true_indices = [index for index, value in enumerate(list_of_trues) if value]
+      graphs_amount = sum(list_of_trues)
+      
+     
+  
+      if sum(list_of_trues) > 0:
+        st.text("Please choose Genres to observe - ")
+        bool_genres = st.radio("Choose view method for genres:",['I prefer to choose the genres manually','Select all genres'],key=777)
+        if bool_genres=='I prefer to choose the genres manually':
+          with st.container():
+            col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
+            classical = col1.checkbox('Classical', key=9)
+            edm = col2.checkbox('EDM', key=10)
+            folk = col3.checkbox('Folk', key=11)    
+            hiphop = col4.checkbox('Hip hop', key=12) 
+            metal = col5.checkbox('Metal', key=13)
+            pop = col6.checkbox('Pop', key=14)  
+            rnb = col7.checkbox('R&B', key=15)    
+            rock = col8.checkbox('Rock', key=16) 
+            videogame = col9.checkbox('Video game music', key=17) 
+        elif bool_genres=='Select all genres':
+          with st.container():
+            col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
+            classical = col1.checkbox('Classical',value=True, key=956555)
+            edm = col2.checkbox('EDM',value=True, key=10555)
+            folk = col3.checkbox('Folk',value=True, key=155551)    
+            hiphop = col4.checkbox('Hip hop',value=True, key=125555) 
+            metal = col5.checkbox('Metal',value=True, key=1555553)
+            pop = col6.checkbox('Pop',value=True, key=145555)  
+            rnb = col7.checkbox('R&B',value=True, key=15555)    
+            rock = col8.checkbox('Rock',value=True, key=165555) 
+            videogame = col9.checkbox('Video game music',value=True, key=15557) 
+        check_box_booleans_graph_1 = [classical,edm,folk,hiphop,metal,pop,rnb,rock,videogame]        
+        genres = ['Classical','EDM','Folk','Hip hop','Metal','Pop','R&B','Rock','Video game music'] 
+        to_show_graph1 =[]
+        for i in range(len(genres)):
+            if check_box_booleans_graph_1[i]:
+                to_show_graph1.append(genres[i])
+   
+  
+        to_show_df_graph1 = df[df["Favorite Genre"].isin(to_show_graph1)]
+  
     
-      Depression = px.scatter(to_show_df_graph1,x="Age", y = 'Depression',
-                        color="Favorite Genre",
-                        title="Age Vs. Depression",
-                        color_discrete_map = color_map_graphs12)
-    
-      Insomnia = px.scatter(to_show_df_graph1,x="Age", y = 'Insomnia',
-                        color="Favorite Genre",
-                        title="Age Vs. Insomnia",
-                        color_discrete_map = color_map_graphs12)
-    
-      OCD = px.scatter(to_show_df_graph1,x="Age", y = 'OCD',
-                        color="Favorite Genre",
-                        title="Age Vs. OCD",
-                        color_discrete_map = color_map_graphs12)
-    
-      graphs = [Anxiety, Depression, Insomnia, OCD]
-      for g in graphs:
-          g.update_xaxes(tickmode='linear', dtick=10)
-          g.update_xaxes(title_font=dict(size=20), tickfont=dict(size=14))
-          g.update_yaxes(title_font=dict(size=20), tickfont=dict(size=14))
-          for trace in g.data:
+        Anxiety = px.scatter(to_show_df_graph1,x="Age", y = 'Anxiety',
+                          color="Favorite Genre",
+                          title="Age Vs. Anxiety",
+                          color_discrete_map = color_map_graphs12)
+  
+      
+        Depression = px.scatter(to_show_df_graph1,x="Age", y = 'Depression',
+                          color="Favorite Genre",
+                          title="Age Vs. Depression",
+                          color_discrete_map = color_map_graphs12)
+      
+        Insomnia = px.scatter(to_show_df_graph1,x="Age", y = 'Insomnia',
+                          color="Favorite Genre",
+                          title="Age Vs. Insomnia",
+                          color_discrete_map = color_map_graphs12)
+      
+        OCD = px.scatter(to_show_df_graph1,x="Age", y = 'OCD',
+                          color="Favorite Genre",
+                          title="Age Vs. OCD",
+                          color_discrete_map = color_map_graphs12)
+      
+        graphs = [Anxiety, Depression, Insomnia, OCD]
+        for g in graphs:
+            g.update_xaxes(tickmode='linear', dtick=10)
+            g.update_xaxes(title_font=dict(size=20), tickfont=dict(size=14))
+            g.update_yaxes(title_font=dict(size=20), tickfont=dict(size=14))
+            for trace in g.data:
+                trace.update(marker=dict(size=10, opacity=0.7))
+        if graphs_amount == 0:
+            pass
+      
+        elif graphs_amount == 1:
+            for i in range(len(list_of_trues)):
+                if list_of_trues[i]:
+                    st.plotly_chart(graphs[i], use_container_width=True)
+                  
+        elif graphs_amount == 2:
+             col1, col2 = st.columns(2, gap="large")
+             g1_idx = true_indices[0]
+             g2_idx = true_indices[1]
+             with col1:
+                st.plotly_chart(graphs[g1_idx], use_container_width=False)
+             with col2:
+                st.plotly_chart(graphs[g2_idx], use_container_width=False)
+        elif graphs_amount == 3:
+             col1, col2 = st.columns(2, gap="large")
+             g1_idx = true_indices[0]
+             g2_idx = true_indices[1]
+             g3_idx = true_indices[2]
+             with col1:
+                st.plotly_chart(graphs[g1_idx], use_container_width=False)
+             with col2:
+                st.plotly_chart(graphs[g2_idx], use_container_width=False)
+             col3, _ = st.columns(2, gap="large")
+             with col3:
+                st.plotly_chart(graphs[g3_idx], use_container_width=False)
+  
+        elif graphs_amount == 4:
+            col1, col2 = st.columns(2, gap="large")
+  
+            with col1:
+                st.plotly_chart(graphs[0], use_container_width=False)
+            with col2:
+                st.plotly_chart(graphs[1], use_container_width=False)
+              
+            col3, col4 = st.columns(2, gap="large")
+            with col3:
+                st.plotly_chart(graphs[2], use_container_width=False)   
+            with col4:
+                st.plotly_chart(graphs[3], use_container_width=False)   
+  
+  
+  elif comparison == 'Average':
+  
+  
+        bool_genres = st.radio("Choose view method for genres:",['I prefer to choose the genres manually','Select all genres'],key=779)
+        if bool_genres=='I prefer to choose the genres manually':
+          with st.container():
+            col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
+            classical = col1.checkbox('Classical', key=93)
+            edm = col2.checkbox('EDM', key=1330)
+            folk = col3.checkbox('Folk', key=1331)    
+            hiphop = col4.checkbox('Hip hop', key=1332) 
+            metal = col5.checkbox('Metal', key=13333)
+            pop = col6.checkbox('Pop', key=1334)  
+            rnb = col7.checkbox('R&B', key=1335)    
+            rock = col8.checkbox('Rock', key=333333) 
+            videogame = col9.checkbox('Video game music', key=1337) 
+        elif bool_genres=='Select all genres':
+          with st.container():
+            col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
+            classical = col1.checkbox('Classical',value=True, key=95653355)
+            edm = col2.checkbox('EDM',value=True, key=1053355)
+            folk = col3.checkbox('Folk',value=True, key=1555331)    
+            hiphop = col4.checkbox('Hip hop',value=True, key=33333333333333333) 
+            metal = col5.checkbox('Metal',value=True, key=155533553)
+            pop = col6.checkbox('Pop',value=True, key=145333555)  
+            rnb = col7.checkbox('R&B',value=True, key=15553335)    
+            rock = col8.checkbox('Rock',value=True, key=165533355) 
+            videogame = col9.checkbox('Video game music',value=True, key=1533557) 
+        check_box_booleans_graph_1 = [classical,edm,folk,hiphop,metal,pop,rnb,rock,videogame]        
+        genres = ['Classical','EDM','Folk','Hip hop','Metal','Pop','R&B','Rock','Video game music'] 
+        to_show_graph1 =[]
+        for i in range(len(genres)):
+            if check_box_booleans_graph_1[i]:
+                to_show_graph1.append(genres[i])
+   
+  
+        to_show_df_graph1 = df[df["Favorite Genre"].isin(to_show_graph1)]
+  
+        g = px.scatter(to_show_df_graph1, x="Age", y="Average Score",
+                           color="Favorite Genre",
+                           title="Scatterplot Matrix with Colors as Legend",
+                          color_discrete_map = color_map_graphs12)
+        for trace in g.data:
               trace.update(marker=dict(size=10, opacity=0.7))
-      if graphs_amount == 0:
-          pass
-    
-      elif graphs_amount == 1:
-          for i in range(len(list_of_trues)):
-              if list_of_trues[i]:
-                  st.plotly_chart(graphs[i], use_container_width=True)
-                
-      elif graphs_amount == 2:
-           col1, col2 = st.columns(2, gap="large")
-           g1_idx = true_indices[0]
-           g2_idx = true_indices[1]
-           with col1:
-              st.plotly_chart(graphs[g1_idx], use_container_width=False)
-           with col2:
-              st.plotly_chart(graphs[g2_idx], use_container_width=False)
-      elif graphs_amount == 3:
-           col1, col2 = st.columns(2, gap="large")
-           g1_idx = true_indices[0]
-           g2_idx = true_indices[1]
-           g3_idx = true_indices[2]
-           with col1:
-              st.plotly_chart(graphs[g1_idx], use_container_width=False)
-           with col2:
-              st.plotly_chart(graphs[g2_idx], use_container_width=False)
-           col3, _ = st.columns(2, gap="large")
-           with col3:
-              st.plotly_chart(graphs[g3_idx], use_container_width=False)
-
-      elif graphs_amount == 4:
-          col1, col2 = st.columns(2, gap="large")
-
-          with col1:
-              st.plotly_chart(graphs[0], use_container_width=False)
-          with col2:
-              st.plotly_chart(graphs[1], use_container_width=False)
-            
-          col3, col4 = st.columns(2, gap="large")
-          with col3:
-              st.plotly_chart(graphs[2], use_container_width=False)   
-          with col4:
-              st.plotly_chart(graphs[3], use_container_width=False)   
-
-
-elif comparison == 'Average':
-
-
-      bool_genres = st.radio("Choose view method for genres:",['I prefer to choose the genres manually','Select all genres'],key=779)
-      if bool_genres=='I prefer to choose the genres manually':
-        with st.container():
-          col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
-          classical = col1.checkbox('Classical', key=93)
-          edm = col2.checkbox('EDM', key=1330)
-          folk = col3.checkbox('Folk', key=1331)    
-          hiphop = col4.checkbox('Hip hop', key=1332) 
-          metal = col5.checkbox('Metal', key=13333)
-          pop = col6.checkbox('Pop', key=1334)  
-          rnb = col7.checkbox('R&B', key=1335)    
-          rock = col8.checkbox('Rock', key=333333) 
-          videogame = col9.checkbox('Video game music', key=1337) 
-      elif bool_genres=='Select all genres':
-        with st.container():
-          col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
-          classical = col1.checkbox('Classical',value=True, key=95653355)
-          edm = col2.checkbox('EDM',value=True, key=1053355)
-          folk = col3.checkbox('Folk',value=True, key=1555331)    
-          hiphop = col4.checkbox('Hip hop',value=True, key=33333333333333333) 
-          metal = col5.checkbox('Metal',value=True, key=155533553)
-          pop = col6.checkbox('Pop',value=True, key=145333555)  
-          rnb = col7.checkbox('R&B',value=True, key=15553335)    
-          rock = col8.checkbox('Rock',value=True, key=165533355) 
-          videogame = col9.checkbox('Video game music',value=True, key=1533557) 
-      check_box_booleans_graph_1 = [classical,edm,folk,hiphop,metal,pop,rnb,rock,videogame]        
-      genres = ['Classical','EDM','Folk','Hip hop','Metal','Pop','R&B','Rock','Video game music'] 
-      to_show_graph1 =[]
-      for i in range(len(genres)):
-          if check_box_booleans_graph_1[i]:
-              to_show_graph1.append(genres[i])
- 
-
-      to_show_df_graph1 = df[df["Favorite Genre"].isin(to_show_graph1)]
-
-      g = px.scatter(to_show_df_graph1, x="Age", y="Average Score",
-                         color="Favorite Genre",
-                         title="Scatterplot Matrix with Colors as Legend",
-                        color_discrete_map = color_map_graphs12)
-      for trace in g.data:
-            trace.update(marker=dict(size=10, opacity=0.7))
-      g.update_layout(yaxis_title='Average of Mental Health Scores')
-      g.update_xaxes(range=[-0.5, 90.5], tickmode='linear', dtick=10)  
-      g.update_xaxes(title_font=dict(size=20), tickfont=dict(size=14))
-      g.update_yaxes(title_font=dict(size=20), tickfont=dict(size=14))
-      st.plotly_chart(g, use_container_width=True)
-
+        g.update_layout(yaxis_title='Average of Mental Health Scores')
+        g.update_xaxes(range=[-0.5, 90.5], tickmode='linear', dtick=10)  
+        g.update_xaxes(title_font=dict(size=20), tickfont=dict(size=14))
+        g.update_yaxes(title_font=dict(size=20), tickfont=dict(size=14))
+        st.plotly_chart(g, use_container_width=True)
+  
 st.markdown("---") 
 st.markdown("---")     
   
