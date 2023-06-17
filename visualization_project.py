@@ -11,9 +11,19 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 ####################################### Intro #######################################
+
+
+
 st.set_page_config(page_title="Streamlit Project",
                    page_icon=":bar_chart:",
                   layout="wide")
+
+with st.sidebar:
+  selected = option_menu(
+    menu_title='Title'
+    options = ['opt1','opt2']
+  )
+
 with st.container():
     col1, col2, col3 = st.columns([0.25, 0.5, 0.25])
     col2.title('Visualization Final Project')
