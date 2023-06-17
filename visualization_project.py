@@ -364,7 +364,7 @@ st.markdown("---")
 ##################################### Third Graph #####################################
 st.subheader('Bar Plot for Genres Vs. Mental Health Scores')
 st.text("Use the checkboxes to observe specific genres")
-select_all = st.radio("Would you like to view all Genres at once?",['Yes please.','No, I will choose myself.']
+select_all = st.radio("Would you like to view all Genres at once?",['Yes please.','No, I will choose myself.'])
 if select_all == 'Yes please.': 
   with st.container():
       col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
