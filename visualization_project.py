@@ -115,7 +115,7 @@ comparison = st.radio("Choose one of:", ['None', 'Average', 'Comparison'], key=5
 if comparison == 'Comparison':
     st.text("Which Mental Health Disorders would you like to compare?")
     with st.container():
-        col1, col2, col3, col4 = st.columns([0.1, 0.2, 0.1, 0.6])
+        col1, col2, col3, col4 = st.columns([0.15, 0.15, 0.15, 0.55])
         checkbox1 = col1.checkbox('Anxiety', key=1)
         checkbox2 = col2.checkbox('Depression', key=2)
         checkbox3 = col3.checkbox('Insomnia', key=3)    
@@ -349,7 +349,7 @@ comparison = st.radio("Choose one of:", ['None', 'Average', 'Comparison'], key=5
 if comparison == 'Comparison':
     st.text("Which Mental Health Disorders would you like to compare?")
     with st.container():
-        col1, col2, col3, col4 = st.columns([0.1, 0.2, 0.1, 0.6])
+        col1, col2, col3, col4 = st.columns([0.15, 0.15, 0.15, 0.55])
         checkbox5 = col1.checkbox('Anxiety', key=5)
         checkbox6 = col2.checkbox('Depression', key=6)
         checkbox7 = col3.checkbox('Insomnia', key=7)    
