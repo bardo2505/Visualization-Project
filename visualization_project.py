@@ -322,20 +322,47 @@ if comparison == 'Comparison':
         
     true_indices = [index for index, value in enumerate(list_of_trues) if value]
     graphs_amount = sum(list_of_trues)
+
+
+
+    st.text("Please choose Genres to observe - ")
+    with st.container():
+      col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
+      classical = col1.checkbox('Classical', key=39)
+      edm = col2.checkbox('EDM', key=310)
+      folk = col3.checkbox('Folk', key=311)    
+      hiphop = col4.checkbox('Hip hop', key=312) 
+      metal = col5.checkbox('Metal', key=313)
+      pop = col6.checkbox('Pop', key=314)
+      rnb = col7.checkbox('R&B', key=315)    
+      rock = col8.checkbox('Rock', key=316) 
+      videogame = col9.checkbox('Video game music', key=317) 
+
+    check_box_booleans_graph_2 = [classical,edm,folk,hiphop,metal,pop,rnb,rock,videogame]        
+    genres = ['Classical','EDM','Folk','Hip hop','Metal','Pop','R&B','Rock','Video game music'] 
+    to_show_graph2 =[]
+    for i in range(len(genres)):
+        if check_box_booleans_graph_2[i]:
+            to_show_graph2.append(genres[i])
+ 
+
+    to_show_df_graph2 = df[df["Fav genre"].isin(to_show_graph2)]
+
     
-    Anxiety = px.scatter(df,x="Hours per day", y = 'Anxiety',
+    
+    Anxiety = px.scatter(to_show_df_graph2,x="Hours per day", y = 'Anxiety',
                         color="Fav genre",
                         title="Hours per day Vs. Anxiety",
                         color_discrete_sequence = color_map_graphs12)
-    Depression = px.scatter(df,x="Hours per day", y = 'Depression',
+    Depression = px.scatter(to_show_df_graph2,x="Hours per day", y = 'Depression',
                         color="Fav genre",
                         title="Hours per day Vs. Depression",
                         color_discrete_sequence = color_map_graphs12)
-    Insomnia = px.scatter(df,x="Hours per day", y = 'Insomnia',
+    Insomnia = px.scatter(to_show_df_graph2,x="Hours per day", y = 'Insomnia',
                         color="Fav genre",
                         title="Hours per day Vs. Insomnia",
                         color_discrete_sequence = color_map_graphs12)
-    OCD = px.scatter(df,x="Hours per day", y = 'OCD',
+    OCD = px.scatter(to_show_df_graph2,x="Hours per day", y = 'OCD',
                         color="Fav genre",
                         title="Hours per day Vs. OCD",
                         color_discrete_sequence = color_map_graphs12)
@@ -390,7 +417,31 @@ if comparison == 'Comparison':
 
 
 elif comparison == 'Average':
-    g = px.scatter(df, x="Hours per day", y="targets_mean",
+
+
+    st.text("Please choose Genres to observe - ")
+    with st.container():
+      col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
+      classical = col1.checkbox('Classical', key=439)
+      edm = col2.checkbox('EDM', key=4310)
+      folk = col3.checkbox('Folk', key=4311)    
+      hiphop = col4.checkbox('Hip hop', key=4312) 
+      metal = col5.checkbox('Metal', key=4313)
+      pop = col6.checkbox('Pop', key=4314)
+      rnb = col7.checkbox('R&B', key=4315)    
+      rock = col8.checkbox('Rock', key=4316) 
+      videogame = col9.checkbox('Video game music', key=4317) 
+
+    check_box_booleans_graph_22 = [classical,edm,folk,hiphop,metal,pop,rnb,rock,videogame]        
+    genres = ['Classical','EDM','Folk','Hip hop','Metal','Pop','R&B','Rock','Video game music'] 
+    to_show_graph22 =[]
+    for i in range(len(genres)):
+        if check_box_booleans_graph_22[i]:
+            to_show_graph22.append(genres[i])
+ 
+
+    to_show_df_graph22 = df[df["Fav genre"].isin(to_show_graph2)]
+    g = px.scatter(to_show_df_graph22, x="Hours per day", y="targets_mean",
                          color="Fav genre",
                          title="Scatterplot Matrix with Colors as Legend",
                         color_discrete_sequence = color_map_graphs12)
