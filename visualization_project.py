@@ -179,7 +179,7 @@ if comparison == 'Comparison':
      
   
     if sum(list_of_trues) > 0:
-      st.text("Please choose Genres to observe - ")
+      st.text("Please choose Genres to observe:")
       bool_genres = st.radio("Choose view method for genres:",['I prefer to choose the genres manually','Select all genres'],key=777)
       if bool_genres=='I prefer to choose the genres manually':
         with st.container():
@@ -342,7 +342,7 @@ elif comparison == 'Average':
   
       g = px.scatter(to_show_df_graph1, x="Age", y="Average Score",
                            color="Favorite Genre",
-                           title="Scatterplot Matrix with Colors as Legend",
+                           title="Age Vs. Average of scores",
                           color_discrete_map = color_map_graphs12)
       for trace in g.data:
             trace.update(marker=dict(size=10, opacity=0.7))
@@ -402,7 +402,7 @@ if comparison == 'Comparison':
 
     if sum(list_of_trues) > 0:
       
-      st.text("Please choose Genres to observe - ")
+      st.text("Please choose Genres to observe:")
       bool_genres2 = st.radio("Choose view method for genres:",['I prefer to choose the genres manually','Select all genres'],key=877)
       if bool_genres2=='I prefer to choose the genres manually':
         with st.container():
@@ -512,6 +512,7 @@ if comparison == 'Comparison':
 
 
 elif comparison == 'Average':
+    st.text("Please choose Genres to observe:")
     bool_genres2 = st.radio("Choose view method for genres:",['I prefer to choose the genres manually','Select all genres'],key=77229)
     if bool_genres2=='I prefer to choose the genres manually':
         with st.container():
@@ -548,7 +549,7 @@ elif comparison == 'Average':
     to_show_df_graph22 = df[df["Favorite Genre"].isin(to_show_graph2)]
     g = px.scatter(to_show_df_graph22, x="Hours per day", y="Average Score",
                          color="Favorite Genre",
-                         title="Scatterplot Matrix with Colors as Legend",
+                         title="Hours per day Vs. Average of scores",
                         color_discrete_map = color_map_graphs12)
     for trace in g.data:
         trace.update(marker=dict(size=10, opacity=0.7))
