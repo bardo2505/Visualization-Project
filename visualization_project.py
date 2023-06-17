@@ -549,7 +549,7 @@ hours_bins_order = ["[0-2]","(2-3]","(3-4]","(4-24]"]
 df["Hours bins"] = pd.Categorical(df["Hours bins"], categories=hours_bins_order, ordered=True)
 
 df_avg = df.groupby(["Hours bins", "Fav genre"]).mean().reset_index()
-
+df_avg['Average Score'] = df_avg['Average Score'].apply(lambda x: round(x, 2))
 st.text(df_avg.columns)
 fourth_graph_fig1 = px.density_heatmap(df_avg, x="Fav genre", y="Hours bins", z="Average Score",
                          labels=dict(x="Favorite Genre", y="Hours Bins", z="Average Score"),
