@@ -44,7 +44,7 @@ if color_blind == 'Yes':
     } 
 else:
 
-  cmap_graph_4 = "Oranges" # graph 4
+  cmap_graph_4 = "Tempo" # graph 4
   color_map_graphs12 = {
         "Classical": px.colors.qualitative.Dark24[19], # Deep Blue
         "EDM":  px.colors.qualitative.D3[5], # Brown
