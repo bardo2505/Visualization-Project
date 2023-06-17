@@ -15,19 +15,6 @@ from plotly.subplots import make_subplots
 
 
 
-
-# [
-#         "Classical":px.colors.qualitative.Dark24[5], # Black
-#         "EDM":px.colors.qualitative.Dark24[7], # Purple
-#         "Folk":px.colors.qualitative.T10[9], # Grey
-#         "Hip hop":px.colors.qualitative.Vivid[2], # Torquise
-#         "Metal":px.colors.qualitative.Alphabet[19], # Light blue
-#         "Pop":px.colors.qualitative.Set1[0], # Red
-#         "R&B":px.colors.qualitative.Set1[4], # Orange
-#         "Rock":px.colors.qualitative.Set1[5], # Yellow
-#         "Video game music":px.colors.qualitative.Pastel1[8] # White
-#      ]  
-
 # Intro #
 st.set_page_config(page_title="Streamlit Project",
                    page_icon=":bar_chart:",
@@ -50,7 +37,7 @@ if color_blind == 'Yes':
         px.colors.qualitative.Pastel1[8] # White
      ]  
 else:
-  # cmap_graphs12 = px.colors.qualitative.Prism # graphs 1 and 2
+  # cmap_graphs12 = px.colors.qualitative.D3 # graphs 1 and 2
   cmap_graph_4 = "Oranges" # graph 4
   color_map_graphs12 = px.colors.qualitative.Dark24
 
