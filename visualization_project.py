@@ -126,7 +126,7 @@ st.subheader('Scatter Plot for Age Vs. Mental Health Scores')
 comparison = st.radio("Would you like to see how age affects the average of the scores? Or compare between specific scores?, Choose one of:", ['None', 'Average', 'Comparison'], key=50)
 
 if comparison == 'Comparison':
-    st.text("Please choose Mental health scores to observe (target values)")
+    st.text("Which Mental Health Disorders would you like to compare?")
     with st.container():
         col1, col2, col3, col4 = st.columns([0.1, 0.1, 0.1, 0.7])
         checkbox1 = col1.checkbox('Anxiety', key=1)
@@ -318,7 +318,7 @@ st.subheader('Scatter Plot for Hours of listening per day Vs. Mental Health Scor
 
 comparison = st.radio("Would you like to see how age affects the average of the scores? Or compare between specific scores?, Choose one of:", ['None', 'Average', 'Comparison'], key=52)
 if comparison == 'Comparison':
-    
+    st.text("Which Mental Health Disorders would you like to compare?")
     with st.container():
         col1, col2, col3, col4 = st.columns([0.1, 0.1, 0.1, 0.7])
         checkbox5 = col1.checkbox('Anxiety', key=5)
