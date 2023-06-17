@@ -264,7 +264,7 @@ elif comparison == 'Average':
           to_show_graph12.append(genres[i])
  
 
-    to_show_df_graph12 = df[df["Fav genre"].isin(to_show_graph1)]
+    to_show_df_graph12 = df[df["Fav genre"].isin(to_show_graph12)]
 
 
       
