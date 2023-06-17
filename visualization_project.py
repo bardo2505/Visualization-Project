@@ -553,6 +553,7 @@ df_avg = df.groupby(["Hours bins", "Fav genre"]).mean().reset_index()
 st.text(df_avg.columns)
 fourth_graph_fig1 = px.density_heatmap(df_avg, x="Fav genre", y="Hours bins", z="Average Score",
                          labels=dict(x="Favorite Genre", y="Hours Bins", z="Average Score"),
+                         text_auto ="Average Score",
                          color_continuous_scale=cmap_graph_4)
 fourth_graph_fig1.update_layout(title="Average Mental Health Score by Hours Bins and Favorite Genre",
                                xaxis=dict(
