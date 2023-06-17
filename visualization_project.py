@@ -162,7 +162,7 @@ if comparison == 'Comparison':
 
     if sum(list_of_trues) > 0:
       st.text("Please choose Genres to observe - ")
-      bool_genres = st.radio("Choose view method for genres:",['I prefer to choose the genres manually','Select all genres'])
+      bool_genres = st.radio("Choose view method for genres:",['I prefer to choose the genres manually','Select all genres'],key=777)
       if bool_genres=='I prefer to choose the genres manually':
         with st.container():
           col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
@@ -352,95 +352,113 @@ if comparison == 'Comparison':
 
 
 
-    st.text("Please choose Genres to observe - ")
-    with st.container():
-      col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
-      classical = col1.checkbox('Classical', key=39)
-      edm = col2.checkbox('EDM', key=310)
-      folk = col3.checkbox('Folk', key=311)    
-      hiphop = col4.checkbox('Hip hop', key=312) 
-      metal = col5.checkbox('Metal', key=313)
-      pop = col6.checkbox('Pop', key=314)
-      rnb = col7.checkbox('R&B', key=315)    
-      rock = col8.checkbox('Rock', key=316) 
-      videogame = col9.checkbox('Video game music', key=317) 
+    if sum(list_of_trues) > 0:
+      
+      st.text("Please choose Genres to observe - ")
+      bool_genres2 = st.radio("Choose view method for genres:",['I prefer to choose the genres manually','Select all genres'],key=877)
+      if bool_genres2=='I prefer to choose the genres manually':
+        with st.container():
+          col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
+          classical = col1.checkbox('Classical', key=29)
+          edm = col2.checkbox('EDM', key=210)
+          folk = col3.checkbox('Folk', key=211)    
+          hiphop = col4.checkbox('Hip hop', key=212) 
+          metal = col5.checkbox('Metal', key=213)
+          pop = col6.checkbox('Pop', key=214)  
+          rnb = col7.checkbox('R&B', key=125)    
+          rock = col8.checkbox('Rock', key=216) 
+          videogame = col9.checkbox('Video game music', key=217) 
+      elif bool_genres2=='Select all genres':
+        with st.container():
+          col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
+          classical = col1.checkbox('Classical',value=True, key=9256555)
+          edm = col2.checkbox('EDM',value=True, key=120555)
+          folk = col3.checkbox('Folk',value=True, key=1552551)    
+          hiphop = col4.checkbox('Hip hop',value=True, key=1252555) 
+          metal = col5.checkbox('Metal',value=True, key=1555253)
+          pop = col6.checkbox('Pop',value=True, key=1455255)  
+          rnb = col7.checkbox('R&B',value=True, key=155255)    
+          rock = col8.checkbox('Rock',value=True, key=1652555) 
+          videogame = col9.checkbox('Video game music',value=True, key=125557) 
 
-    check_box_booleans_graph_2 = [classical,edm,folk,hiphop,metal,pop,rnb,rock,videogame]        
-    genres = ['Classical','EDM','Folk','Hip hop','Metal','Pop','R&B','Rock','Video game music'] 
-    to_show_graph2 =[]
-    for i in range(len(genres)):
-        if check_box_booleans_graph_2[i]:
-            to_show_graph2.append(genres[i])
+
+
+      check_box_booleans_graph_2 = [classical,edm,folk,hiphop,metal,pop,rnb,rock,videogame]        
+      genres = ['Classical','EDM','Folk','Hip hop','Metal','Pop','R&B','Rock','Video game music'] 
+      to_show_graph2 =[]
+      for i in range(len(genres)):
+          if check_box_booleans_graph_2[i]:
+              to_show_graph2.append(genres[i])
  
 
-    to_show_df_graph2 = df[df["Favorite Genre"].isin(to_show_graph2)]
+      to_show_df_graph2 = df[df["Favorite Genre"].isin(to_show_graph2)]
 
     
     
-    Anxiety = px.scatter(to_show_df_graph2,x="Hours per day", y = 'Anxiety',
+      Anxiety = px.scatter(to_show_df_graph2,x="Hours per day", y = 'Anxiety',
                         color="Favorite Genre",
                         title="Hours per day Vs. Anxiety",
                         color_discrete_map = color_map_graphs12)
-    Depression = px.scatter(to_show_df_graph2,x="Hours per day", y = 'Depression',
+      Depression = px.scatter(to_show_df_graph2,x="Hours per day", y = 'Depression',
                         color="Favorite Genre",
                         title="Hours per day Vs. Depression",
                         color_discrete_map = color_map_graphs12)
-    Insomnia = px.scatter(to_show_df_graph2,x="Hours per day", y = 'Insomnia',
+      Insomnia = px.scatter(to_show_df_graph2,x="Hours per day", y = 'Insomnia',
                         color="Favorite Genre",
                         title="Hours per day Vs. Insomnia",
                         color_discrete_map = color_map_graphs12)
-    OCD = px.scatter(to_show_df_graph2,x="Hours per day", y = 'OCD',
+      OCD = px.scatter(to_show_df_graph2,x="Hours per day", y = 'OCD',
                         color="Favorite Genre",
                         title="Hours per day Vs. OCD",
                         color_discrete_map = color_map_graphs12)
 
-    graphs = [Anxiety, Depression, Insomnia, OCD]
-    for g in graphs:
-      g.update_xaxes(range=[-0.5, 24.5], tickmode='linear', dtick=2)  
-      for trace in g.data:
-          trace.update(marker=dict(size=10, opacity=0.7))
-    if graphs_amount == 0:
-        pass
+      graphs = [Anxiety, Depression, Insomnia, OCD]
+      for g in graphs:
+        g.update_xaxes(range=[-0.5, 24.5], tickmode='linear', dtick=2)  
+        for trace in g.data:
+            trace.update(marker=dict(size=10, opacity=0.7))
+      if graphs_amount == 0:
+          pass
     
-    elif graphs_amount == 1:
-        for i in range(len(list_of_trues)):
-            if list_of_trues[i]:
-                st.plotly_chart(graphs[i], use_container_width=True)
+      elif graphs_amount == 1:
+          for i in range(len(list_of_trues)):
+              if list_of_trues[i]:
+                  st.plotly_chart(graphs[i], use_container_width=True)
                 
-    elif graphs_amount == 2:
-         col1, col2 = st.columns(2, gap="large")
-         g1_idx = true_indices[0]
-         g2_idx = true_indices[1]
-         with col1:
-            st.plotly_chart(graphs[g1_idx], use_container_width=False)
-         with col2:
-            st.plotly_chart(graphs[g2_idx], use_container_width=False)
-    elif graphs_amount == 3:
-         col1, col2 = st.columns(2, gap="large")
-         g1_idx = true_indices[0]
-         g2_idx = true_indices[1]
-         g3_idx = true_indices[2]
-         with col1:
-            st.plotly_chart(graphs[g1_idx], use_container_width=False)
-         with col2:
-            st.plotly_chart(graphs[g2_idx], use_container_width=False)
-         col3, _ = st.columns(2, gap="large")
-         with col3:
-            st.plotly_chart(graphs[g3_idx], use_container_width=False)
+      elif graphs_amount == 2:
+           col1, col2 = st.columns(2, gap="large")
+           g1_idx = true_indices[0]
+           g2_idx = true_indices[1]
+           with col1:
+              st.plotly_chart(graphs[g1_idx], use_container_width=False)
+           with col2:
+              st.plotly_chart(graphs[g2_idx], use_container_width=False)
+      elif graphs_amount == 3:
+           col1, col2 = st.columns(2, gap="large")
+           g1_idx = true_indices[0]
+           g2_idx = true_indices[1]
+           g3_idx = true_indices[2]
+           with col1:
+              st.plotly_chart(graphs[g1_idx], use_container_width=False)
+           with col2:
+              st.plotly_chart(graphs[g2_idx], use_container_width=False)
+           col3, _ = st.columns(2, gap="large")
+           with col3:
+              st.plotly_chart(graphs[g3_idx], use_container_width=False)
 
-    elif graphs_amount == 4:
-        col1, col2 = st.columns(2, gap="large")
+      elif graphs_amount == 4:
+          col1, col2 = st.columns(2, gap="large")
 
-        with col1:
-            st.plotly_chart(graphs[0], use_container_width=False)
-        with col2:
-            st.plotly_chart(graphs[1], use_container_width=False)
+          with col1:
+              st.plotly_chart(graphs[0], use_container_width=False)
+          with col2:
+              st.plotly_chart(graphs[1], use_container_width=False)
             
-        col3, col4 = st.columns(2, gap="large")
-        with col3:
-            st.plotly_chart(graphs[2], use_container_width=False)   
-        with col4:
-            st.plotly_chart(graphs[3], use_container_width=False)   
+          col3, col4 = st.columns(2, gap="large")
+          with col3:
+              st.plotly_chart(graphs[2], use_container_width=False)   
+          with col4:
+              st.plotly_chart(graphs[3], use_container_width=False)   
 
 
 elif comparison == 'Average':
