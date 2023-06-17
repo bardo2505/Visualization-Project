@@ -46,7 +46,7 @@ else:
         "Hip hop": px.colors.qualitative.Alphabet[6], # Light Green
         "Metal": px.colors.qualitative.Alphabet[24], # Yellow
         "Pop": px.colors.qualitative.Set1[0], # Red
-        "R&B": '#FFFFFF', # Black
+        "R&B": px.colors.qualitative.Dark24[5], # Black
         "Rock": px.colors.qualitative.Alphabet[5], # Dark Green
         "Video game music":  px.colors.qualitative.Set1[4], # Orange
       }
