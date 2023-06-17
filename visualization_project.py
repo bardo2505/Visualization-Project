@@ -352,7 +352,7 @@ elif comparison == 'Average':
       g.update_yaxes(title_font=dict(size=20), tickfont=dict(size=14))
       st.plotly_chart(g, use_container_width=True)
   
-st.markdown("---") 
+
 st.markdown("---")     
   
   
@@ -560,7 +560,7 @@ elif comparison == 'Average':
 
     st.plotly_chart(g, use_container_width=True)#fix this
 
-st.markdown("---") 
+
 st.markdown("---") 
   
   
@@ -659,7 +659,7 @@ elif order != 'Overall view (Compare all 4 disorders)':
 
 
 
-st.markdown("---") 
+
 st.markdown("---") 
 ##################################### Fourth Graph #####################################
 
