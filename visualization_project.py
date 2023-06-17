@@ -23,7 +23,7 @@ if color_blind == 'Yes':
         "EDM":  px.colors.qualitative.Dark2[4], # Green
         "Folk":  px.colors.qualitative.Antique[5], # Purple
         "Hip hop": px.colors.qualitative.Dark24[14], # Olive
-        "Metal": px.colors.qualitative.Set1[5]  # Yellow
+        "Metal": px.colors.qualitative.Set1[5],  # Yellow
         "Pop": px.colors.qualitative.Set1[0],  # Red
         "R&b": px.colors.qualitative.Dark24[5], # Black
         "Rock": px.colors.qualitative.Dark2[0], # Dark Green
