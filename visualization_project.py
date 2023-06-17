@@ -295,36 +295,6 @@ elif comparison == 'Average':
 
       to_show_df_graph1 = df[df["Favorite Genre"].isin(to_show_graph1)]
 
-
-
-
-
-  
-    # st.text("Please choose Genres to observe - ")
-    # with st.container():
-    #     col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
-    #     classical = col1.checkbox('Classical', key=90)
-    #     edm = col2.checkbox('EDM', key=100)
-    #     folk = col3.checkbox('Folk', key=110)    
-    #     hiphop = col4.checkbox('Hip hop', key=120) 
-    #     metal = col5.checkbox('Metal', key=130)
-    #     pop = col6.checkbox('Pop', key=140)
-    #     rnb = col7.checkbox('R&B', key=150)    
-    #     rock = col8.checkbox('Rock', key=160) 
-    #     videogame = col9.checkbox('Video game music', key=170) 
-
-    # check_box_booleans_graph_12 = [classical,edm,folk,hiphop,metal,pop,rnb,rock,videogame]        
-    # genres = ['Classical','EDM','Folk','Hip hop','Metal','Pop','R&B','Rock','Video game music'] 
-    # to_show_graph12 =[]
-    # for i in range(len(genres)):
-    #   if check_box_booleans_graph_12[i]:
-    #       to_show_graph12.append(genres[i])
- 
-
-    # to_show_df_graph12 = df[df["Favorite Genre"].isin(to_show_graph12)]
-
-
-      
       g = px.scatter(to_show_df_graph1, x="Age", y="Average Score",
                          color="Favorite Genre",
                          title="Scatterplot Matrix with Colors as Legend",
@@ -497,30 +467,40 @@ if comparison == 'Comparison':
 
 
 elif comparison == 'Average':
-
-
-    st.text("Please choose Genres to observe - ")
-    with st.container():
-      col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
-      classical = col1.checkbox('Classical', key=439)
-      edm = col2.checkbox('EDM', key=4310)
-      folk = col3.checkbox('Folk', key=4311)    
-      hiphop = col4.checkbox('Hip hop', key=4312) 
-      metal = col5.checkbox('Metal', key=4313)
-      pop = col6.checkbox('Pop', key=4314)
-      rnb = col7.checkbox('R&B', key=4315)    
-      rock = col8.checkbox('Rock', key=4316) 
-      videogame = col9.checkbox('Video game music', key=4317) 
-
-    check_box_booleans_graph_22 = [classical,edm,folk,hiphop,metal,pop,rnb,rock,videogame]        
+    bool_genres2 = st.radio("Choose view method for genres:",['I prefer to choose the genres manually','Select all genres'],key=77229)
+    if bool_genres2=='I prefer to choose the genres manually':
+        with st.container():
+          col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
+          classical = col1.checkbox('Classical', key=943)
+          edm = col2.checkbox('EDM', key=13340)
+          folk = col3.checkbox('Folk', key=13431)    
+          hiphop = col4.checkbox('Hip hop', key=14332) 
+          metal = col5.checkbox('Metal', key=133433)
+          pop = col6.checkbox('Pop', key=14334)  
+          rnb = col7.checkbox('R&B', key=13435)    
+          rock = col8.checkbox('Rock', key=3343333) 
+          videogame = col9.checkbox('Video game music', key=14337) 
+    elif bool_genres2=='Select all genres':
+        with st.container():
+          col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
+          classical = col1.checkbox('Classical',value=True, key=956543355)
+          edm = col2.checkbox('EDM',value=True, key=10534355)
+          folk = col3.checkbox('Folk',value=True, key=15545331)    
+          hiphop = col4.checkbox('Hip hop',value=True, key=333334333333333333) 
+          metal = col5.checkbox('Metal',value=True, key=1555335543)
+          pop = col6.checkbox('Pop',value=True, key=1453335455)  
+          rnb = col7.checkbox('R&B',value=True, key=155533435)    
+          rock = col8.checkbox('Rock',value=True, key=1655343355) 
+          videogame = col9.checkbox('Video game music',value=True, key=15334557) 
+    check_box_booleans_graph_2 = [classical,edm,folk,hiphop,metal,pop,rnb,rock,videogame]        
     genres = ['Classical','EDM','Folk','Hip hop','Metal','Pop','R&B','Rock','Video game music'] 
-    to_show_graph22 =[]
+    to_show_graph2 =[]
     for i in range(len(genres)):
-        if check_box_booleans_graph_22[i]:
-            to_show_graph22.append(genres[i])
+        if check_box_booleans_graph_2[i]:
+            to_show_graph2.append(genres[i])
  
 
-    to_show_df_graph22 = df[df["Favorite Genre"].isin(to_show_graph22)]
+    to_show_df_graph22 = df[df["Favorite Genre"].isin(to_show_graph2)]
     g = px.scatter(to_show_df_graph22, x="Hours per day", y="Average Score",
                          color="Favorite Genre",
                          title="Scatterplot Matrix with Colors as Legend",
