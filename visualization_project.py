@@ -73,7 +73,7 @@ else:
 df = pd.read_csv('mxmh_survey_results.csv') # read csv
 df = df.sort_values('Fav genre')
 df = df.rename(columns={"Fav genre": "Favorite Genre"})
-st.text(df.columns)
+
 genres_to_remove = ['Jazz', 'Lofi', 'Gospel', 'Latin','Rap','Country','K pop'] # remove genres with num of records < 30
 df = df[~df['Favorite Genre'].isin(genres_to_remove)]
 
@@ -551,7 +551,6 @@ df["Hours bins"] = pd.Categorical(df["Hours bins"], categories=hours_bins_order,
 
 df_avg = df.groupby(["Hours bins", "Favorite Genre"]).mean().reset_index()
 df_avg['Average Score'] = df_avg['Average Score'].apply(lambda x: round(x, 2))
-st.text(df_avg.columns)
 fourth_graph_fig1 = px.density_heatmap(df_avg, x="Favorite Genre", y="Hours bins", z="Average Score",
                          labels=dict(x="Favorite Genre", y="Hours Bins", z="Average Score"),
                          text_auto ="Average Score",
