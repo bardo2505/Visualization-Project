@@ -550,12 +550,12 @@ to_show_df = third_graph_df[third_graph_df["Genre"].isin(to_show)]
 st.text("Please choose order method:")
 order = st.radio("Please choose order method:",['Alphabetical order','Order by sum of values (Can view one disorder at a time)'],key=40000)
 if order == 'Alphabetical order':
-   third_graph_fig1 = px.histogram(to_show_df, x="Genre", y='Average Score',
+    third_graph_fig1 = px.histogram(to_show_df, x="Genre", y='Average Score',
                color='Mental Disorder', barmode='group',
                histfunc='avg',
                height=400,
                color_discrete_map=color_map_graph3)
-  third_graph_fig1.update_layout(title="Put title here",
+    third_graph_fig1.update_layout(title="Put title here",
                                  xaxis=dict(
                                          tickfont=dict(size=17),  # Set font size for x-axis tick numbers
                                          title=dict(text="Favorite Genre",font=dict(size=20))  # Set font size for x-axis label
@@ -564,7 +564,7 @@ if order == 'Alphabetical order':
                                          tickfont=dict(size=17),  # Set font size for y-axis tick numbers
                                          title=dict(text="Mental Health Score", font=dict(size=20))  # Set font size for y-axis label
                                           ))
-  st.plotly_chart(third_graph_fig1, use_container_width=True)
+    st.plotly_chart(third_graph_fig1, use_container_width=True)
 
 
 elif order == 'Order by sum of values (Can view one disorder at a time)':
