@@ -353,19 +353,19 @@ if comparison == 'Comparison':
     Anxiety = px.scatter(to_show_df_graph2,x="Hours per day", y = 'Anxiety',
                         color="Fav genre",
                         title="Hours per day Vs. Anxiety",
-                        color_discrete_sequence = color_map_graphs12)
+                        color_discrete_map = color_map_graphs12)
     Depression = px.scatter(to_show_df_graph2,x="Hours per day", y = 'Depression',
                         color="Fav genre",
                         title="Hours per day Vs. Depression",
-                        color_discrete_sequence = color_map_graphs12)
+                        color_discrete_map = color_map_graphs12)
     Insomnia = px.scatter(to_show_df_graph2,x="Hours per day", y = 'Insomnia',
                         color="Fav genre",
                         title="Hours per day Vs. Insomnia",
-                        color_discrete_sequence = color_map_graphs12)
+                        color_discrete_map = color_map_graphs12)
     OCD = px.scatter(to_show_df_graph2,x="Hours per day", y = 'OCD',
                         color="Fav genre",
                         title="Hours per day Vs. OCD",
-                        color_discrete_sequence = color_map_graphs12)
+                        color_discrete_map = color_map_graphs12)
 
     graphs = [Anxiety, Depression, Insomnia, OCD]
     for g in graphs:
@@ -444,7 +444,7 @@ elif comparison == 'Average':
     g = px.scatter(to_show_df_graph22, x="Hours per day", y="targets_mean",
                          color="Fav genre",
                          title="Scatterplot Matrix with Colors as Legend",
-                        color_discrete_sequence = color_map_graphs12)
+                        color_discrete_map = color_map_graphs12)
     for trace in g.data:
         trace.update(marker=dict(size=10, opacity=0.7))
     g.update_layout(yaxis_title='Average of Mental Health Scores')
