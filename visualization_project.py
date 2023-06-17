@@ -209,6 +209,8 @@ if comparison == 'Comparison':
       graphs = [Anxiety, Depression, Insomnia, OCD]
       for g in graphs:
           g.update_xaxes(tickmode='linear', dtick=10)
+          g.update_xaxes(title_font=dict(size=20), tickfont=dict(size=14))
+          g.update_yaxes(title_font=dict(size=20), tickfont=dict(size=14))
           for trace in g.data:
               trace.update(marker=dict(size=10, opacity=0.7))
       if graphs_amount == 0:
@@ -331,6 +333,8 @@ elif comparison == 'Average':
             trace.update(marker=dict(size=10, opacity=0.7))
       g.update_layout(yaxis_title='Average of Mental Health Scores')
       g.update_xaxes(range=[-0.5, 90.5], tickmode='linear', dtick=10)  
+      g.update_xaxes(title_font=dict(size=20), tickfont=dict(size=14))
+      g.update_yaxes(title_font=dict(size=20), tickfont=dict(size=14))
       st.plotly_chart(g, use_container_width=True)
 
 st.markdown("---") 
@@ -444,6 +448,8 @@ if comparison == 'Comparison':
       graphs = [Anxiety, Depression, Insomnia, OCD]
       for g in graphs:
         g.update_xaxes(range=[-0.5, 24.5], tickmode='linear', dtick=2)  
+        g.update_xaxes(title_font=dict(size=20), tickfont=dict(size=14))
+        g.update_yaxes(title_font=dict(size=20), tickfont=dict(size=14))
         for trace in g.data:
             trace.update(marker=dict(size=10, opacity=0.7))
       if graphs_amount == 0:
