@@ -184,7 +184,7 @@ if comparison == 'Comparison':
         metal = col5.checkbox('Metal',value=True, key=1555553)
         pop = col6.checkbox('Pop',value=True, key=145555)  
         rnb = col7.checkbox('R&B',value=True, key=15555)    
-        rock = col8.checkbox('Rock',value=True key=165555) 
+        rock = col8.checkbox('Rock',value=True, key=165555) 
         videogame = col9.checkbox('Video game music',value=True, key=15557) 
     check_box_booleans_graph_1 = [classical,edm,folk,hiphop,metal,pop,rnb,rock,videogame]        
     genres = ['Classical','EDM','Folk','Hip hop','Metal','Pop','R&B','Rock','Video game music'] 
