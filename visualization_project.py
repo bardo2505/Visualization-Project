@@ -26,8 +26,8 @@ with st.container():
 st.subheader("Intro")
 st.text(
   """
-  The subject of our visualization is the relationship between music consumption habits and preferences and their self
-  reported mental health state.
+The subject of our visualization is the relationship between music consumption habits and preferences and their self
+reported mental health state.
 
 Mental health is an issue that affects millions of people around the world, with no signs of improvement and becoming increasingly alarming.
 According to the World Health Organization, mental health disorders have become the leading cause of disability,
@@ -179,8 +179,8 @@ if comparison == 'Comparison':
      
   
     if sum(list_of_trues) > 0:
-      st.text("Please choose Genres to observe:")
-      bool_genres = st.radio("Choose view method for genres:",['I prefer to choose the genres manually','Select all genres'],key=777)
+
+      bool_genres = st.radio("Please choose view method for genres:",['I prefer to choose the genres manually','Select all genres'],key=777)
       if bool_genres=='I prefer to choose the genres manually':
         with st.container():
           col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
@@ -402,8 +402,8 @@ if comparison == 'Comparison':
 
     if sum(list_of_trues) > 0:
       
-      st.text("Please choose Genres to observe:")
-      bool_genres2 = st.radio("Choose view method for genres:",['I prefer to choose the genres manually','Select all genres'],key=877)
+
+      bool_genres2 = st.radio("Please choose view method for genres:",['I prefer to choose the genres manually','Select all genres'],key=877)
       if bool_genres2=='I prefer to choose the genres manually':
         with st.container():
           col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
@@ -512,8 +512,8 @@ if comparison == 'Comparison':
 
 
 elif comparison == 'Average':
-    st.text("Please choose Genres to observe:")
-    bool_genres2 = st.radio("Choose view method for genres:",['I prefer to choose the genres manually','Select all genres'],key=77229)
+    
+    bool_genres2 = st.radio("Please choose view method for genres:",['I prefer to choose the genres manually','Select all genres'],key=77229)
     if bool_genres2=='I prefer to choose the genres manually':
         with st.container():
           col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
