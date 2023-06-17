@@ -72,14 +72,14 @@ else:
 
 df = pd.read_csv('mxmh_survey_results.csv') # read csv
 df = df.sort_values('Fav genre')
-
+df.rename(columns={"Fav genre": "Favorite Genre"})
 genres_to_remove = ['Jazz', 'Lofi', 'Gospel', 'Latin','Rap','Country','K pop'] # remove genres with num of records < 30
-df = df[~df['Fav genre'].isin(genres_to_remove)]
+df = df[~df['Favorite Genre'].isin(genres_to_remove)]
 
 
 genres_to_keep = ['Rock','Pop','Metal','Classical','Video game music','EDM','R&B','Hip hop','Folk']  # remove people that are not listening to thier fav genre (112 records removed)
 for idx, row in df.iterrows():
-    fav = row['Fav genre']
+    fav = row['Favorite Genre']
     if row[f'Frequency [{fav}]'] not in ['Sometimes','Very frequently']:
       df = df.drop(idx)
 
@@ -102,7 +102,7 @@ targets = ['Anxiety','Depression','Insomnia','OCD']
 names = sorted(['Rock','Video game music','R&B','EDM', 'Hip hop','Pop','Classical', 'Metal', 'Folk'])
 j=0
 for name in names:
-    curr_df = df[df['Fav genre']==name]
+    curr_df = df[df['Favorite Genre']==name]
     for target in targets:
         j+=1
         curr_avg = np.mean(curr_df[target])
@@ -180,27 +180,27 @@ if comparison == 'Comparison':
             to_show_graph1.append(genres[i])
  
 
-    to_show_df_graph1 = df[df["Fav genre"].isin(to_show_graph1)]
+    to_show_df_graph1 = df[df["Favorite Genre"].isin(to_show_graph1)]
 
   
     Anxiety = px.scatter(to_show_df_graph1,x="Age", y = 'Anxiety',
-                        color="Fav genre",
+                        color="Favorite Genre",
                         title="Age Vs. Anxiety",
                         color_discrete_map = color_map_graphs12)
 
     
     Depression = px.scatter(to_show_df_graph1,x="Age", y = 'Depression',
-                        color="Fav genre",
+                        color="Favorite Genre",
                         title="Age Vs. Depression",
                         color_discrete_map = color_map_graphs12)
     
     Insomnia = px.scatter(to_show_df_graph1,x="Age", y = 'Insomnia',
-                        color="Fav genre",
+                        color="Favorite Genre",
                         title="Age Vs. Insomnia",
                         color_discrete_map = color_map_graphs12)
     
     OCD = px.scatter(to_show_df_graph1,x="Age", y = 'OCD',
-                        color="Fav genre",
+                        color="Favorite Genre",
                         title="Age Vs. OCD",
                         color_discrete_map = color_map_graphs12)
     
@@ -276,12 +276,12 @@ elif comparison == 'Average':
           to_show_graph12.append(genres[i])
  
 
-    to_show_df_graph12 = df[df["Fav genre"].isin(to_show_graph12)]
+    to_show_df_graph12 = df[df["Favorite Genre"].isin(to_show_graph12)]
 
 
       
     g = px.scatter(to_show_df_graph12, x="Age", y="Average Score",
-                         color="Fav genre",
+                         color="Favorite Genre",
                          title="Scatterplot Matrix with Colors as Legend",
                         color_discrete_map = color_map_graphs12)
     for trace in g.data:
@@ -358,24 +358,24 @@ if comparison == 'Comparison':
             to_show_graph2.append(genres[i])
  
 
-    to_show_df_graph2 = df[df["Fav genre"].isin(to_show_graph2)]
+    to_show_df_graph2 = df[df["Favorite Genre"].isin(to_show_graph2)]
 
     
     
     Anxiety = px.scatter(to_show_df_graph2,x="Hours per day", y = 'Anxiety',
-                        color="Fav genre",
+                        color="Favorite Genre",
                         title="Hours per day Vs. Anxiety",
                         color_discrete_map = color_map_graphs12)
     Depression = px.scatter(to_show_df_graph2,x="Hours per day", y = 'Depression',
-                        color="Fav genre",
+                        color="Favorite Genre",
                         title="Hours per day Vs. Depression",
                         color_discrete_map = color_map_graphs12)
     Insomnia = px.scatter(to_show_df_graph2,x="Hours per day", y = 'Insomnia',
-                        color="Fav genre",
+                        color="Favorite Genre",
                         title="Hours per day Vs. Insomnia",
                         color_discrete_map = color_map_graphs12)
     OCD = px.scatter(to_show_df_graph2,x="Hours per day", y = 'OCD',
-                        color="Fav genre",
+                        color="Favorite Genre",
                         title="Hours per day Vs. OCD",
                         color_discrete_map = color_map_graphs12)
 
@@ -452,9 +452,9 @@ elif comparison == 'Average':
             to_show_graph22.append(genres[i])
  
 
-    to_show_df_graph22 = df[df["Fav genre"].isin(to_show_graph22)]
+    to_show_df_graph22 = df[df["Favorite Genre"].isin(to_show_graph22)]
     g = px.scatter(to_show_df_graph22, x="Hours per day", y="Average Score",
-                         color="Fav genre",
+                         color="Favorite Genre",
                          title="Scatterplot Matrix with Colors as Legend",
                         color_discrete_map = color_map_graphs12)
     for trace in g.data:
@@ -548,10 +548,10 @@ st.subheader('Heatmap for Hours of listening per day Vs. Mental Health Scores')
 hours_bins_order = ["[0-2]","(2-3]","(3-4]","(4-24]"]
 df["Hours bins"] = pd.Categorical(df["Hours bins"], categories=hours_bins_order, ordered=True)
 
-df_avg = df.groupby(["Hours bins", "Fav genre"]).mean().reset_index()
+df_avg = df.groupby(["Hours bins", "Favorite Genre"]).mean().reset_index()
 df_avg['Average Score'] = df_avg['Average Score'].apply(lambda x: round(x, 2))
 st.text(df_avg.columns)
-fourth_graph_fig1 = px.density_heatmap(df_avg, x="Fav genre", y="Hours bins", z="Average Score",
+fourth_graph_fig1 = px.density_heatmap(df_avg, x="Favorite Genre", y="Hours bins", z="Average Score",
                          labels=dict(x="Favorite Genre", y="Hours Bins", z="Average Score"),
                          text_auto ="Average Score",
                          color_continuous_scale=cmap_graph_4
