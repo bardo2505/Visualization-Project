@@ -468,15 +468,15 @@ select_all = st.radio("Would you like to view all Genres at once?",['Yes please.
 if select_all == 'Yes please.': 
   with st.container():
       col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
-      classical = col1.checkbox('Classical',value=True, key=9)
-      edm = col2.checkbox('EDM',value=True, key=10)
-      folk = col3.checkbox('Folk',value=True, key=11)    
-      hiphop = col4.checkbox('Hip hop',value=True, key=12) 
-      metal = col5.checkbox('Metal',value=True, key=13)
-      pop = col6.checkbox('Pop',value=True, key=14)
-      rnb = col7.checkbox('R&B',value=True, key=15)    
-      rock = col8.checkbox('Rock',value=True, key=16) 
-      videogame = col9.checkbox('Video game music',value=True, key=17) 
+      classical = col1.checkbox('Classical',value=True, key=9999699)
+      edm = col2.checkbox('EDM',value=True, key=10999999)
+      folk = col3.checkbox('Folk',value=True, key=11999999)    
+      hiphop = col4.checkbox('Hip hop',value=True, key=12999999) 
+      metal = col5.checkbox('Metal',value=True, key=139999999)
+      pop = col6.checkbox('Pop',value=True, key=1499999)
+      rnb = col7.checkbox('R&B',value=True, key=159999999)    
+      rock = col8.checkbox('Rock',value=True, key=16999999) 
+      videogame = col9.checkbox('Video game music',value=True, key=17999999) 
 else:
   with st.container():
       col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
