@@ -243,7 +243,7 @@ comparison = st.radio("Would you like to see how age affects the average of the 
 if comparison == 'Comparison':
     
     with st.container():
-        col1, col2, col3, col4 = st.columns(4)
+        col1, col2, col3, col4 = st.columns([0.1, 0.1, 0.1, 0.7])
         checkbox5 = col1.checkbox('Anxiety', key=5)
         checkbox6 = col2.checkbox('Depression', key=6)
         checkbox7 = col3.checkbox('Insomnia', key=7)    
