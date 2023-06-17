@@ -13,7 +13,7 @@ from plotly.subplots import make_subplots
 ####################################### Intro #######################################
 st.set_page_config(page_title="Streamlit Project",
                    page_icon=":bar_chart:",
-                  layout="centered")
+                  layout="wide")
 st.title('PROJECT')
 color_blind = st.radio("Are you color blind?",['No','Yes'],key=51) # Did you know that 9% of men are color blind?
 if color_blind == 'Yes': 
