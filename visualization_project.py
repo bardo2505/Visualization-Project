@@ -25,31 +25,53 @@ color_blind = st.radio("Are you color blind?",['No','Yes'],key=51) # Did you kno
 if color_blind == 'Yes': 
 
   cmap_graph_4 = "RdBu" # graph 4
-  color_map_graphs12 = [
-        px.colors.qualitative.Dark24[5], # Black
-        px.colors.qualitative.Dark24[7], # Purple
-        px.colors.qualitative.T10[9], # Grey
-        px.colors.qualitative.Vivid[2], # Torquise
-        px.colors.qualitative.Alphabet[19], # Light blue
-        px.colors.qualitative.Set1[0], # Red
-        px.colors.qualitative.Set1[4], # Orange
-        px.colors.qualitative.Set1[5], # Yellow
-        px.colors.qualitative.Pastel1[8] # White
-     ]  
+  # color_map_graphs12 = [
+  #       px.colors.qualitative.Dark24[5], # Black
+  #       px.colors.qualitative.Dark24[7], # Purple
+  #       px.colors.qualitative.T10[9], # Grey
+  #       px.colors.qualitative.Vivid[2], # Torquise
+  #       px.colors.qualitative.Alphabet[19], # Light blue
+  #       px.colors.qualitative.Set1[0], # Red
+  #       px.colors.qualitative.Set1[4], # Orange
+  #       px.colors.qualitative.Set1[5], # Yellow
+  #       px.colors.qualitative.Pastel1[8] # White
+  #    ]  
+  color_map_graphs12 = {
+        "Classical": px.colors.qualitative.Dark24[19], # Deep Blue
+        "EDM":  px.colors.qualitative.Dark24[21], # Brown
+        "Folk":  px.colors.qualitative.T10[9], # Grey
+        "Hip hop": px.colors.qualitative.Alphabet[6], # Light Green
+        "Metal": px.colors.qualitative.Alphabet[24], # Yellow
+        "Pop": px.colors.qualitative.Set1[0], # Red
+        "R&b": px.colors.qualitative.Dark24[5], # Black
+        "Rock": px.colors.qualitative.Alphabet[5], # Dark Green
+        "Video game music":  px.colors.qualitative.Set1[4], # Orange
+    }
 else:
 
   cmap_graph_4 = "Oranges" # graph 4
-  color_map_graphs12 = [
-        px.colors.qualitative.Dark24[19], # Deep Blue
-        px.colors.qualitative.Dark24[21], # Brown
-        px.colors.qualitative.T10[9], # Grey
-        px.colors.qualitative.Alphabet[6], # Light Green
-        px.colors.qualitative.Alphabet[24], # Yellow
-        px.colors.qualitative.Set1[0], # Red
-        px.colors.qualitative.Dark24[5], # Black
-        px.colors.qualitative.Alphabet[5], # Dark Green
-        px.colors.qualitative.Set1[4], # Orange
-     ]  
+  # color_map_graphs12 = [
+  #       px.colors.qualitative.Dark24[19], # Deep Blue
+  #       px.colors.qualitative.Dark24[21], # Brown
+  #       px.colors.qualitative.T10[9], # Grey
+  #       px.colors.qualitative.Alphabet[6], # Light Green
+  #       px.colors.qualitative.Alphabet[24], # Yellow
+  #       px.colors.qualitative.Set1[0], # Red
+  #       px.colors.qualitative.Dark24[5], # Black
+  #       px.colors.qualitative.Alphabet[5], # Dark Green
+  #       px.colors.qualitative.Set1[4], # Orange
+  #    ]  
+color_map_graphs12 = {
+        "Classical": px.colors.qualitative.Dark24[19], # Deep Blue
+        "EDM":  px.colors.qualitative.Dark24[21], # Brown
+        "Folk":  px.colors.qualitative.T10[9], # Grey
+        "Hip hop": px.colors.qualitative.Alphabet[6], # Light Green
+        "Metal": px.colors.qualitative.Alphabet[24], # Yellow
+        "Pop": px.colors.qualitative.Set1[0], # Red
+        "R&b": px.colors.qualitative.Dark24[5], # Black
+        "Rock": px.colors.qualitative.Alphabet[5], # Dark Green
+        "Video game music":  px.colors.qualitative.Set1[4], # Orange
+    }
 
      
   
@@ -174,23 +196,23 @@ if comparison == 'Comparison':
     Anxiety = px.scatter(to_show_df_graph1,x="Age", y = 'Anxiety',
                         color="Fav genre",
                         title="Age Vs. Anxiety",
-                        color_discrete_sequence = color_map_graphs12)
+                        color_discrete_map = color_map_graphs12)
 
     
     Depression = px.scatter(to_show_df_graph1,x="Age", y = 'Depression',
                         color="Fav genre",
                         title="Age Vs. Depression",
-                        color_discrete_sequence = color_map_graphs12)
+                        color_discrete_map = color_map_graphs12)
     
     Insomnia = px.scatter(to_show_df_graph1,x="Age", y = 'Insomnia',
                         color="Fav genre",
                         title="Age Vs. Insomnia",
-                        color_discrete_sequence = color_map_graphs12)
+                        color_discrete_map = color_map_graphs12)
     
     OCD = px.scatter(to_show_df_graph1,x="Age", y = 'OCD',
                         color="Fav genre",
                         title="Age Vs. OCD",
-                        color_discrete_sequence = color_map_graphs12)
+                        color_discrete_map = color_map_graphs12)
     
     graphs = [Anxiety, Depression, Insomnia, OCD]
     for g in graphs:
