@@ -18,16 +18,11 @@ st.set_page_config(page_title="Streamlit Project",
                    page_icon=":bar_chart:",
                   layout="wide")
 st.markdown("<h1 style='text-align: center; color: black;'>Visualization Final Project</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: black;'>Beni Ifland - 208906255</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: black;'>Bar Dolev - 318419512</h1>", unsafe_allow_html=True)
 
-# with st.container():
-#     col1, col2, col3 = st.columns([0.25, 0.5, 0.25])
-#     col2.title('Visualization Final Project')
-with st.container():
-    col1, col2, col3 = st.columns([0.30, 0.5, 0.20])
-    col2.header('Beni Ifland - 208906255')
-with st.container():
-    col1, col2, col3 = st.columns([0.32, 0.5, 0.20])
-    col2.header(' Bar Dolev - 318419512')
+
+
 st.header("Intro")
 
 st.subheader("""The subject of our visualization is the relationship between music consumption habits and preferences and their self reported mental health state.""")
