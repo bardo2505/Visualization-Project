@@ -135,7 +135,7 @@ st.markdown("<h2>Would you like to observe the relationships between age and the
 comparison = st.radio("Choose one of:", ['None', 'Average', 'Comparison'], key=50)
   
 if comparison == 'Comparison':
-    st.text("Which Mental Health Disorders would you like to compare?")
+    st.markdown("<h2>Which Mental Health Disorders would you like to compare?</h2>", unsafe_allow_html=True)
     with st.container():
         col1, col2, col3, col4 = st.columns([0.15, 0.15, 0.15, 0.55])
         checkbox1 = col1.checkbox('Anxiety', key=1)
@@ -171,8 +171,8 @@ if comparison == 'Comparison':
   
     if sum(list_of_trues) > 0:
 
-      bool_genres = st.radio("Please choose view method for genres:",['I prefer to choose the genres manually','Select all genres'],key=777)
-      if bool_genres=='I prefer to choose the genres manually':
+      bool_genres = st.radio("Please choose view method for genres:",['I prefer to choose the genres myself','Select all genres'],key=777)
+      if bool_genres=='I prefer to choose the genres myself':
         with st.container():
           col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
           classical = col1.checkbox('Classical', key=9)
@@ -296,8 +296,8 @@ if comparison == 'Comparison':
   
   
 elif comparison == 'Average':
-      bool_genres = st.radio("Choose view method for genres:",['I prefer to choose the genres manually','Select all genres'],key=779)
-      if bool_genres=='I prefer to choose the genres manually':
+      bool_genres = st.radio("Choose view method for genres:",['I prefer to choose the genres myself','Select all genres'],key=779)
+      if bool_genres=='I prefer to choose the genres myself':
         with st.container():
           col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
           classical = col1.checkbox('Classical', key=93)
@@ -358,7 +358,7 @@ st.markdown("<h2>Would you like to observe the relationships between Hours of li
 
 comparison = st.radio("Choose one of:", ['None', 'Average', 'Comparison'], key=52)
 if comparison == 'Comparison':
-    st.text("Which Mental Health Disorders would you like to compare?")
+    st.markdown("<h2>Which Mental Health Disorders would you like to compare?</h2>", unsafe_allow_html=True)
     with st.container():
         col1, col2, col3, col4 = st.columns([0.15, 0.15, 0.15, 0.55])
         checkbox5 = col1.checkbox('Anxiety', key=5)
@@ -395,8 +395,8 @@ if comparison == 'Comparison':
     if sum(list_of_trues) > 0:
       
 
-      bool_genres2 = st.radio("Please choose view method for genres:",['I prefer to choose the genres manually','Select all genres'],key=877)
-      if bool_genres2=='I prefer to choose the genres manually':
+      bool_genres2 = st.radio("Please choose view method for genres:",['I prefer to choose the genres myself','Select all genres'],key=877)
+      if bool_genres2=='I prefer to choose the genres myself':
         with st.container():
           col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
           classical = col1.checkbox('Classical', key=29)
@@ -505,8 +505,8 @@ if comparison == 'Comparison':
 
 elif comparison == 'Average':
     
-    bool_genres2 = st.radio("Please choose view method for genres:",['I prefer to choose the genres manually','Select all genres'],key=77229)
-    if bool_genres2=='I prefer to choose the genres manually':
+    bool_genres2 = st.radio("Please choose view method for genres:",['I prefer to choose the genres myself','Select all genres'],key=77229)
+    if bool_genres2=='I prefer to choose the genres myself':
         with st.container():
           col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
           classical = col1.checkbox('Classical', key=943)
@@ -565,8 +565,8 @@ st.subheader('Genres & Mental Health Scores, by Mental Health Disorder - Histogr
 order = st.radio("Which type of view would you prefer?",['Overall view (Compare all 4 disorders)','Specific view (Zoom in on one disorder)'],key=40000)
 if order != 'Overall view (Compare all 4 disorders)':
   disorder = st.radio("Please choose disorder to view:",['Anxiety','Depression','Insomnia','OCD'],key=40001)
-  
-st.text("Would you like to view all Genres at once?")
+st.markdown("<h2>Would you like to view all Genres at once?</h2>", unsafe_allow_html=True)  
+
 select_all = st.radio("Choose one of: ",['Yes please.','No, I will choose myself.'])
 if select_all == 'Yes please.': 
   with st.container():
@@ -691,8 +691,6 @@ fourth_graph_fig1.update_layout(title="Average Mental Health Score by Hours Bins
 
 #fourth_graph_fig1.update_layout(uniformtext_minsize=20, uniformtext_mode='hide')      
 st.plotly_chart(fourth_graph_fig1, use_container_width=True)
-st.text("""
-Note - the brackets we use indicate whether or not the number
-near the bracket is included in the bin. Exmaple: (2,3] means 2 < x <= 3
-""")
+st.markdown("<h2>Note - the brackets we use indicate whether or not the number near the bracket is included in the bin. Exmaple: (2,3] means 2 < x <= 3</h2>", unsafe_allow_html=True)  
+
 
