@@ -125,7 +125,7 @@ st.markdown("---")
 
 ##################################### First Graph #####################################
 
-st.markdown("<style>h1{font-size: 30px; font-family: Arial, sans-serif;}</style>", unsafe_allow_html=True) 
+st.markdown("<style>h1{font-size: 14px; font-family: Arial, sans-serif;}</style>", unsafe_allow_html=True) 
 
 
 st.subheader('Age & Mental Health Disorders scores - Scatter plot')
