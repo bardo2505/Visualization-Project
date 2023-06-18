@@ -21,15 +21,14 @@ st.markdown("<h1 style='text-align: center; color: black;'>Visualization Final P
 st.markdown("<h1 style='text-align: center; color: black;'>Beni Ifland - 208906255</h1>", unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; color: black;'>Bar Dolev - 318419512</h1>", unsafe_allow_html=True)
 
-
+st.markdown("<style>h2{font-size: 16px; font-family: Assistant, sans-serif;}</style>", unsafe_allow_html=True) 
+st.markdown("<style>h3{font-size: 20px; font-family: Assistant, sans-serif;}</style>", unsafe_allow_html=True) 
 
 st.header("The relationship between user's music consumption habits and preferences and their self reported mental health state")
 
+st.markdown("<h3>Mental health is an issue that affects millions of people around the world, with no signs of improvement and becoming increasingly alarming. According to the World Health Organization, mental health disorders have become the leading cause of disability, affecting a staggering 450 million people. Music, often revered as a universal language, has been used for centuries to convey emotions and thoughts. Music is valued, among other things, for its therapeutic potential, especially in the treatment of mental health problems in situations such as depression, anxiety, post-traumatic stress disorder (PTSD) and more. However, the mechanisms underlying music's apparent positive effects on mental health remain elusive and unclear to this day. The main question we chose is whether there is a connection between the nature of a certain person's music consumption and his mental health? We want to allow through visualization a critical observation of the connections between the consumption characteristics and the personal characteristics of the listeners and their mental health. In our Data, there are 4 Mental Health Disorders we will try to explore, each of them is on a scale of 0-10 and reflects one surveyee's rate of himself regarding that score, the Mental Disorders are Anxiety, Depression, Insomnia and OCD.</h3>", unsafe_allow_html=True)
+# st.subheader("""""")
 
-st.subheader("""Mental health is an issue that affects millions of people around the world, with no signs of improvement and becoming increasingly alarming. According to the World Health Organization, mental health disorders have become the leading cause of disability, affecting a staggering 450 million people.""")
-st.subheader("""Music, often revered as a universal language, has been used for centuries to convey emotions and thoughts. Music is valued, among other things, for its therapeutic potential, especially in the treatment of mental health problems in situations such as depression, anxiety, post-traumatic stress disorder (PTSD) and more. However, the mechanisms underlying music's apparent positive effects on mental health remain elusive and unclear to this day.""")
-st.subheader("""The main question we chose is whether there is a connection between the nature of a certain person's music consumption and his mental health? We want to allow through visualization a critical observation of the connections between the consumption characteristics and the personal characteristics of the listeners and their mental health.""")
-st.subheader("""In our Data, there are 4 Mental Health Disorders we will try to explore, each of them is on a scale of 0-10 and reflects one surveyee's rate of himself regarding that score, the Mental Disorders are Anxiety, Depression, Insomnia and OCD.""")
 st.markdown("---")  
 color_blind = st.radio("This Project is Color-blind friendly, Are you color blind?",['No','Yes'],key=51) # Did you know that 9% of men are color blind?
 if color_blind == 'Yes': 
@@ -125,11 +124,11 @@ st.markdown("---")
 
 ##################################### First Graph #####################################
 
-st.markdown("<style>h1{font-size: 16px; font-family: Assistant, sans-serif;}</style>", unsafe_allow_html=True) 
+
 
 
 st.subheader('Age & Mental Health Disorders scores - Scatter plot')
-st.markdown("<h1>Would you like to see how age affects the Average of the Mental health scores? Or compare between two or more specific scores?</h1>", unsafe_allow_html=True)
+st.markdown("<h2>Would you like to observe the relationships between age and the Average of the Mental health scores? Or compare between two or more specific Mental Disorders?</h2>", unsafe_allow_html=True)
 
 comparison = st.radio("Choose one of:", ['None', 'Average', 'Comparison'], key=50)
   
@@ -352,7 +351,8 @@ st.markdown("---")
   
 ##################################### Second Graph #####################################
 st.subheader('Hours of listening (Daily) & Mental Health Disorders scores - Scatter plot')
-st.text('Would you like to see how Hours of listening affects the Average of the Mental health scores? Or compare between two or more specific scores?')
+st.markdown("<h2>Would you like to observe the relationships between Hours of listening per day and the Average of the Mental health scores? Or compare between two or more specific Mental Disorders?</h2>", unsafe_allow_html=True)
+
 
 comparison = st.radio("Choose one of:", ['None', 'Average', 'Comparison'], key=52)
 if comparison == 'Comparison':
