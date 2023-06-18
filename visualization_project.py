@@ -125,9 +125,12 @@ st.markdown("---")
 
 ##################################### First Graph #####################################
 
-    
+st.markdown("<style>h1{font-size: 30px; font-family: Arial, sans-serif;}</style>", unsafe_allow_html=True) 
+
+
 st.subheader('Age & Mental Health Disorders scores - Scatter plot')
-st.text('Would you like to see how age affects the Average of the Mental health scores? Or compare between two or more specific scores?')
+st.markdown("<h1>Would you like to see how age affects the Average of the Mental health scores? Or compare between two or more specific scores?</h1>", unsafe_allow_html=True)
+
 comparison = st.radio("Choose one of:", ['None', 'Average', 'Comparison'], key=50)
   
 if comparison == 'Comparison':
