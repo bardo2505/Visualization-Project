@@ -131,8 +131,8 @@ st.markdown("---")
 
 st.subheader('Age & Mental Health Disorders scores - Scatter plot')
 st.markdown("<h2>Would you like to observe the relationships between age and the Average of the Mental health scores? Or compare between two or more specific Mental Disorders?</h2>", unsafe_allow_html=True)
-
-comparison = st.radio("Choose one of:", ['None', 'Average', 'Comparison'], key=50)
+st.markdown("<h2>Choose one of:</h2>", unsafe_allow_html=True)
+comparison = st.radio(" ", ['None', 'Average', 'Comparison'], key=50)
   
 if comparison == 'Comparison':
     st.markdown("<h2>Which Mental Health Disorders would you like to compare?</h2>", unsafe_allow_html=True)
