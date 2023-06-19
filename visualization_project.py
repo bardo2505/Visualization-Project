@@ -24,6 +24,7 @@ st.markdown("<h1 style='text-align: center; color: black;'>Bar Dolev - 318419512
 st.markdown("<style>h2{font-size: 18px; font-family: Assistant, sans-serif;}</style>", unsafe_allow_html=True) 
 st.markdown("<style>h3{font-size: 20px; font-family: Assistant, sans-serif;}</style>", unsafe_allow_html=True) 
 st.markdown("<style>h4{font-size: 26px; font-family: Assistant, sans-serif;}</style>", unsafe_allow_html=True) 
+st.markdown("<style>h5{font-size: 12px; font-family: Assistant, sans-serif;}</style>", unsafe_allow_html=True) 
 
 st.markdown("<h4>The relationship between user's music consumption habits and preferences and their self reported mental health state</h4>", unsafe_allow_html=True)
 st.markdown("<h3>Mental health is an issue that affects millions of people around the world, with no signs of improvement and becoming increasingly alarming. According to the World Health Organization, mental health disorders have become the leading cause of disability, affecting a staggering 450 million people.</h3>", unsafe_allow_html=True)
@@ -692,6 +693,6 @@ fourth_graph_fig1.update_layout(title="Average Mental Health Score by Hours Bins
 
 #fourth_graph_fig1.update_layout(uniformtext_minsize=20, uniformtext_mode='hide')      
 st.plotly_chart(fourth_graph_fig1, use_container_width=True)
-st.markdown("<h2>Note - the brackets we use indicate whether or not the number near the bracket is included in the bin. Exmaple: (2,3] means 2 < x <= 3</h2>", unsafe_allow_html=True)  
+st.markdown("<h5>Note - the brackets we use indicate whether or not the number near the bracket is included in the bin. Exmaple: (2,3] means 2 < x <= 3</h5>", unsafe_allow_html=True)  
 
 
