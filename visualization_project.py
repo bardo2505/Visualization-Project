@@ -621,7 +621,7 @@ if order == 'Overall view (Compare all 4 disorders)':
                                          tickfont=dict(size=17),  # Set font size for y-axis tick numbers
                                          title=dict(text="Mental Health Score", font=dict(size=20))  # Set font size for y-axis label
                                           ),
-                                  bargap=0.85)
+                                  bargap=0.65)
     st.plotly_chart(third_graph_fig1, use_container_width=True)
 
 
@@ -642,7 +642,7 @@ elif order != 'Overall view (Compare all 4 disorders)':
                                          tickfont=dict(size=17),  # Set font size for y-axis tick numbers
                                          title=dict(text=f"{disorder} Score", font=dict(size=20))  # Set font size for y-axis label
                                           ),
-                                bargap = 0.85)
+                                bargap = 0.65)
   
   third_graph_fig1.update_xaxes(categoryorder="total descending")
   st.plotly_chart(third_graph_fig1, use_container_width=False)
