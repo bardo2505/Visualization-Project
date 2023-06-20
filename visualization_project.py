@@ -172,7 +172,7 @@ if comparison == 'Comparison':
      
   
     if sum(list_of_trues) > 0:
-      bool_genres = st.radio("Please choose view method for genres:",['I prefer to choose the genres myself','Select all genres'],key=777)
+      bool_genres = st.radio("Please choose view method for genres:",['Select all genres','I prefer to choose the genres myself'],key=777)
       if bool_genres=='I prefer to choose the genres myself':
         with st.container():
           col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
@@ -298,7 +298,7 @@ if comparison == 'Comparison':
   
 elif comparison == 'Average':
 
-      bool_genres = st.radio("Choose view method for genres:",['I prefer to choose the genres myself','Select all genres'],key=779)
+      bool_genres = st.radio("Choose view method for genres:",['Select all genres','I prefer to choose the genres myself'],key=779)
       if bool_genres=='I prefer to choose the genres myself':
         with st.container():
           col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
@@ -396,7 +396,7 @@ if comparison == 'Comparison':
     if sum(list_of_trues) > 0:
       
 
-      bool_genres2 = st.radio("Please choose view method for genres:",['I prefer to choose the genres myself','Select all genres'],key=877)
+      bool_genres2 = st.radio("Please choose view method for genres:",['Select all genres','I prefer to choose the genres myself'],key=877)
       if bool_genres2=='I prefer to choose the genres myself':
         with st.container():
           col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
@@ -506,7 +506,7 @@ if comparison == 'Comparison':
 
 elif comparison == 'Average':
 
-    bool_genres2 = st.radio("Please choose view method for genres:",['I prefer to choose the genres myself','Select all genres'],key=77229)
+    bool_genres2 = st.radio("Please choose view method for genres:",['Select all genres','I prefer to choose the genres myself'],key=77229)
     if bool_genres2=='I prefer to choose the genres myself':
         with st.container():
           col1, col2, col3, col4,col5, col6, col7, col8 ,col9 = st.columns(9)
