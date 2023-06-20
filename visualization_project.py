@@ -473,35 +473,35 @@ if comparison == 'Comparison':
            g1_idx = true_indices[0]
            g2_idx = true_indices[1]
            with col1:
-              st.plotly_chart(graphs[g1_idx], use_container_width=False)
+              st.plotly_chart(graphs[g1_idx], use_container_width=True)
            with col2:
-              st.plotly_chart(graphs[g2_idx], use_container_width=False)
+              st.plotly_chart(graphs[g2_idx], use_container_width=True)
       elif graphs_amount == 3:
            col1, col2 = st.columns(2, gap="large")
            g1_idx = true_indices[0]
            g2_idx = true_indices[1]
            g3_idx = true_indices[2]
            with col1:
-              st.plotly_chart(graphs[g1_idx], use_container_width=False)
+              st.plotly_chart(graphs[g1_idx], use_container_width=True)
            with col2:
-              st.plotly_chart(graphs[g2_idx], use_container_width=False)
+              st.plotly_chart(graphs[g2_idx], use_container_width=True)
            col3, _ = st.columns(2, gap="large")
            with col3:
-              st.plotly_chart(graphs[g3_idx], use_container_width=False)
+              st.plotly_chart(graphs[g3_idx], use_container_width=True)
 
       elif graphs_amount == 4:
           col1, col2 = st.columns(2, gap="large")
 
           with col1:
-              st.plotly_chart(graphs[0], use_container_width=False)
+              st.plotly_chart(graphs[0], use_container_width=True)
           with col2:
-              st.plotly_chart(graphs[1], use_container_width=False)
+              st.plotly_chart(graphs[1], use_container_width=True)
             
           col3, col4 = st.columns(2, gap="large")
           with col3:
-              st.plotly_chart(graphs[2], use_container_width=False)   
+              st.plotly_chart(graphs[2], use_container_width=True)   
           with col4:
-              st.plotly_chart(graphs[3], use_container_width=False)   
+              st.plotly_chart(graphs[3], use_container_width=True)   
 
 
 elif comparison == 'Average':
