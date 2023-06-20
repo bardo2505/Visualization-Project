@@ -25,7 +25,7 @@ st.markdown("<style>h2{font-size: 18px; font-family: Assistant, sans-serif;}</st
 st.markdown("<style>h3{font-size: 20px; font-family: Assistant, sans-serif;}</style>", unsafe_allow_html=True) 
 st.markdown("<style>h4{font-size: 26px; font-family: Assistant, sans-serif;}</style>", unsafe_allow_html=True) 
 st.markdown("<style>h5{font-size: 12px; font-family: Assistant, sans-serif;}</style>", unsafe_allow_html=True) 
-st.markdown("<h4>Dudi gever al halal</h4>", unsafe_allow_html=True)
+
 st.markdown("<h4>The relationship between user's music consumption habits and preferences and their self reported mental health state</h4>", unsafe_allow_html=True)
 st.markdown("<h3>Mental health is an issue that affects millions of people around the world, with no signs of improvement and becoming increasingly alarming. According to the World Health Organization, mental health disorders have become the leading cause of disability, affecting a staggering 450 million people.</h3>", unsafe_allow_html=True)
 st.markdown("<h3>Music, often revered as a universal language, has been used for centuries to convey emotions and thoughts. Music is valued, among other things, for its therapeutic potential, especially in the treatment of mental health problems in situations such as depression, anxiety, post-traumatic stress disorder (PTSD) and more. However, the mechanisms underlying music's apparent positive effects on mental health remain elusive and unclear to this day.</h3>", unsafe_allow_html=True)
